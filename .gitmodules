@@ -1,0 +1,3 @@
+[submodule "conjure"]
+	path = conjure
+	url = ../conjure
