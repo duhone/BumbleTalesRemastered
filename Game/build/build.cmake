@@ -9,7 +9,10 @@ set(CR_INTERFACE_MODULES
 )
 
 set(CR_IMPLEMENTATION
+    ${root}/source/AppConfig.ixx
+    ${root}/source/IRenderable.ixx
     ${root}/source/main.cpp
+    ${root}/source/Timer.ixx
 )
 
 set(CR_BUILD_FILES

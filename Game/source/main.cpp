@@ -5,6 +5,8 @@
 
 import CR.Engine;
 
+import CR.Game.Timer;
+
 import std;
 import std.compat;
 
@@ -14,6 +16,8 @@ namespace cecore  = CR::Engine::Core;
 namespace ceinput = CR::Engine::Input;
 namespace cegraph = CR::Engine::Graphics;
 namespace ceplat  = CR::Engine::Platform;
+
+namespace cg = CR::Game;
 
 namespace fs = std::filesystem;
 
@@ -104,9 +108,12 @@ int main(int, char*) {
 	std::vector<float> spriteRotSpeeds;
 	for(uint32_t i = 0; i < numSprites; ++i) { spriteRotSpeeds.emplace_back(cecore::Random(0.005f, 0.05f)); }
 
+	cg::Timer::Initialize();
+
 	uint32_t frameCount = 0;
 	auto startFPSTime   = std::chrono::high_resolution_clock::now();
 	while(!glfwWindowShouldClose(window)) {
+		cg::Timer::Update();
 		// Should really check for windows resize from OS as well. and minimized. the ReInitialize
 		// graphics engine. Do that once we are using GLFW at top of loop. Not a problem so far on
 		// windows, return value of graphics Render is taking care of it. No reason to keep trying to
