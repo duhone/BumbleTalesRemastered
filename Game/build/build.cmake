@@ -11,6 +11,11 @@ set(CR_INTERFACE_MODULES
 set(CR_IMPLEMENTATION
     ${root}/source/AppConfig.ixx
     ${root}/source/IRenderable.ixx
+    ${root}/source/ISavableView.ixx
+    ${root}/source/ISaveOnTerminate.ixx
+    ${root}/source/IScrapbookChapter.ixx
+    ${root}/source/ITouchable.ixx
+    ${root}/source/IView.ixx
     ${root}/source/main.cpp
     ${root}/source/Timer.ixx
 )
