@@ -10,6 +10,9 @@ set(CR_INTERFACE_MODULES
 
 set(CR_IMPLEMENTATION
     ${root}/source/AppConfig.ixx
+    ${root}/source/Event.ixx
+    ${root}/source/FSM.ixx
+    ${root}/source/FunctionObjects.ixx
     ${root}/source/IRenderable.ixx
     ${root}/source/ISavableView.ixx
     ${root}/source/ISaveOnTerminate.ixx
@@ -17,6 +20,8 @@ set(CR_IMPLEMENTATION
     ${root}/source/ITouchable.ixx
     ${root}/source/IView.ixx
     ${root}/source/main.cpp
+    ${root}/source/Property.ixx
+    ${root}/source/SplashScreen.ixx
     ${root}/source/Timer.ixx
 )
 

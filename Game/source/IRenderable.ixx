@@ -13,7 +13,7 @@ import std;
 import std.compat;
 
 export namespace CR::Game {
-	class IRenderable {
+	export class IRenderable {
 	  public:
 		virtual ~IRenderable() = default;
 
