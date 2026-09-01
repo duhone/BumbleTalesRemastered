@@ -24,6 +24,10 @@ namespace fs = std::filesystem;
 using namespace std::literals;
 
 namespace {
+	// For this simple game we don't really need texture sets. So there will only be 1, and it will always be
+	// resident. loaded on startup.
+	uint64_t textureSetHashes[] = {cecore::C_Hash64("Splash")};
+
 	void glfwErrorCallback(int error, const char* description) {
 		CR_WARN("GLFW Error {}: {}", error, description);
 	}
@@ -51,7 +55,6 @@ int main(int, char*) {
 	}
 
 	CR::Engine::Initialize(window, assetsPath);
-	cegraph::SetClearColor(glm::vec4(0.0f, 0.25f, 0.0f, 1.0f));
 
 	ceaud::setFXVolume(1.0f);
 	ceaud::setMusicVolume(0.75f);
@@ -60,53 +63,7 @@ int main(int, char*) {
 	auto musicHandle = ceaud::Music::GetHandle(cecore::C_Hash64("bgmMenu"));
 	ceaud::Music::Play(musicHandle);
 
-	ceinput::Handles::Region region = ceinput::Regions::create({{0, 0}, {400, 300}});
-
-	std::vector<uint64_t> textureSetHashes;
-	textureSetHashes.emplace_back(cecore::C_Hash64("CompletionScreen"));
-	textureSetHashes.emplace_back(cecore::C_Hash64("BonusHarrySelect"));
-	textureSetHashes.emplace_back(cecore::C_Hash64("brick"));
-	textureSetHashes.emplace_back(cecore::C_Hash64("diamond"));
-	textureSetHashes.emplace_back(cecore::C_Hash64("gold"));
-	textureSetHashes.emplace_back(cecore::C_Hash64("ice"));
-	textureSetHashes.emplace_back(cecore::C_Hash64("leaf"));
-	textureSetHashes.emplace_back(cecore::C_Hash64("m"));
-	textureSetHashes.emplace_back(cecore::C_Hash64("question"));
-	textureSetHashes.emplace_back(cecore::C_Hash64("wood"));
 	auto textureSet = cegraph::Textures::LoadTextureSet(textureSetHashes);
-
-	std::vector<cegraph::Handles::Sprite> sprites;
-	std::vector<glm::vec2> spritePositions;
-	std::vector<float> spriteRotations;
-
-	constexpr uint32_t numSprites = 64;
-	{
-		std::vector<uint64_t> spriteHashes;
-		for(uint32_t i = 0; i < numSprites; ++i) {
-			spriteHashes.emplace_back(
-			    textureSetHashes[cecore::Random(2, (int32_t)textureSetHashes.size() - 1)]);
-
-			spritePositions.emplace_back(
-			    glm::vec2{cecore::Random(0.0f, 700.0f), cecore::Random(0.0f, 400.0f)});
-			spriteRotations.emplace_back(cecore::Random(0.0f, 3.14f));
-		}
-
-		spriteHashes.emplace_back(cecore::C_Hash64("CompletionScreen"));
-		spritePositions.emplace_back(glm::vec2{400.0f, 300.0f});
-		spriteRotations.emplace_back(0.0f);
-
-		spriteHashes.emplace_back(cecore::C_Hash64("BonusHarrySelect"));
-		spritePositions.emplace_back(glm::vec2{100.0f, 100.0f});
-		spriteRotations.emplace_back(0.0f);
-
-		sprites.resize(spriteHashes.size());
-		cegraph::Sprites::Create(spriteHashes, sprites);
-		cegraph::Sprites::SetPositions(sprites, spritePositions);
-		cegraph::Sprites::SetRotations(sprites, spriteRotations);
-	}
-
-	std::vector<float> spriteRotSpeeds;
-	for(uint32_t i = 0; i < numSprites; ++i) { spriteRotSpeeds.emplace_back(cecore::Random(0.005f, 0.05f)); }
 
 	cg::Timer::Initialize();
 
@@ -114,22 +71,10 @@ int main(int, char*) {
 	auto startFPSTime   = std::chrono::high_resolution_clock::now();
 	while(!glfwWindowShouldClose(window)) {
 		cg::Timer::Update();
-		// Should really check for windows resize from OS as well. and minimized. the ReInitialize
-		// graphics engine. Do that once we are using GLFW at top of loop. Not a problem so far on
-		// windows, return value of graphics Render is taking care of it. No reason to keep trying to
-		// reinitialize when minimized. Just running app at 10fps in that case for now.
 
 		glfwPollEvents();
 
 		CR::Engine::Update();
-
-		for(uint32_t i = 0; i < numSprites; ++i) { spriteRotations[i] += spriteRotSpeeds[i]; }
-		cegraph::Sprites::SetRotations(sprites, spriteRotations);
-
-		uint32_t regionState;
-		ceinput::Regions::getStates({&region, 1}, {&regionState, 1});
-
-		if((regionState & ceinput::Regions::RegionStates::Pressed) != 0) { ceaud::SoundFX::Play(fanfareFX); }
 
 		bool gsAvailable = CR::Engine::Render();
 
@@ -152,7 +97,6 @@ int main(int, char*) {
 
 	ceaud::Music::Stop();
 
-	cegraph::Sprites::Delete(sprites);
 	cegraph::Textures::ReleaseTextureSet(textureSet);
 
 	CR::Engine::Shutdown();
