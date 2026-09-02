@@ -48,7 +48,7 @@ int main(int, char*) {
 	}
 
 	glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-	GLFWwindow* window = glfwCreateWindow(800, 600, "Conjure", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(800, 600, "Bumble Tales Remastered", NULL, NULL);
 	if(!window) {
 		CR_ASSERT_ALWAYS(false, "failed to create glfw window");
 		return 0;

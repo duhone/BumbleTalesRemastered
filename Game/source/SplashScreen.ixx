@@ -6,6 +6,10 @@
  *  Copyright 2009 Conjured Realms LLC. All rights reserved.
  *
  */
+module;
+
+#include <glm/glm.hpp>
+
 export module CR.Game.SplashScreen;
 
 import CR.Game.IRenderable;
@@ -20,10 +24,10 @@ import std.compat;
 export namespace CR::Game {
 	class SplashScreen : public IRenderable {
 	  public:
-		SplashScreen(int splashAsset, float delayTime, int zPos);
+		SplashScreen(uint64_t splashAsset, float delayTime, int zPos);
 		virtual ~SplashScreen();
 
-		void SetSplashAsset(int splashAsset, float delayTime);
+		void SetSplashAsset(uint64_t splashAsset, float delayTime);
 		void SetFadeEffect(bool _value);
 		void StartSplash();
 
@@ -33,7 +37,8 @@ export namespace CR::Game {
 		void ForceRender();
 		void SetPosition(float xLoc, float yLoc);
 		void PauseAnimation(bool pause);
-		void SetFrameSet(int frameSet);
+
+		void SetFrame(int frame);
 		CR::Utility::Event SplashFinished;
 		void DesignSize([[maybe_unused]] int _width, [[maybe_unused]] int _height) {
 			// TODO: no design size yet in new graphics engine
@@ -52,10 +57,11 @@ export namespace CR::Game {
 
 module :private;
 
-namespace cg = CR::Game;
+namespace cegraph = CR::Engine::Graphics;
+namespace cg      = CR::Game;
 
-cg::SplashScreen::SplashScreen(int splashAsset, float delayTime, [[maybe_unused]] int zPos) {
-	// splashSprite = graphics_engine->CreateSprite1(false, zPos);
+cg::SplashScreen::SplashScreen(uint64_t splashAsset, float delayTime, [[maybe_unused]] int zPos) {
+	splashSprite = cegraph::Sprites::Create(splashAsset);
 	SetSplashAsset(splashAsset, delayTime);
 	m_running = false;
 	isFade    = false;
@@ -63,11 +69,12 @@ cg::SplashScreen::SplashScreen(int splashAsset, float delayTime, [[maybe_unused]
 }
 
 cg::SplashScreen::~SplashScreen() {
-	// splashSprite->Release();
+	cegraph::Sprites::Delete(splashSprite);
 }
 
-void cg::SplashScreen::SetSplashAsset([[maybe_unused]] int splashAsset, float delayTime) {
-	// splashSprite->SetImage(splashAsset);
+void cg::SplashScreen::SetSplashAsset([[maybe_unused]] uint64_t splashAsset, float delayTime) {
+	cegraph::Sprites::Delete(splashSprite);
+	splashSprite = cegraph::Sprites::Create(splashAsset);
 	SetPosition(160, 240);
 	m_baseDelayTime = delayTime;
 	m_delayTime     = delayTime;
@@ -107,12 +114,12 @@ void cg::SplashScreen::ForceRender() {
 	// splashSprite->Render();
 }
 
-void cg::SplashScreen::SetPosition([[maybe_unused]] float xLoc, [[maybe_unused]] float yLoc) {
-	// splashSprite->SetPositionAbsolute(xLoc, yLoc);
+void cg::SplashScreen::SetPosition(float xLoc, float yLoc) {
+	cegraph::Sprites::SetPosition(splashSprite, glm::vec2(xLoc, yLoc));
 }
 
 void cg::SplashScreen::PauseAnimation([[maybe_unused]] bool pause) {}
 
-void cg::SplashScreen::SetFrameSet([[maybe_unused]] int frameSet) {
-	// splashSprite->SetFrameSet(frameSet);
+void cg::SplashScreen::SetFrame(int frame) {
+	cegraph::Sprites::SetFrame(splashSprite, (uint16_t)frame);
 }
