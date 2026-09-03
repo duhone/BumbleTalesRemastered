@@ -59,7 +59,6 @@ int main(int, char*) {
 	ceaud::setFXVolume(1.0f);
 	ceaud::setMusicVolume(0.75f);
 
-	auto fanfareFX   = ceaud::SoundFX::GetHandle(cecore::C_Hash64("levelupfanfare"));
 	auto musicHandle = ceaud::Music::GetHandle(cecore::C_Hash64("bgmMenu"));
 	ceaud::Music::Play(musicHandle);
 

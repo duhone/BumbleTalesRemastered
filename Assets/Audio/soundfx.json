@@ -1,8 +1,8 @@
 {
     "soundfx" : [
             {
-                "name" : "levelupfanfare",
-                "path" : "Audio/FX/levelupfanfare.flac"
+                "name" : "tanlogo",
+                "path" : "Audio/FX/tanlogo.flac"
             }
         ]
 }

@@ -27,7 +27,7 @@ export namespace CR::Game {
 		SplashScreen(uint64_t splashAsset, float delayTime, int zPos);
 		virtual ~SplashScreen();
 
-		void SetSplashAsset(uint64_t splashAsset, float delayTime);
+		void SetSplashFrame(uint32_t frame, float delayTime);
 		void SetFadeEffect(bool _value);
 		void StartSplash();
 
@@ -38,7 +38,6 @@ export namespace CR::Game {
 		void SetPosition(float xLoc, float yLoc);
 		void PauseAnimation(bool pause);
 
-		void SetFrame(int frame);
 		CR::Utility::Event SplashFinished;
 		void DesignSize([[maybe_unused]] int _width, [[maybe_unused]] int _height) {
 			// TODO: no design size yet in new graphics engine
@@ -62,7 +61,7 @@ namespace cg      = CR::Game;
 
 cg::SplashScreen::SplashScreen(uint64_t splashAsset, float delayTime, [[maybe_unused]] int zPos) {
 	splashSprite = cegraph::Sprites::Create(splashAsset);
-	SetSplashAsset(splashAsset, delayTime);
+	SetSplashFrame(0, delayTime);
 	m_running = false;
 	isFade    = false;
 	fadeAlpha = 255;
@@ -72,9 +71,8 @@ cg::SplashScreen::~SplashScreen() {
 	cegraph::Sprites::Delete(splashSprite);
 }
 
-void cg::SplashScreen::SetSplashAsset([[maybe_unused]] uint64_t splashAsset, float delayTime) {
-	cegraph::Sprites::Delete(splashSprite);
-	splashSprite = cegraph::Sprites::Create(splashAsset);
+void cg::SplashScreen::SetSplashFrame(uint32_t frame, float delayTime) {
+	cegraph::Sprites::SetFrame(splashSprite, (uint16_t)frame);
 	SetPosition(160, 240);
 	m_baseDelayTime = delayTime;
 	m_delayTime     = delayTime;
@@ -98,10 +96,7 @@ void cg::SplashScreen::Update() {
 		SplashFinished();
 	}
 
-	if(isFade) {
-		// CR::Math::Color32 color = CR::Math::Color32(255, 255, 255, fadeAlpha);
-		// splashSprite->Color(color);
-	}
+	if(isFade) { cegraph::Sprites::SetColor(splashSprite, glm::u8vec4(255, 255, 255, fadeAlpha)); }
 }
 
 void cg::SplashScreen::Render() {
@@ -119,7 +114,3 @@ void cg::SplashScreen::SetPosition(float xLoc, float yLoc) {
 }
 
 void cg::SplashScreen::PauseAnimation([[maybe_unused]] bool pause) {}
-
-void cg::SplashScreen::SetFrame(int frame) {
-	cegraph::Sprites::SetFrame(splashSprite, (uint16_t)frame);
-}
