@@ -6,6 +6,7 @@
 import CR.Engine;
 
 import CR.Game.Timer;
+import CR.Game;
 
 import std;
 import std.compat;
@@ -26,7 +27,8 @@ using namespace std::literals;
 namespace {
 	// For this simple game we don't really need texture sets. So there will only be 1, and it will always be
 	// resident. loaded on startup.
-	uint64_t textureSetHashes[] = {cecore::C_Hash64("Splash")};
+	constexpr uint64_t c_textureSetHashes[] = {cecore::C_Hash64("Splash")};
+	std::unique_ptr<CR::Game::Game> m_game;
 
 	void glfwErrorCallback(int error, const char* description) {
 		CR_WARN("GLFW Error {}: {}", error, description);
@@ -48,21 +50,18 @@ int main(int, char*) {
 	}
 
 	glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-	GLFWwindow* window = glfwCreateWindow(800, 600, "Bumble Tales Remastered", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(640, 960, "Bumble Tales Remastered", NULL, NULL);
 	if(!window) {
 		CR_ASSERT_ALWAYS(false, "failed to create glfw window");
 		return 0;
 	}
 
-	CR::Engine::Initialize(window, assetsPath);
+	CR::Engine::Initialize(window, glm::uvec2(640, 960), assetsPath);
 
-	ceaud::setFXVolume(1.0f);
-	ceaud::setMusicVolume(0.75f);
+	auto textureSet = cegraph::Textures::LoadTextureSet(c_textureSetHashes);
 
-	auto musicHandle = ceaud::Music::GetHandle(cecore::C_Hash64("bgmMenu"));
-	ceaud::Music::Play(musicHandle);
-
-	auto textureSet = cegraph::Textures::LoadTextureSet(textureSetHashes);
+	m_game = std::make_unique<cg::Game>();
+	m_game->Initialize();
 
 	cg::Timer::Initialize();
 
@@ -74,6 +73,8 @@ int main(int, char*) {
 		glfwPollEvents();
 
 		CR::Engine::Update();
+
+		m_game->Execute();
 
 		bool gsAvailable = CR::Engine::Render();
 
@@ -94,7 +95,8 @@ int main(int, char*) {
 		}
 	}
 
-	ceaud::Music::Stop();
+	m_game->ApplicationTerminated();
+	m_game.reset();
 
 	cegraph::Textures::ReleaseTextureSet(textureSet);
 

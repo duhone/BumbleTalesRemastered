@@ -66,8 +66,9 @@ bool cg::MainMenuGameState::Begin() {
 	if(m_showSplashScreen) {
 		stateMachine.State = cg::Constants::SPLASH_MENU_STATE;
 		m_showSplashScreen = false;
-	} else
+	} else {
 		stateMachine.State = cg::Constants::HOME_MENU_STATE;
+	}
 
 	m_requestStartStoryMode  = false;
 	m_requestStartArcadeMode = false;
@@ -81,13 +82,15 @@ void cg::MainMenuGameState::End() {
 int cg::MainMenuGameState::Process() {
 	stateMachine();
 
+	/* states dont exist yet, pending port
 	if(m_requestStartStoryMode) {
-		m_requestStartStoryMode = false;
-		return cg::Constants::STORY_MODE_STATE;
+	    m_requestStartStoryMode = false;
+	    return cg::Constants::STORY_MODE_STATE;
 	} else if(m_requestStartArcadeMode) {
-		m_requestStartArcadeMode = false;
-		return cg::Constants::ARCADE_MODE_STATE;
-	}
+	    m_requestStartArcadeMode = false;
+	    return cg::Constants::ARCADE_MODE_STATE;
+	}*/
+
 	/*commented out in prev repo
 	else if (m_requestShowOptionsMenu)
 	{

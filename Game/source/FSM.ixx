@@ -71,6 +71,7 @@ export namespace CR::Utility {
 	class IState {
 	  public:
 		static const int UNCHANGED = -1;
+		virtual ~IState() {}
 		virtual bool Begin() { return false; }
 		virtual void End() {}
 		virtual int Process() { return UNCHANGED; }

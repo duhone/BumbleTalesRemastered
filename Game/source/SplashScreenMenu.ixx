@@ -47,7 +47,9 @@ cg::SplashScreenMenu::SplashScreenMenu() {
 	m_requestShowHomeMenu = false;
 }
 
-cg::SplashScreenMenu::~SplashScreenMenu() {}
+cg::SplashScreenMenu::~SplashScreenMenu() {
+	delete view;
+}
 
 bool cg::SplashScreenMenu::Begin() {
 	view = new SplashScreenMenuView();
@@ -57,18 +59,17 @@ bool cg::SplashScreenMenu::Begin() {
 
 void cg::SplashScreenMenu::End() {
 	delete view;
+	view = nullptr;
 }
 
 int cg::SplashScreenMenu::Process() {
 	view->Update();
-
-	// graphics_engine->BeginFrame();
 	view->Render();
-	// graphics_engine->EndFrame();
 
 	if(m_requestShowHomeMenu) {
 		m_requestShowHomeMenu = false;
-		return cg::Constants::HOME_MENU_STATE;
+		// hame state not implemented yet
+		// return cg::Constants::HOME_MENU_STATE;
 	}
 
 	return CR::Utility::IState::UNCHANGED;

@@ -33,6 +33,7 @@ void cg::Timer::Initialize() {
 void cg::Timer::Update() {
 	auto currenttime = std::chrono::steady_clock::now();
 	m_timePassed     = std::chrono::duration<float>(currenttime - m_starttime).count();
+	m_starttime      = currenttime;
 }
 
 float cg::Timer::GetTimePassed() {

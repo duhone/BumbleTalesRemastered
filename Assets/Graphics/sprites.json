@@ -3,7 +3,7 @@
         {
             "name": "Splash",
             "texture": "Splash",
-            "frame_rate": "FPS60"
+            "frame_rate": "FPS0"
         }
     ]
 }

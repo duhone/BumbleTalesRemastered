@@ -39,10 +39,6 @@ export namespace CR::Game {
 		void PauseAnimation(bool pause);
 
 		CR::Utility::Event SplashFinished;
-		void DesignSize([[maybe_unused]] int _width, [[maybe_unused]] int _height) {
-			// TODO: no design size yet in new graphics engine
-			// if(splashSprite) splashSprite->SetDesignSize(_width, _height);
-		}
 
 	  private:
 		CR::Engine::Graphics::Handles::Sprite splashSprite;
@@ -73,7 +69,7 @@ cg::SplashScreen::~SplashScreen() {
 
 void cg::SplashScreen::SetSplashFrame(uint32_t frame, float delayTime) {
 	cegraph::Sprites::SetFrame(splashSprite, (uint16_t)frame);
-	SetPosition(160, 240);
+	SetPosition(0, 0);
 	m_baseDelayTime = delayTime;
 	m_delayTime     = delayTime;
 }

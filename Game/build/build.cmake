@@ -14,6 +14,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/Event.ixx
     ${root}/source/FSM.ixx
     ${root}/source/FunctionObjects.ixx
+    ${root}/source/Game.ixx
     ${root}/source/HomeMenuView.ixx
     ${root}/source/IRenderable.ixx
     ${root}/source/ISavableView.ixx

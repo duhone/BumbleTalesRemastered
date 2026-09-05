@@ -44,12 +44,15 @@ namespace cecore = CR::Engine::Core;
 namespace ceaud  = CR::Engine::Audio;
 namespace cg     = CR::Game;
 
+namespace {
+	constexpr float c_splashScreenDelayTime = 1.0f;
+}
+
 cg::SplashScreenMenuView::SplashScreenMenuView() {
 	tandemSound = ceaud::SoundFX::GetHandle(cecore::C_Hash64("tanlogo"));
 	ceaud::SoundFX::Play(tandemSound);
 
-	m_splashScreen = new SplashScreen(cecore::C_Hash64("Splash"), 1.5f, 1000);
-	m_splashScreen->DesignSize(320, 480);
+	m_splashScreen = new SplashScreen(cecore::C_Hash64("Splash"), c_splashScreenDelayTime, 1000);
 	m_splashScreen->SplashFinished += CR::Utility::Delegate(this, &SplashScreenMenuView::OnSplashScreen1Done);
 	m_splashScreen->StartSplash();
 }
@@ -69,8 +72,7 @@ void cg::SplashScreenMenuView::Render() {
 void cg::SplashScreenMenuView::OnSplashScreen1Done() {
 	m_splashScreen->SplashFinished.Clear();
 	m_splashScreen->SplashFinished += CR::Utility::Delegate(this, &SplashScreenMenuView::OnSplashScreen2Done);
-	m_splashScreen->SetSplashFrame(1, 1.5f);
-	m_splashScreen->DesignSize(320, 480);
+	m_splashScreen->SetSplashFrame(1, c_splashScreenDelayTime);
 	m_splashScreen->StartSplash();
 }
 
