@@ -41,15 +41,15 @@ set(CR_SCHEMA_FILES
 set(CR_GENERATED_FILES
 )
 
-add_executable(game 
+add_executable(BumbleTalesRemastered 
 )
 
-settingsCR(game)
+settingsCR(BumbleTalesRemastered)
 
-target_link_libraries(game PUBLIC
+target_link_libraries(BumbleTalesRemastered PUBLIC
 	engine
 )
 
-target_compile_definitions(game PRIVATE ASSETS_FOLDER="${root}/../Assets")
+target_compile_definitions(BumbleTalesRemastered PRIVATE ASSETS_FOLDER="${root}/../Assets")
 
 endblock()

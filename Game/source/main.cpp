@@ -1,5 +1,9 @@
 #include <engine/Engine.h>
 
+#if CR_FINAL
+#include <windows.h>
+#endif
+
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
@@ -56,6 +60,10 @@ int main(int, char*) {
 		return 0;
 	}
 
+#if CR_FINAL
+	FreeConsole();
+#endif
+
 	CR::Engine::Initialize(window, glm::uvec2(640, 960), assetsPath);
 
 	auto textureSet = cegraph::Textures::LoadTextureSet(c_textureSetHashes);
@@ -85,9 +93,9 @@ int main(int, char*) {
 
 		++frameCount;
 		if(frameCount == 1024) {
-			frameCount      = 0;
-			auto endFPSTime = std::chrono::high_resolution_clock::now();
-			double times =
+			frameCount                       = 0;
+			[[maybe_unused]] auto endFPSTime = std::chrono::high_resolution_clock::now();
+			[[maybe_unused]] double times =
 			    std::chrono::duration_cast<std::chrono::milliseconds>(endFPSTime - startFPSTime).count() /
 			    1000.0f;
 			startFPSTime = endFPSTime;
