@@ -16,6 +16,8 @@ set(CR_IMPLEMENTATION
     ${root}/source/FunctionObjects.ixx
     ${root}/source/Game.ixx
     ${root}/source/HomeMenuView.ixx
+    ${root}/source/IInputObject.ixx
+    ${root}/source/InputButton.ixx
     ${root}/source/IRenderable.ixx
     ${root}/source/ISavableView.ixx
     ${root}/source/ISaveOnTerminate.ixx
