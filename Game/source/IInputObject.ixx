@@ -19,40 +19,18 @@ export namespace CR::Game {
 		int top, bottom, left, right;
 	};
 
-	struct Touch {
-		Touch() : X(0), Y(0), Active(false), ID(-1) {}
-		Touch(int _id) : X(0), Y(0), Active(false), ID(_id) {}
-		float X;        // position x
-		float Y;        // position y
-		bool Active;    // is touch active (currently down)
-		int ID;         // touch's unique identifier
-	};
-
 	class IInputObject {
 	  public:
-		IInputObject() : m_disabled(false) {}
+		IInputObject();
+		virtual ~IInputObject();
 
-		virtual ~IInputObject() {}
-
-		void TouchesBegan(Touch& _touches) {
-			if(!m_disabled) TouchesBeganImpl(_touches);
-		}
-		void TouchesMoved(Touch& _touches) {
-			if(!m_disabled) TouchesMovedImpl(_touches);
-		}
-		void TouchesEnded(Touch& _touches) {
-			if(!m_disabled) TouchesEndedImpl(_touches);
-		}
 		bool Disabled() const { return m_disabled; }
 		void Disabled(bool _disabled) {
 			if(!_disabled && m_disabled) Reset();
 			m_disabled = _disabled;
 		}
 
-		virtual void TouchesBeganImpl(Touch& _touches) = 0;
-		virtual void TouchesMovedImpl(Touch& _touches) = 0;
-		virtual void TouchesEndedImpl(Touch& _touches) = 0;
-		virtual void Reset()                           = 0;
+		virtual void Reset() = 0;
 
 		virtual void Update([[maybe_unused]] float time) {}
 		virtual void Render()        = 0;
@@ -61,5 +39,20 @@ export namespace CR::Game {
 	  protected:
 		bool m_disabled;
 		CR::Engine::Audio::Handles::SoundFX m_soundFX;
+		CR::Engine::Input::Handles::Region m_region;
 	};
 }    // namespace CR::Game
+
+module :private;
+
+namespace cecore  = CR::Engine::Core;
+namespace ceinput = CR::Engine::Input;
+namespace cg      = CR::Game;
+
+cg::IInputObject::IInputObject() : m_disabled(false) {
+	CR::Engine::Input::Regions::create(cecore::Rect2D<int32_t>{{0, 0}, {0, 0}});
+}
+
+cg::IInputObject::~IInputObject() {
+	CR::Engine::Input::Regions::release(m_region);
+}

@@ -27,15 +27,10 @@ export namespace CR::Game {
 		virtual ~InputButton();
 
 		void SetButtonBounds(float left, float top, float width, float height);
-		void SetSpriteAndBounds(float left, float top, uint64_t spriteHash, int zPos = 0);
+		void SetSpriteAndBounds(float left, float top, uint64_t spriteHash, int zPos = 50);
 		void SetSound(uint64_t hash);
 
-		void TouchesBeganImpl(Touch& _touches);
-		void TouchesMovedImpl(Touch& _touches);
-		void TouchesEndedImpl(Touch& _touches);
-
 		bool IsDown() const { return isDown; }
-		// void Temp(int _value) {temp = _value;}
 		bool WasPressed() {
 			// reset wasPressed whenever it is checked for
 			if(wasPressed) {
@@ -64,20 +59,19 @@ export namespace CR::Game {
 		CR::Utility::Event OnClicked;
 
 	  private:
+		void Update([[maybe_unused]] float time) override;
+
 		Rect bounds;
 		Rect position;
-		bool isDown;
 		bool isActing;
-
+		bool isDown;
 		bool wasPressed;
-		int touchID;
 		CR::Engine::Graphics::Handles::Sprite objectSprite;
 
 		bool soundOn;
 
 		void SetSprite(uint64_t spriteHash, int zPos);
 
-		// CR::Utility::Guid soundId;
 		CR::Engine::Audio::Handles::SoundFX sound;
 		CR::Engine::Audio::Handles::SoundFX disabledSound;
 	};
@@ -85,13 +79,14 @@ export namespace CR::Game {
 
 module :private;
 
+namespace cecore  = CR::Engine::Core;
+namespace ceinput = CR::Engine::Input;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
 cg::InputButton::InputButton() {
 	isDown        = false;
 	wasPressed    = false;
-	touchID       = -1;
 	bounds.top    = 0;
 	bounds.left   = 0;
 	bounds.bottom = 0;
@@ -125,6 +120,9 @@ void cg::InputButton::SetButtonBounds(float left, float top, float width, float 
 	r.bottom = (int)round(height);
 	r.right  = (int)round(width);
 	bounds   = r;
+
+	ceinput::Regions::update(m_region,
+	                         cecore::Rect2D<int32_t>{{r.left, r.top}, {r.right - r.left, r.bottom - r.top}});
 }
 
 void cg::InputButton::SetSpriteAndBounds(float left, float top, uint64_t spriteHash, int zPos) {
@@ -139,78 +137,32 @@ void cg::InputButton::SetSpriteAndBounds(float left, float top, uint64_t spriteH
 	r.right  = (int)round(size.x);
 	bounds   = r;
 	position = r;
+
+	ceinput::Regions::update(m_region, cecore::Rect2D<int32_t>{{r.left, r.top}, {r.right, r.bottom}});
 }
 
 void cg::InputButton::SetSprite(uint64_t spriteHash, [[maybe_unused]] int zPos) {
 	if(objectSprite.isValid()) { CR::Engine::Graphics::Sprites::Delete(objectSprite); }
 	objectSprite = CR::Engine::Graphics::Sprites::Create(spriteHash);
-	// set zpos
+	cegraph::Sprites::SetZOrder(objectSprite, (uint8_t)zPos);
 }
 
-void cg::InputButton::TouchesBeganImpl(Touch& _touches) {
-	// CGPoint glLocation;
-	// for (int i = 0;i < _touches.size();++i)
-	{
-		if(touchID != -1 && touchID != _touches.ID) return;
+void cg::InputButton::Update([[maybe_unused]] float time) {
+	uint32_t state = ceinput::Regions::getState(m_region);
 
-		// glLocation = GetGLLocation(view, touch);
-
-		if(_touches.X > bounds.left && _touches.X < bounds.right + bounds.left && _touches.Y > bounds.top &&
-		   _touches.Y < bounds.bottom + bounds.top) {
-			isDown        = true;
-			isActing      = true;
-			this->touchID = _touches.ID;
-		} else {
-			isDown   = false;
-			isActing = false;
-		}
+	if((state & ceinput::Regions::RegionStates::Pressed) != 0) {
+		if(soundOn) { CR::Engine::Audio::SoundFX::Play(m_soundFX); }
+		if(OnClicked.Size() > 0)
+			OnClicked();
+		else
+			wasPressed = true;
 	}
-}
-
-void cg::InputButton::TouchesMovedImpl(Touch& _touches) {
-	// CGPoint glLocation;
-	// for (int i = 0;i < _touches.size();++i)
-	{
-		if(touchID != -1 && touchID != _touches.ID) return;
-
-		// glLocation = GetGLLocation(view, touch);
-
-		if(_touches.X > bounds.left && _touches.X < bounds.right + bounds.left && _touches.Y > bounds.top &&
-		   _touches.Y < bounds.bottom + bounds.top) {
-			isDown   = true;
-			isActing = true;
-			// this->touch = touch;
-		} else {
-			isDown   = false;
-			isActing = false;
-		}
-	}
-}
-
-void cg::InputButton::TouchesEndedImpl(Touch& _touches) {
-	// for (int i = 0;i < _touches.size();++i)
-	{
-		if(touchID == _touches.ID) {
-			if(isDown) {
-				if(soundOn) { CR::Engine::Audio::SoundFX::Play(m_soundFX); }
-
-				if(OnClicked.Size() > 0)
-					OnClicked();
-				else
-					wasPressed = true;
-			}
-
-			isDown        = false;
-			isActing      = false;
-			this->touchID = -1;
-			// break;
-		}
-	}
+	isDown = (state & ceinput::Regions::RegionStates::Down) != 0;
+	// Not sure what the purpose of isActing was?
+	isActing = isDown;
 }
 
 void cg::InputButton::Reset() {
-	touchID    = -1;
-	isDown     = false;
 	isActing   = false;
 	wasPressed = false;
 }
@@ -234,4 +186,7 @@ void cg::InputButton::SetPosition(int x, int y) {
 	position.top  = y;
 	bounds.left   = x;
 	bounds.top    = y;
+
+	ceinput::Regions::update(
+	    m_region, cecore::Rect2D<int32_t>{{bounds.left, bounds.top}, {bounds.right, bounds.bottom}});
 }
