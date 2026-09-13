@@ -32,7 +32,7 @@ export namespace CR::Game {
 
 		virtual void Reset() = 0;
 
-		virtual void Update([[maybe_unused]] float time) {}
+		virtual void Update() {}
 		virtual void Render()        = 0;
 		virtual void FreeResources() = 0;
 
@@ -50,7 +50,7 @@ namespace ceinput = CR::Engine::Input;
 namespace cg      = CR::Game;
 
 cg::IInputObject::IInputObject() : m_disabled(false) {
-	CR::Engine::Input::Regions::create(cecore::Rect2D<int32_t>{{0, 0}, {0, 0}});
+	m_region = CR::Engine::Input::Regions::create(cecore::Rect2D<int32_t>{{0, 0}, {0, 0}});
 }
 
 cg::IInputObject::~IInputObject() {

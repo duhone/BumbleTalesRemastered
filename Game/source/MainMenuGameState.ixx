@@ -12,7 +12,7 @@ export module CR.Game.MainMenuGameState;
 import CR.Game.Constants;
 import CR.Game.SplashScreenMenu;
 import CR.Game.FSM;
-// #include "HelpMenuScreen.h"
+import CR.Game.HomeMenuScreen;
 // #include "HomeMenuScreen.h"
 // #include "MoreGamesMenuScreen.h"
 // #include "OptionsMenuScreen.h"
@@ -52,9 +52,11 @@ namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
 cg::MainMenuGameState::MainMenuGameState() {
-	stateMachine << new SplashScreenMenu() /*<< new HomeMenuScreen(this) << new OptionsMenuScreen(this)
-	             << new HelpMenuScreen(this) << new MoreGamesMenuScreen(this)
-	             << new ScrapbookMenuScreen(this)*/
+	stateMachine << new SplashScreenMenu()
+	             << new HomeMenuScreen([&] { StartStoryMode(); },
+	                                   [&] { StartArcadeMode(); }) /*<< new OptionsMenuScreen(this)
+<< new HelpMenuScreen(this) << new MoreGamesMenuScreen(this)
+<< new ScrapbookMenuScreen(this)*/
 	    ;
 	stateMachine.State = cg::Constants::SPLASH_MENU_STATE;
 	m_showSplashScreen = true;

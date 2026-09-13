@@ -3,6 +3,27 @@
         {
             "name": "Splash",
             "path": "Graphics/Textures/Menu/Splash.webp"
+        },{
+            "name": "MenuBG",
+            "path": "Graphics/Textures/Menu/MenuBG.webp"
+        },{
+            "name": "Button_ArcadeMode",
+            "path": "Graphics/Textures/Menu/Button_ArcadeMode.webp"
+        },{
+            "name": "Button_StoryMode",
+            "path": "Graphics/Textures/Menu/Button_StoryMode.webp"
+        },{
+            "name": "Button_ResumeGame",
+            "path": "Graphics/Textures/Menu/Button_ResumeGame.webp"
+        },{
+            "name": "Button_Scrapbook",
+            "path": "Graphics/Textures/Menu/Button_Scrapbook.webp"
+        },{
+            "name": "Button_HelpInfo",
+            "path": "Graphics/Textures/Menu/Button_HelpInfo.webp"
+        },{
+            "name": "Button_Options",
+            "path": "Graphics/Textures/Menu/Button_Options.webp"
         }
     ]
 }

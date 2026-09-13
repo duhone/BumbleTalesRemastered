@@ -6,10 +6,15 @@
  *  Copyright 2009 Conjured Realms LLC. All rights reserved.
  *
  */
+module;
+
+#include <glm/glm.hpp>
+
 export module CR.Game.HomeMenuView;
 
 import CR.Game.IView;
 import CR.Game.Event;
+import CR.Game.InputButton;
 
 import CR.Engine;
 
@@ -20,7 +25,7 @@ export namespace CR::Game {
 	class HomeMenuView : public IView {
 	  public:
 		HomeMenuView();
-		~HomeMenuView();
+		virtual ~HomeMenuView();
 
 		void Update();
 		void Render();
@@ -42,92 +47,86 @@ export namespace CR::Game {
 
 	  private:
 		CR::Engine::Graphics::Handles::Sprite menuBackground;
-		/*Input_Button* storyModeButton;
-		Input_Button* arcadeModeButton;
-		Input_Button* scrapbookButton;
-		Input_Button* helpButton;
-		Input_Button* optionsButton;
-		Input_Button* moreGamesButton;*/
+		InputButton* storyModeButton;
+		InputButton* arcadeModeButton;
+		InputButton* scrapbookButton;
+		InputButton* helpButton;
+		InputButton* optionsButton;
+		InputButton* moreGamesButton;
 	};
 }    // namespace CR::Game
 
 module :private;
 
+namespace cecore  = CR::Engine::Core;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
 cg::HomeMenuView::HomeMenuView() {
-	/*storyModeButton = new Input_Button();
-	storyModeButton->SetSpriteAndBounds(13, 232, CR::AssetList::Menu_Story_Mode_Button, 800);
-	storyModeButton->DesignSize(289, 57);
-	storyModeButton->OnClicked += Delegate(this, &HomeMenuView::OnStoryModeClicked);
-	storyModeButton->SetSound(CR::AssetList::sounds::shopopen::ID);
-	input_objects.push_back(storyModeButton);
+	storyModeButton = new InputButton();
+	storyModeButton->SetSpriteAndBounds(26, 464, cecore::C_Hash64("Button_StoryMode"), 800);
+	storyModeButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnStoryModeClicked);
+	storyModeButton->SetSound(cecore::C_Hash64("shopopen"));
 
-	arcadeModeButton = new Input_Button();
-	arcadeModeButton->SetSpriteAndBounds(13, 292, CR::AssetList::Menu_Arcade_Mode_Button, 800);
-	arcadeModeButton->DesignSize(289, 57);
-	arcadeModeButton->OnClicked += Delegate(this, &HomeMenuView::OnArcadeModeClicked);
-	arcadeModeButton->SetSound(CR::AssetList::sounds::shopopen::ID);
-	input_objects.push_back(arcadeModeButton);
+	arcadeModeButton = new InputButton();
+	arcadeModeButton->SetSpriteAndBounds(26, 584, cecore::C_Hash64("Button_ArcadeMode"), 800);
+	arcadeModeButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnArcadeModeClicked);
+	arcadeModeButton->SetSound(cecore::C_Hash64("shopopen"));
 
-	scrapbookButton = new Input_Button();
-	scrapbookButton->SetSpriteAndBounds(13, 352, CR::AssetList::Menu_Scrapbook_Button, 800);
-	scrapbookButton->DesignSize(289, 57);
-	scrapbookButton->OnClicked += Delegate(this, &HomeMenuView::OnScrapbookClicked);
-	scrapbookButton->SetSound(CR::AssetList::sounds::shopopen::ID);
-	input_objects.push_back(scrapbookButton);
+	scrapbookButton = new InputButton();
+	scrapbookButton->SetSpriteAndBounds(26, 704, cecore::C_Hash64("Button_Scrapbook"), 800);
+	scrapbookButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnScrapbookClicked);
+	scrapbookButton->SetSound(cecore::C_Hash64("shopopen"));
 
-	helpButton = new Input_Button();
-	helpButton->SetSpriteAndBounds(13, 412, CR::AssetList::Menu_Help_Info_Button, 800);
-	helpButton->DesignSize(98, 57);
-	// helpButton->SetSpriteAndBounds(13, 412, CR::AssetList::Menu_More_Games_Button, 800);
-	helpButton->OnClicked += Delegate(this, &HomeMenuView::OnHelpClicked);
-	helpButton->SetSound(CR::AssetList::sounds::shopopen::ID);
-	input_objects.push_back(helpButton);
+	helpButton = new InputButton();
+	helpButton->SetSpriteAndBounds(26, 824, cecore::C_Hash64("Button_HelpInfo"), 800);
+	helpButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnHelpClicked);
+	helpButton->SetSound(cecore::C_Hash64("shopopen"));
 
-	optionsButton = new Input_Button();
-	optionsButton->SetSpriteAndBounds(109, 412, CR::AssetList::Menu_Options_Button, 800);
-	optionsButton->DesignSize(97, 57);
-	optionsButton->OnClicked += Delegate(this, &HomeMenuView::OnOptionsClicked);
-	optionsButton->SetSound(CR::AssetList::sounds::shopopen::ID);
-	input_objects.push_back(optionsButton);
+	optionsButton = new InputButton();
+	optionsButton->SetSpriteAndBounds(315, 824, cecore::C_Hash64("Button_Options"), 800);
+	optionsButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnOptionsClicked);
+	optionsButton->SetSound(cecore::C_Hash64("shopopen"));
 
+	/*
 	moreGamesButton = new Input_Button();
 	moreGamesButton->SetSpriteAndBounds(205, 412, CR::AssetList::Menu_More_Games_Button, 800);
 	moreGamesButton->DesignSize(97, 57);
 	moreGamesButton->OnClicked += Delegate(this, &HomeMenuView::OnMoreGamesClicked);
 	moreGamesButton->SetSound(CR::AssetList::sounds::shopopen::ID);
-	input_objects.push_back(moreGamesButton);
+	input_objects.push_back(moreGamesButton);*/
 
-	menuBackground = graphics_engine->CreateSprite1(false, 1000);
-	menuBackground->SetImage(CR::AssetList::Menu_Background);
-	menuBackground->SetDesignSize(320, 480);
-	menuBackground->SetPositionAbsolute(160, 240);*/
+	menuBackground = cegraph::Sprites::Create(cecore::C_Hash64("MenuBG"));
+	cegraph::Sprites::SetPosition(menuBackground, glm::vec2(0, 0));
+	cegraph::Sprites::SetZOrder(menuBackground, 0);
 }
 
 cg::HomeMenuView::~HomeMenuView() {
-	/*delete storyModeButton;
+	delete storyModeButton;
 	delete arcadeModeButton;
 	delete scrapbookButton;
 	delete helpButton;
 	delete optionsButton;
-	delete moreGamesButton;
-	menuBackground->Release();*/
+	// delete moreGamesButton;
+	cegraph::Sprites::Delete(menuBackground);
 }
 
-void cg::HomeMenuView::Update() {}
+void cg::HomeMenuView::Update() {
+	storyModeButton->Update();
+	arcadeModeButton->Update();
+	scrapbookButton->Update();
+	helpButton->Update();
+	optionsButton->Update();
+	// moreGamesButton->Update();
+}
 
 void cg::HomeMenuView::Render() {
-	/*graphics_engine->BeginFrame();
-	menuBackground->Render();
 	storyModeButton->Render();
 	arcadeModeButton->Render();
 	scrapbookButton->Render();
 	helpButton->Render();
 	optionsButton->Render();
-	moreGamesButton->Render();
-	graphics_engine->EndFrame();*/
+	// moreGamesButton->Render();
 }
 
 void cg::HomeMenuView::OnStoryModeClicked() {

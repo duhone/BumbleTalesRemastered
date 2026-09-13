@@ -68,8 +68,7 @@ int cg::SplashScreenMenu::Process() {
 
 	if(m_requestShowHomeMenu) {
 		m_requestShowHomeMenu = false;
-		// hame state not implemented yet
-		// return cg::Constants::HOME_MENU_STATE;
+		return cg::Constants::HOME_MENU_STATE;
 	}
 
 	return CR::Utility::IState::UNCHANGED;

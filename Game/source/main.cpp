@@ -31,7 +31,14 @@ using namespace std::literals;
 namespace {
 	// For this simple game we don't really need texture sets. So there will only be 1, and it will always be
 	// resident. loaded on startup.
-	constexpr uint64_t c_textureSetHashes[] = {cecore::C_Hash64("Splash")};
+	constexpr uint64_t c_textureSetHashes[] = {cecore::C_Hash64("Splash"),
+	                                           cecore::C_Hash64("MenuBG"),
+	                                           cecore::C_Hash64("Button_ArcadeMode"),
+	                                           cecore::C_Hash64("Button_StoryMode"),
+	                                           cecore::C_Hash64("Button_ResumeGame"),
+	                                           cecore::C_Hash64("Button_Scrapbook"),
+	                                           cecore::C_Hash64("Button_HelpInfo"),
+	                                           cecore::C_Hash64("Button_Options")};
 	std::unique_ptr<CR::Game::Game> m_game;
 
 	void glfwErrorCallback(int error, const char* description) {

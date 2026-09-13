@@ -3,6 +3,9 @@
             {
                 "name" : "tanlogo",
                 "path" : "Audio/FX/tanlogo.flac"
+            }, {
+                "name" : "shopopen",
+                "path" : "Audio/FX/shopopen.flac"
             }
         ]
 }

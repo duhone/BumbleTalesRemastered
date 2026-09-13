@@ -4,6 +4,34 @@
             "name": "Splash",
             "texture": "Splash",
             "frame_rate": "FPS0"
+        },{
+            "name": "MenuBG",
+            "texture": "MenuBG",
+            "frame_rate": "FPS0"
+        },{
+            "name": "Button_ArcadeMode",
+            "texture": "Button_ArcadeMode",
+            "frame_rate": "FPS0"
+        },{
+            "name": "Button_StoryMode",
+            "texture": "Button_StoryMode",
+            "frame_rate": "FPS0"
+        },{
+            "name": "Button_ResumeGame",
+            "texture": "Button_ResumeGame",
+            "frame_rate": "FPS0"
+        },{
+            "name": "Button_Scrapbook",
+            "texture": "Button_Scrapbook",
+            "frame_rate": "FPS0"
+        },{
+            "name": "Button_HelpInfo",
+            "texture": "Button_HelpInfo",
+            "frame_rate": "FPS0"
+        },{
+            "name": "Button_Options",
+            "texture": "Button_Options",
+            "frame_rate": "FPS0"
         }
     ]
 }

@@ -58,9 +58,9 @@ export namespace CR::Game {
 		void SetSoundOn(bool isOn) { soundOn = isOn; }
 		CR::Utility::Event OnClicked;
 
-	  private:
-		void Update([[maybe_unused]] float time) override;
+		void Update() override;
 
+	  private:
 		Rect bounds;
 		Rect position;
 		bool isActing;
@@ -147,7 +147,7 @@ void cg::InputButton::SetSprite(uint64_t spriteHash, [[maybe_unused]] int zPos) 
 	cegraph::Sprites::SetZOrder(objectSprite, (uint8_t)zPos);
 }
 
-void cg::InputButton::Update([[maybe_unused]] float time) {
+void cg::InputButton::Update() {
 	uint32_t state = ceinput::Regions::getState(m_region);
 
 	if((state & ceinput::Regions::RegionStates::Pressed) != 0) {
@@ -168,10 +168,9 @@ void cg::InputButton::Reset() {
 }
 
 void cg::InputButton::Render() {
-	if(objectSprite != 0) {
+	if(objectSprite.isValid()) {
 		auto size = CR::Engine::Graphics::Sprites::GetSize(objectSprite);
-		CR::Engine::Graphics::Sprites::SetPosition(
-		    objectSprite, {position.left + (size.x / 2), position.top + (size.y / 2)});
+		CR::Engine::Graphics::Sprites::SetPosition(objectSprite, {position.left, position.top});
 
 		if(!isDown) {
 			CR::Engine::Graphics::Sprites::SetFrame(objectSprite, 0);
