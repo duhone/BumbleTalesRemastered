@@ -52,7 +52,7 @@ cg::SplashScreenMenuView::SplashScreenMenuView() {
 	tandemSound = ceaud::SoundFX::GetHandle(cecore::C_Hash64("tanlogo"));
 	ceaud::SoundFX::Play(tandemSound);
 
-	m_splashScreen = new SplashScreen(cecore::C_Hash64("Splash"), c_splashScreenDelayTime, 1000);
+	m_splashScreen = new SplashScreen(cecore::C_Hash64("MenuSplash"), c_splashScreenDelayTime, 1000);
 	m_splashScreen->SplashFinished += CR::Utility::Delegate(this, &SplashScreenMenuView::OnSplashScreen1Done);
 	m_splashScreen->StartSplash();
 }

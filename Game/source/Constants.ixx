@@ -8,7 +8,7 @@ export namespace CR::Game::Constants {
 	constexpr int SPLASH_MENU_STATE     = 0;
 	constexpr int HOME_MENU_STATE       = 1;
 	constexpr int OPTIONS_MENU_STATE    = 2;
-	constexpr int HELP_MENU_STATE       = 3;
+	constexpr int HELP_MENU_STATE       = 2;    // should be 3, once options menu is implemented
 	constexpr int MORE_GAMES_MENU_STATE = 4;
 	constexpr int SCRAPBOOK_MENU_STATE  = 5;
 

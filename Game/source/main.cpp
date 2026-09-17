@@ -31,14 +31,22 @@ using namespace std::literals;
 namespace {
 	// For this simple game we don't really need texture sets. So there will only be 1, and it will always be
 	// resident. loaded on startup.
-	constexpr uint64_t c_textureSetHashes[] = {cecore::C_Hash64("Splash"),
+	constexpr uint64_t c_textureSetHashes[] = {cecore::C_Hash64("MenuSplash"),
 	                                           cecore::C_Hash64("MenuBG"),
-	                                           cecore::C_Hash64("Button_ArcadeMode"),
-	                                           cecore::C_Hash64("Button_StoryMode"),
-	                                           cecore::C_Hash64("Button_ResumeGame"),
-	                                           cecore::C_Hash64("Button_Scrapbook"),
-	                                           cecore::C_Hash64("Button_HelpInfo"),
-	                                           cecore::C_Hash64("Button_Options")};
+	                                           cecore::C_Hash64("MenuButton_ArcadeMode"),
+	                                           cecore::C_Hash64("MenuButton_StoryMode"),
+	                                           cecore::C_Hash64("MenuButton_ResumeGame"),
+	                                           cecore::C_Hash64("MenuButton_Scrapbook"),
+	                                           cecore::C_Hash64("MenuButton_HelpInfo"),
+	                                           cecore::C_Hash64("MenuButton_Options"),
+	                                           cecore::C_Hash64("HelpButton_HowToPlay2"),
+	                                           cecore::C_Hash64("HelpButton_MainMenu2"),
+	                                           cecore::C_Hash64("HelpCredits2"),
+	                                           cecore::C_Hash64("HelpInfoBG"),
+	                                           cecore::C_Hash64("HelpInfoHelp"),
+	                                           cecore::C_Hash64("ScrapbookButton_Exit"),
+	                                           cecore::C_Hash64("ScrapbookButton_LArrow"),
+	                                           cecore::C_Hash64("ScrapbookButton_RArrow")};
 	std::unique_ptr<CR::Game::Game> m_game;
 
 	void glfwErrorCallback(int error, const char* description) {

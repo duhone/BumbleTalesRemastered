@@ -15,6 +15,7 @@ import std.compat;
 
 export namespace CR::Game {
 
+	// this is being used as top, bottom, width, height in button class at least. should rename.
 	struct Rect {
 		int top, bottom, left, right;
 	};

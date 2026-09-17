@@ -1,36 +1,68 @@
 {
     "sprites": [
         {
-            "name": "Splash",
-            "texture": "Splash",
+            "name": "MenuSplash",
+            "texture": "MenuSplash",
             "frame_rate": "FPS0"
         },{
             "name": "MenuBG",
             "texture": "MenuBG",
             "frame_rate": "FPS0"
         },{
-            "name": "Button_ArcadeMode",
-            "texture": "Button_ArcadeMode",
+            "name": "MenuButton_ArcadeMode",
+            "texture": "MenuButton_ArcadeMode",
             "frame_rate": "FPS0"
         },{
-            "name": "Button_StoryMode",
-            "texture": "Button_StoryMode",
+            "name": "MenuButton_StoryMode",
+            "texture": "MenuButton_StoryMode",
             "frame_rate": "FPS0"
         },{
-            "name": "Button_ResumeGame",
-            "texture": "Button_ResumeGame",
+            "name": "MenuButton_ResumeGame",
+            "texture": "MenuButton_ResumeGame",
             "frame_rate": "FPS0"
         },{
-            "name": "Button_Scrapbook",
-            "texture": "Button_Scrapbook",
+            "name": "MenuButton_Scrapbook",
+            "texture": "MenuButton_Scrapbook",
             "frame_rate": "FPS0"
         },{
-            "name": "Button_HelpInfo",
-            "texture": "Button_HelpInfo",
+            "name": "MenuButton_HelpInfo",
+            "texture": "MenuButton_HelpInfo",
             "frame_rate": "FPS0"
         },{
-            "name": "Button_Options",
-            "texture": "Button_Options",
+            "name": "MenuButton_Options",
+            "texture": "MenuButton_Options",
+            "frame_rate": "FPS0"
+        },{
+            "name": "HelpButton_HowToPlay2",
+            "texture": "HelpButton_HowToPlay2",
+            "frame_rate": "FPS0"
+        },{
+            "name": "HelpButton_MainMenu2",
+            "texture": "HelpButton_MainMenu2",
+            "frame_rate": "FPS0"
+        },{
+            "name": "HelpCredits2",
+            "texture": "HelpCredits2",
+            "frame_rate": "FPS0"
+        },{
+            "name": "HelpInfoBG",
+            "texture": "HelpInfoBG",
+            "frame_rate": "FPS0"
+        },{
+            "name": "HelpInfoHelp",
+            "texture": "HelpInfoHelp",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookButton_Exit",
+            "texture": "ScrapbookButton_Exit",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookButton_LArrow",
+            "texture": "ScrapbookButton_LArrow",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookButton_RArrow",
+            "texture": "ScrapbookButton_RArrow",
             "frame_rate": "FPS0"
         }
     ]

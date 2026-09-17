@@ -15,6 +15,8 @@ set(CR_IMPLEMENTATION
     ${root}/source/FSM.ixx
     ${root}/source/FunctionObjects.ixx
     ${root}/source/Game.ixx
+    ${root}/source/HelpMenuScreen.ixx
+    ${root}/source/HelpMenuView.ixx
     ${root}/source/HomeMenuScreen.ixx
     ${root}/source/HomeMenuView.ixx
     ${root}/source/IInputObject.ixx

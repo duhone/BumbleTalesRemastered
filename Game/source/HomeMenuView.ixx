@@ -64,33 +64,33 @@ namespace cg      = CR::Game;
 
 cg::HomeMenuView::HomeMenuView() {
 	storyModeButton = new InputButton();
-	storyModeButton->SetSpriteAndBounds(26, 464, cecore::C_Hash64("Button_StoryMode"), 800);
+	storyModeButton->SetSpriteAndBounds(26, 464, cecore::C_Hash64("MenuButton_StoryMode"), 80);
 	storyModeButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnStoryModeClicked);
 	storyModeButton->SetSound(cecore::C_Hash64("shopopen"));
 
 	arcadeModeButton = new InputButton();
-	arcadeModeButton->SetSpriteAndBounds(26, 584, cecore::C_Hash64("Button_ArcadeMode"), 800);
+	arcadeModeButton->SetSpriteAndBounds(26, 584, cecore::C_Hash64("MenuButton_ArcadeMode"), 80);
 	arcadeModeButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnArcadeModeClicked);
 	arcadeModeButton->SetSound(cecore::C_Hash64("shopopen"));
 
 	scrapbookButton = new InputButton();
-	scrapbookButton->SetSpriteAndBounds(26, 704, cecore::C_Hash64("Button_Scrapbook"), 800);
+	scrapbookButton->SetSpriteAndBounds(26, 704, cecore::C_Hash64("MenuButton_Scrapbook"), 80);
 	scrapbookButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnScrapbookClicked);
 	scrapbookButton->SetSound(cecore::C_Hash64("shopopen"));
 
 	helpButton = new InputButton();
-	helpButton->SetSpriteAndBounds(26, 824, cecore::C_Hash64("Button_HelpInfo"), 800);
+	helpButton->SetSpriteAndBounds(26, 824, cecore::C_Hash64("MenuButton_HelpInfo"), 80);
 	helpButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnHelpClicked);
 	helpButton->SetSound(cecore::C_Hash64("shopopen"));
 
 	optionsButton = new InputButton();
-	optionsButton->SetSpriteAndBounds(315, 824, cecore::C_Hash64("Button_Options"), 800);
+	optionsButton->SetSpriteAndBounds(315, 824, cecore::C_Hash64("MenuButton_Options"), 80);
 	optionsButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnOptionsClicked);
 	optionsButton->SetSound(cecore::C_Hash64("shopopen"));
 
 	/*
 	moreGamesButton = new Input_Button();
-	moreGamesButton->SetSpriteAndBounds(205, 412, CR::AssetList::Menu_More_Games_Button, 800);
+	moreGamesButton->SetSpriteAndBounds(205, 412, CR::AssetList::Menu_More_Games_Button, 80);
 	moreGamesButton->DesignSize(97, 57);
 	moreGamesButton->OnClicked += Delegate(this, &HomeMenuView::OnMoreGamesClicked);
 	moreGamesButton->SetSound(CR::AssetList::sounds::shopopen::ID);

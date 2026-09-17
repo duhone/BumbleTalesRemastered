@@ -1,29 +1,53 @@
 {
     "textures": [
         {
-            "name": "Splash",
+            "name": "MenuSplash",
             "path": "Graphics/Textures/Menu/Splash.webp"
         },{
             "name": "MenuBG",
             "path": "Graphics/Textures/Menu/MenuBG.webp"
         },{
-            "name": "Button_ArcadeMode",
+            "name": "MenuButton_ArcadeMode",
             "path": "Graphics/Textures/Menu/Button_ArcadeMode.webp"
         },{
-            "name": "Button_StoryMode",
+            "name": "MenuButton_StoryMode",
             "path": "Graphics/Textures/Menu/Button_StoryMode.webp"
         },{
-            "name": "Button_ResumeGame",
+            "name": "MenuButton_ResumeGame",
             "path": "Graphics/Textures/Menu/Button_ResumeGame.webp"
         },{
-            "name": "Button_Scrapbook",
+            "name": "MenuButton_Scrapbook",
             "path": "Graphics/Textures/Menu/Button_Scrapbook.webp"
         },{
-            "name": "Button_HelpInfo",
+            "name": "MenuButton_HelpInfo",
             "path": "Graphics/Textures/Menu/Button_HelpInfo.webp"
         },{
-            "name": "Button_Options",
+            "name": "MenuButton_Options",
             "path": "Graphics/Textures/Menu/Button_Options.webp"
+        },{
+            "name": "HelpButton_HowToPlay2",
+            "path": "Graphics/Textures/InfoHelp/Button_HowToPlay2.webp"
+        },{
+            "name": "HelpButton_MainMenu2",
+            "path": "Graphics/Textures/InfoHelp/Button_MainMenu2.webp"
+        },{
+            "name": "HelpCredits2",
+            "path": "Graphics/Textures/InfoHelp/Credits2.webp"
+        },{
+            "name": "HelpInfoBG",
+            "path": "Graphics/Textures/InfoHelp/InfoBG.webp"
+        },{
+            "name": "HelpInfoHelp",
+            "path": "Graphics/Textures/InfoHelp/InfoHelp.webp"
+        },{
+            "name": "ScrapbookButton_Exit",
+            "path": "Graphics/Textures/Scrapbook/Button_Exit.webp"
+        },{
+            "name": "ScrapbookButton_LArrow",
+            "path": "Graphics/Textures/Scrapbook/Button_LArrow.webp"
+        },{
+            "name": "ScrapbookButton_RArrow",
+            "path": "Graphics/Textures/Scrapbook/Button_RArrow.webp"
         }
     ]
 }

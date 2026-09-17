@@ -27,7 +27,7 @@ export namespace CR::Game {
 		virtual ~InputButton();
 
 		void SetButtonBounds(float left, float top, float width, float height);
-		void SetSpriteAndBounds(float left, float top, uint64_t spriteHash, int zPos = 50);
+		void SetSpriteAndBounds(float left, float top, uint64_t spriteHash, uint8_t zPos = 50);
 		void SetSound(uint64_t hash);
 
 		bool IsDown() const { return isDown; }
@@ -70,7 +70,7 @@ export namespace CR::Game {
 
 		bool soundOn;
 
-		void SetSprite(uint64_t spriteHash, int zPos);
+		void SetSprite(uint64_t spriteHash, uint8_t zPos);
 
 		CR::Engine::Audio::Handles::SoundFX sound;
 		CR::Engine::Audio::Handles::SoundFX disabledSound;
@@ -120,12 +120,9 @@ void cg::InputButton::SetButtonBounds(float left, float top, float width, float 
 	r.bottom = (int)round(height);
 	r.right  = (int)round(width);
 	bounds   = r;
-
-	ceinput::Regions::update(m_region,
-	                         cecore::Rect2D<int32_t>{{r.left, r.top}, {r.right - r.left, r.bottom - r.top}});
 }
 
-void cg::InputButton::SetSpriteAndBounds(float left, float top, uint64_t spriteHash, int zPos) {
+void cg::InputButton::SetSpriteAndBounds(float left, float top, uint64_t spriteHash, uint8_t zPos) {
 	SetSprite(spriteHash, zPos);
 
 	auto size = cegraph::Sprites::GetSize(objectSprite);
@@ -137,17 +134,22 @@ void cg::InputButton::SetSpriteAndBounds(float left, float top, uint64_t spriteH
 	r.right  = (int)round(size.x);
 	bounds   = r;
 	position = r;
-
-	ceinput::Regions::update(m_region, cecore::Rect2D<int32_t>{{r.left, r.top}, {r.right, r.bottom}});
 }
 
-void cg::InputButton::SetSprite(uint64_t spriteHash, [[maybe_unused]] int zPos) {
+void cg::InputButton::SetSprite(uint64_t spriteHash, uint8_t zPos) {
 	if(objectSprite.isValid()) { CR::Engine::Graphics::Sprites::Delete(objectSprite); }
 	objectSprite = CR::Engine::Graphics::Sprites::Create(spriteHash);
-	cegraph::Sprites::SetZOrder(objectSprite, (uint8_t)zPos);
+	cegraph::Sprites::SetZOrder(objectSprite, zPos);
 }
 
 void cg::InputButton::Update() {
+	if(m_disabled) {
+		ceinput::Regions::update(m_region, cecore::Rect2D<int32_t>{{0, 0}, {0, 0}});
+		return;
+	}
+	ceinput::Regions::update(
+	    m_region, cecore::Rect2D<int32_t>{{bounds.left, bounds.top}, {bounds.right, bounds.bottom}});
+
 	uint32_t state = ceinput::Regions::getState(m_region);
 
 	if((state & ceinput::Regions::RegionStates::Pressed) != 0) {
@@ -169,6 +171,7 @@ void cg::InputButton::Reset() {
 
 void cg::InputButton::Render() {
 	if(objectSprite.isValid()) {
+		cegraph::Sprites::SetVisibility(objectSprite, !m_disabled);
 		auto size = CR::Engine::Graphics::Sprites::GetSize(objectSprite);
 		CR::Engine::Graphics::Sprites::SetPosition(objectSprite, {position.left, position.top});
 
