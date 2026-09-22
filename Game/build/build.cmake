@@ -10,6 +10,9 @@ set(CR_INTERFACE_MODULES
 
 set(CR_IMPLEMENTATION
     ${root}/source/AppConfig.ixx
+    ${root}/source/ArcadeModeSaveInfo.ixx
+    ${root}/source/BuildingLevels.ixx
+    ${root}/source/CharacterLevels.ixx
     ${root}/source/Constants.ixx
     ${root}/source/Event.ixx
     ${root}/source/FSM.ixx
@@ -30,10 +33,17 @@ set(CR_IMPLEMENTATION
     ${root}/source/main.cpp
     ${root}/source/MainMenuGameState.ixx
     ${root}/source/Property.ixx
+    ${root}/source/SaveInfo.ixx
+    ${root}/source/SavedGame.ixx
+    ${root}/source/SaveGameManager.ixx
+    ${root}/source/SettingsSaveInfo.ixx
     ${root}/source/SplashScreen.ixx
     ${root}/source/SplashScreenMenu.ixx
     ${root}/source/SplashScreenMenuView.ixx
+    ${root}/source/StoryModeSaveInfo.ixx
     ${root}/source/Timer.ixx
+    ${root}/source/Trophies.ixx
+    ${root}/source/TrophySaveInfo.ixx
 )
 
 set(CR_BUILD_FILES
