@@ -12,7 +12,9 @@ set(CR_IMPLEMENTATION
     ${root}/source/AppConfig.ixx
     ${root}/source/ArcadeModeSaveInfo.ixx
     ${root}/source/BuildingLevels.ixx
+    ${root}/source/CheckboxControl.ixx
     ${root}/source/CharacterLevels.ixx
+    ${root}/source/ConfirmEraseDialog.ixx
     ${root}/source/Constants.ixx
     ${root}/source/Event.ixx
     ${root}/source/FSM.ixx
@@ -33,6 +35,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/main.cpp
     ${root}/source/MainMenuGameState.ixx
     ${root}/source/Property.ixx
+    ${root}/source/RadioButtonControl.ixx
     ${root}/source/SaveInfo.ixx
     ${root}/source/SavedGame.ixx
     ${root}/source/SaveGameManager.ixx

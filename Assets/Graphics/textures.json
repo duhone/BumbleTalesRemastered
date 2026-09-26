@@ -48,6 +48,30 @@
         },{
             "name": "ScrapbookButton_RArrow",
             "path": "Graphics/Textures/Scrapbook/Button_RArrow.webp"
+        },{
+            "name": "OptionsButton_EraseData",
+            "path": "Graphics/Textures/Options/Button_EraseData.webp"
+        },{
+            "name": "OptionsButton_Exit2",
+            "path": "Graphics/Textures/Options/Button_Exit2.webp"
+        },{
+            "name": "OptionsButton_No2",
+            "path": "Graphics/Textures/Options/Button_No2.webp"
+        },{
+            "name": "OptionsButton_Yes2",
+            "path": "Graphics/Textures/Options/Button_Yes2.webp"
+        },{
+            "name": "OptionsCheck",
+            "path": "Graphics/Textures/Options/Check.webp"
+        },{
+            "name": "OptionsConfirmErase",
+            "path": "Graphics/Textures/Options/ConfirmErase.webp"
+        },{
+            "name": "OptionsBase",
+            "path": "Graphics/Textures/Options/OptionsBase.webp"
+        },{
+            "name": "OptionsHeader",
+            "path": "Graphics/Textures/Options/OptionsHeader.webp"
         }
     ]
 }

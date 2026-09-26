@@ -64,6 +64,38 @@
             "name": "ScrapbookButton_RArrow",
             "texture": "ScrapbookButton_RArrow",
             "frame_rate": "FPS0"
+        },{
+            "name": "OptionsButton_EraseData",
+            "texture": "OptionsButton_EraseData",
+            "frame_rate": "FPS0"
+        },{
+            "name": "OptionsButton_Exit2",
+            "texture": "OptionsButton_Exit2",
+            "frame_rate": "FPS0"
+        },{
+            "name": "OptionsButton_No2",
+            "texture": "OptionsButton_No2",
+            "frame_rate": "FPS0"
+        },{
+            "name": "OptionsButton_Yes2",
+            "texture": "OptionsButton_Yes2",
+            "frame_rate": "FPS0"
+        },{
+            "name": "OptionsCheck",
+            "texture": "OptionsCheck",
+            "frame_rate": "FPS0"
+        },{
+            "name": "OptionsConfirmErase",
+            "texture": "OptionsConfirmErase",
+            "frame_rate": "FPS0"
+        },{
+            "name": "OptionsBase",
+            "texture": "OptionsBase",
+            "frame_rate": "FPS0"
+        },{
+            "name": "OptionsHeader",
+            "texture": "OptionsHeader",
+            "frame_rate": "FPS0"
         }
     ]
 }

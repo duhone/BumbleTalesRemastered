@@ -94,8 +94,6 @@ cg::InputButton::InputButton() {
 	isActing      = false;
 	soundOn       = false;
 	position      = bounds;
-
-	// m_soundFX = ISound::Instance().CreateSoundFX(CR::AssetList::sounds::click::ID);
 }
 
 cg::InputButton::~InputButton() {
