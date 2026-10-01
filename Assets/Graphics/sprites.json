@@ -53,6 +53,10 @@
             "texture": "HelpInfoHelp",
             "frame_rate": "FPS0"
         },{
+            "name": "ScrapbookButton_Characters",
+            "texture": "ScrapbookButton_Characters",
+            "frame_rate": "FPS0"
+        },{
             "name": "ScrapbookButton_Exit",
             "texture": "ScrapbookButton_Exit",
             "frame_rate": "FPS0"
@@ -63,6 +67,118 @@
         },{
             "name": "ScrapbookButton_RArrow",
             "texture": "ScrapbookButton_RArrow",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookButton_Records",
+            "texture": "ScrapbookButton_Records",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookButton_Trophies",
+            "texture": "ScrapbookButton_Trophies",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCategoryRim",
+            "texture": "ScrapbookCategoryRim",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookFont_Records1",
+            "texture": "ScrapbookFont_Records1",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookFont_Records2",
+            "texture": "ScrapbookFont_Records2",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookLockedTaleImage",
+            "texture": "ScrapbookLockedTaleImage",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookRecordsBase1",
+            "texture": "ScrapbookRecordsBase1",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookRecordsBase2",
+            "texture": "ScrapbookRecordsBase2",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookBG",
+            "texture": "ScrapbookBG",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookTags1",
+            "texture": "ScrapbookTags1",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookTags2",
+            "texture": "ScrapbookTags2",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookTrophyBase1",
+            "texture": "ScrapbookTrophyBase1",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookTrophyIcon",
+            "texture": "ScrapbookTrophyIcon",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookTrophyInfo",
+            "texture": "ScrapbookTrophyInfo",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookTrophyNames",
+            "texture": "ScrapbookTrophyNames",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale01",
+            "texture": "ScrapbookCharTale01",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale02",
+            "texture": "ScrapbookCharTale02",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale03",
+            "texture": "ScrapbookCharTale03",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale04",
+            "texture": "ScrapbookCharTale04",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale05",
+            "texture": "ScrapbookCharTale05",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale06",
+            "texture": "ScrapbookCharTale06",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale07",
+            "texture": "ScrapbookCharTale07",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale08",
+            "texture": "ScrapbookCharTale08",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale09",
+            "texture": "ScrapbookCharTale09",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale10",
+            "texture": "ScrapbookCharTale10",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale11",
+            "texture": "ScrapbookCharTale11",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale12",
+            "texture": "ScrapbookCharTale12",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ScrapbookCharTale13",
+            "texture": "ScrapbookCharTale13",
             "frame_rate": "FPS0"
         },{
             "name": "OptionsButton_EraseData",

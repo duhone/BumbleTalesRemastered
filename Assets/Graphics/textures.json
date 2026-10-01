@@ -40,6 +40,9 @@
             "name": "HelpInfoHelp",
             "path": "Graphics/Textures/InfoHelp/InfoHelp.webp"
         },{
+            "name": "ScrapbookButton_Characters",
+            "path": "Graphics/Textures/Scrapbook/Button_Characters.webp"
+        },{
             "name": "ScrapbookButton_Exit",
             "path": "Graphics/Textures/Scrapbook/Button_Exit.webp"
         },{
@@ -48,6 +51,90 @@
         },{
             "name": "ScrapbookButton_RArrow",
             "path": "Graphics/Textures/Scrapbook/Button_RArrow.webp"
+        },{
+            "name": "ScrapbookButton_Records",
+            "path": "Graphics/Textures/Scrapbook/Button_Records.webp"
+        },{
+            "name": "ScrapbookButton_Trophies",
+            "path": "Graphics/Textures/Scrapbook/Button_Trophies.webp"
+        },{
+            "name": "ScrapbookCategoryRim",
+            "path": "Graphics/Textures/Scrapbook/CategoryRim.webp"
+        },{
+            "name": "ScrapbookFont_Records1",
+            "path": "Graphics/Textures/Scrapbook/Font_Records1.webp"
+        },{
+            "name": "ScrapbookFont_Records2",
+            "path": "Graphics/Textures/Scrapbook/Font_Records2.webp"
+        },{
+            "name": "ScrapbookLockedTaleImage",
+            "path": "Graphics/Textures/Scrapbook/LockedTaleImage.webp"
+        },{
+            "name": "ScrapbookRecordsBase1",
+            "path": "Graphics/Textures/Scrapbook/RecordsBase1.webp"
+        },{
+            "name": "ScrapbookRecordsBase2",
+            "path": "Graphics/Textures/Scrapbook/RecordsBase2.webp"
+        },{
+            "name": "ScrapbookBG",
+            "path": "Graphics/Textures/Scrapbook/ScrapbookBG.webp"
+        },{
+            "name": "ScrapbookTags1",
+            "path": "Graphics/Textures/Scrapbook/ScrapbookTags1.webp"
+        },{
+            "name": "ScrapbookTags2",
+            "path": "Graphics/Textures/Scrapbook/ScrapbookTags2.webp"
+        },{
+            "name": "ScrapbookTrophyBase1",
+            "path": "Graphics/Textures/Scrapbook/TrophyBase1.webp"
+        },{
+            "name": "ScrapbookTrophyIcon",
+            "path": "Graphics/Textures/Scrapbook/TrophyIcon.webp"
+        },{
+            "name": "ScrapbookTrophyInfo",
+            "path": "Graphics/Textures/Scrapbook/TrophyInfo.webp"
+        },{
+            "name": "ScrapbookTrophyNames",
+            "path": "Graphics/Textures/Scrapbook/TrophyNames.webp"
+        },{
+            "name": "ScrapbookCharTale01",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale01.webp"
+        },{
+            "name": "ScrapbookCharTale02",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale02.webp"
+        },{
+            "name": "ScrapbookCharTale03",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale03.webp"
+        },{
+            "name": "ScrapbookCharTale04",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale04.webp"
+        },{
+            "name": "ScrapbookCharTale05",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale05.webp"
+        },{
+            "name": "ScrapbookCharTale06",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale06.webp"
+        },{
+            "name": "ScrapbookCharTale07",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale07.webp"
+        },{
+            "name": "ScrapbookCharTale08",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale08.webp"
+        },{
+            "name": "ScrapbookCharTale09",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale09.webp"
+        },{
+            "name": "ScrapbookCharTale10",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale10.webp"
+        },{
+            "name": "ScrapbookCharTale11",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale11.webp"
+        },{
+            "name": "ScrapbookCharTale12",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale12.webp"
+        },{
+            "name": "ScrapbookCharTale13",
+            "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale13.webp"
         },{
             "name": "OptionsButton_EraseData",
             "path": "Graphics/Textures/Options/Button_EraseData.webp"
