@@ -80,10 +80,11 @@ void cg::SettingsSaveInfo::Load() {
 		fread(&m_hintsOn, 1, sizeof(m_hintsOn), file);
 		fread(&m_soundOn, 1, sizeof(m_soundOn), file);
 		fread(&m_musicOn, 1, sizeof(m_musicOn), file);
-	} else
-		Reset();
 
-	fclose(file);
+		fclose(file);
+	} else {
+		Reset();
+	}
 }
 
 void cg::SettingsSaveInfo::Reset() {

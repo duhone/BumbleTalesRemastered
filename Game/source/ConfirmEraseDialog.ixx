@@ -38,10 +38,14 @@ export namespace CR::Game {
 		void OnNoClicked();
 		virtual void InputChanged() {}
 
+		void SetDisabled(bool disabled);
+
 	  private:
 		CR::Engine::Graphics::Handles::Sprite confirmEraseSprite;
 		InputButton* yesButton;
 		InputButton* noButton;
+
+		bool m_disabled{true};
 	};
 }    // namespace CR::Game
 
@@ -57,22 +61,31 @@ cg::ConfirmEraseDialog::ConfirmEraseDialog() {
 	cegraph::Sprites::SetZOrder(confirmEraseSprite, 30);
 
 	yesButton = new InputButton();
-	yesButton->SetSpriteAndBounds(0, 0, cecore::C_Hash64("OptionsButton_Yes2"), 0);
+	yesButton->SetSpriteAndBounds(0, 0, cecore::C_Hash64("OptionsButton_Yes2"), 40);
 	yesButton->OnClicked += CR::Utility::Delegate(this, &ConfirmEraseDialog::OnYesClicked);
 	yesButton->SetSound(cecore::C_Hash64("shopopen"));
 
 	noButton = new InputButton();
-	noButton->SetSpriteAndBounds(0, 0, cecore::C_Hash64("OptionsButton_No2"), 0);
+	noButton->SetSpriteAndBounds(0, 0, cecore::C_Hash64("OptionsButton_No2"), 40);
 	noButton->OnClicked += CR::Utility::Delegate(this, &ConfirmEraseDialog::OnNoClicked);
 	noButton->SetSound(cecore::C_Hash64("shopopen"));
 
 	SetPosition(320, 480);
 }
 
-cg::ConfirmEraseDialog::~ConfirmEraseDialog() {}
+cg::ConfirmEraseDialog::~ConfirmEraseDialog() {
+	delete yesButton;
+	delete noButton;
+
+	cegraph::Sprites::Delete(confirmEraseSprite);
+}
 
 // IRenderable
 void cg::ConfirmEraseDialog::Update() {
+	yesButton->Disabled(m_disabled);
+	noButton->Disabled(m_disabled);
+	cegraph::Sprites::SetVisibility(confirmEraseSprite, !m_disabled);
+
 	yesButton->Update();
 	noButton->Update();
 }
@@ -96,4 +109,8 @@ void cg::ConfirmEraseDialog::OnYesClicked() {
 
 void cg::ConfirmEraseDialog::OnNoClicked() {
 	OnNo();
+}
+
+void cg::ConfirmEraseDialog::SetDisabled(bool disabled) {
+	m_disabled = disabled;
 }

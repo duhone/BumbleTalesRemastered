@@ -45,8 +45,16 @@ namespace {
 	                                           cecore::C_Hash64("HelpInfoBG"),
 	                                           cecore::C_Hash64("HelpInfoHelp"),
 	                                           cecore::C_Hash64("ScrapbookButton_Exit"),
-	                                           cecore::C_Hash64("ScrapbookButton_LArrow"),
-	                                           cecore::C_Hash64("ScrapbookButton_RArrow")};
+											   cecore::C_Hash64("ScrapbookButton_LArrow"),
+											   cecore::C_Hash64("ScrapbookButton_RArrow"),
+											   cecore::C_Hash64("OptionsButton_EraseData"),
+											   cecore::C_Hash64("OptionsButton_Exit2"),
+											   cecore::C_Hash64("OptionsButton_No2"),
+											   cecore::C_Hash64("OptionsButton_Yes2"),
+											   cecore::C_Hash64("OptionsCheck"),
+											   cecore::C_Hash64("OptionsConfirmErase"),
+											   cecore::C_Hash64("OptionsBase"),
+											   cecore::C_Hash64("OptionsHeader")};
 	std::unique_ptr<CR::Game::Game> m_game;
 
 	void glfwErrorCallback(int error, const char* description) {

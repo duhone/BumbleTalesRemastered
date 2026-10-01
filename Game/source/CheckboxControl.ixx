@@ -68,7 +68,7 @@ cg::CheckboxControl::~CheckboxControl() {
 }
 
 void cg::CheckboxControl::SetSpriteAndPosition(uint64_t spriteHash, int xLoc, int yLoc) {
-	SetSprite(spriteHash, 40);
+	SetSprite(spriteHash, 25);
 
 	CR::Engine::Graphics::Sprites::SetPosition(checkSprite, {xLoc, yLoc});
 }
@@ -83,7 +83,7 @@ void cg::CheckboxControl::SetButtonBounds(float left, float top, float width, fl
 }
 
 void cg::CheckboxControl::SetSpriteAndBounds(float left, float top, uint64_t spriteHash) {
-	SetSprite(spriteHash, 40);
+	SetSprite(spriteHash, 25);
 
 	auto size = cegraph::Sprites::GetSize(checkSprite);
 
@@ -115,14 +115,13 @@ void cg::CheckboxControl::Update() {
 
 void cg::CheckboxControl::Render() {
 	if(checkSprite.isValid()) {
-		cegraph::Sprites::SetVisibility(checkSprite, !m_disabled);
 		auto size = CR::Engine::Graphics::Sprites::GetSize(checkSprite);
 		CR::Engine::Graphics::Sprites::SetPosition(checkSprite, {bounds.left, bounds.top});
 
 		if(!m_isChecked) {
-			CR::Engine::Graphics::Sprites::SetFrame(checkSprite, 0);
+			cegraph::Sprites::SetVisibility(checkSprite, false);
 		} else {
-			CR::Engine::Graphics::Sprites::SetFrame(checkSprite, 1);
+			cegraph::Sprites::SetVisibility(checkSprite, !m_disabled);
 		}
 	}
 }

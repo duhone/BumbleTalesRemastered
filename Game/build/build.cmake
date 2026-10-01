@@ -34,6 +34,8 @@ set(CR_IMPLEMENTATION
     ${root}/source/IView.ixx
     ${root}/source/main.cpp
     ${root}/source/MainMenuGameState.ixx
+    ${root}/source/OptionsMenuScreen.ixx
+    ${root}/source/OptionsMenuView.ixx
     ${root}/source/Property.ixx
     ${root}/source/RadioButtonControl.ixx
     ${root}/source/SaveInfo.ixx

@@ -11,6 +11,8 @@ export module CR.Game;
 import CR.Game.Constants;
 import CR.Game.FSM;
 import CR.Game.MainMenuGameState;
+import CR.Game.SaveGameManager;
+import CR.Game.SettingsSaveInfo;
 
 import CR.Engine;
 
@@ -43,14 +45,9 @@ cg::Game::Game() {}
 cg::Game::~Game() {}
 
 void cg::Game::Initialize() {
-	;
-	// saveGameManager = new SaveGameManager();
-
-	// SettingsSaveInfo* saveInfo = saveGameManager->LoadSettingsSaveInfo();
-	// ISound::Instance().MuteMusic(!saveInfo->GetOptionsMusicOn());
-	// ISound::Instance().MuteSounds(!saveInfo->GetOptionsSoundOn());
-	ceaud::setFXVolume(1.0f);
-	ceaud::setMusicVolume(0.75f);
+	SettingsSaveInfo* saveInfo = GetSaveGameManager().LoadSettingsSaveInfo();
+	ceaud::setMusicVolume(saveInfo->GetOptionsMusicOn() ? 1.0f : 0.0f);
+	ceaud::setFXVolume(saveInfo->GetOptionsSoundOn() ? 1.0f : 0.0f);
 
 	// set up the game states
 	gameStateMachine << new MainMenuGameState() /*<< new StoryModeGameState() << new ArcadeModeGameState()*/;
@@ -62,5 +59,5 @@ void cg::Game::Execute() {
 }
 
 void cg::Game::ApplicationTerminated() {
-	// saveGameManager->SaveOnTerminate();
+	GetSaveGameManager().SaveOnTerminate();
 }

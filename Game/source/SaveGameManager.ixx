@@ -49,6 +49,8 @@ export namespace CR::Game {
 	  private:
 		ISaveOnTerminate* m_saveOnTerminate;
 	};
+
+	SaveGameManager& GetSaveGameManager();
 }    // namespace CR::Game
 
 module :private;
@@ -56,7 +58,7 @@ module :private;
 namespace cg = CR::Game;
 
 cg::SaveGameManager::SaveGameManager() {
-	m_saveOnTerminate = NULL;
+	m_saveOnTerminate = nullptr;
 }
 
 cg::SaveGameManager::~SaveGameManager() {}
@@ -102,7 +104,7 @@ void cg::SaveGameManager::SaveSettingsSaveInfo(SettingsSaveInfo* info) {
 }
 
 void cg::SaveGameManager::SaveOnTerminate() {
-	if(m_saveOnTerminate != NULL) m_saveOnTerminate->OnSaveOnTerminate();
+	if(m_saveOnTerminate != nullptr) m_saveOnTerminate->OnSaveOnTerminate();
 }
 
 void cg::SaveGameManager::SetCurrentSaveOnTerminate(ISaveOnTerminate* saveOnTerminate) {
@@ -125,4 +127,9 @@ void cg::SaveGameManager::Reset() {
 	TrophySaveInfo* trophySave = LoadTrophySaveInfo();
 	trophySave->Reset();
 	trophySave->Save();
+}
+
+cg::SaveGameManager& cg::GetSaveGameManager() {
+	static SaveGameManager s_saveGameManager{};
+	return s_saveGameManager;
 }
