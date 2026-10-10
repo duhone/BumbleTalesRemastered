@@ -15,4 +15,20 @@ export namespace CR::Game::Constants {
 	constexpr uint32_t MAIN_MENU_STATE   = 0;
 	constexpr uint32_t STORY_MODE_STATE  = 1;
 	constexpr uint32_t ARCADE_MODE_STATE = 2;
+
+	enum ResourceType {
+		Leaf    = 0,
+		Brick   = 1,
+		Wood    = 2,
+		Crystal = 3,
+		Diamond = 4,
+		Gold    = 5,
+		MTile   = 6,
+		QTile   = 7,
+		NoTile,
+		NUMResourceTypes
+	};
+	enum AnimationStatus { AnimationOff, AnimationOn };
+	enum AnimationDirection { AnimateUp, AnimateDown, AnimateLeft, AnimateRight };
+
 }    // namespace CR::Game::Constants

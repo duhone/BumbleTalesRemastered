@@ -11,7 +11,9 @@ set(CR_INTERFACE_MODULES
 set(CR_IMPLEMENTATION
     ${root}/source/AppConfig.ixx
     ${root}/source/ArcadeModeSaveInfo.ixx
+    ${root}/source/ArcadeRecords.ixx
     ${root}/source/BuildingLevels.ixx
+    ${root}/source/CharacterTale.ixx
     ${root}/source/CheckboxControl.ixx
     ${root}/source/CharacterLevels.ixx
     ${root}/source/ConfirmEraseDialog.ixx
@@ -34,18 +36,23 @@ set(CR_IMPLEMENTATION
     ${root}/source/IView.ixx
     ${root}/source/main.cpp
     ${root}/source/MainMenuGameState.ixx
+    ${root}/source/NumberFont.ixx
     ${root}/source/OptionsMenuScreen.ixx
     ${root}/source/OptionsMenuView.ixx
     ${root}/source/Property.ixx
     ${root}/source/RadioButtonControl.ixx
+    ${root}/source/RepeatedSpriteHelper.ixx
     ${root}/source/SaveInfo.ixx
     ${root}/source/SavedGame.ixx
     ${root}/source/SaveGameManager.ixx
+    ${root}/source/SBCharacterChapter.ixx
     ${root}/source/SettingsSaveInfo.ixx
     ${root}/source/SplashScreen.ixx
     ${root}/source/SplashScreenMenu.ixx
     ${root}/source/SplashScreenMenuView.ixx
     ${root}/source/StoryModeSaveInfo.ixx
+    ${root}/source/StoryRecords.ixx
+    ${root}/source/TimeDisplay.ixx
     ${root}/source/Timer.ixx
     ${root}/source/Trophies.ixx
     ${root}/source/TrophySaveInfo.ixx
