@@ -46,6 +46,8 @@ set(CR_IMPLEMENTATION
     ${root}/source/SavedGame.ixx
     ${root}/source/SaveGameManager.ixx
     ${root}/source/SBCharacterChapter.ixx
+    ${root}/source/SBRecordChapter.ixx
+    ${root}/source/SBTrophyChapter.ixx
     ${root}/source/SettingsSaveInfo.ixx
     ${root}/source/SplashScreen.ixx
     ${root}/source/SplashScreenMenu.ixx
@@ -55,6 +57,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/TimeDisplay.ixx
     ${root}/source/Timer.ixx
     ${root}/source/Trophies.ixx
+    ${root}/source/TrophyButton.ixx
     ${root}/source/TrophySaveInfo.ixx
 )
 

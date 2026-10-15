@@ -12,7 +12,7 @@ module;
 
 #include <glm/glm.hpp>
 
-export module CR.Game.ArcadeRecords;
+export module CR.Game.StoryRecords;
 
 import CR.Engine;
 
