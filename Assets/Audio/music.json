@@ -3,6 +3,9 @@
             {
                 "name" : "bgmMenu",
                 "path" : "Audio/Music/BGM_Menu.flac"
+            }, {
+                "name" : "bgmScrapbook",
+                "path" : "Audio/Music/BGM_Scrapbook.flac"
             }
         ]
 }

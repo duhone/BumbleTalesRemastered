@@ -6,6 +6,9 @@
             }, {
                 "name" : "shopopen",
                 "path" : "Audio/FX/shopopen.flac"
+            }, {
+                "name" : "scrapbookpageturn1",
+                "path" : "Audio/FX/scrapbookpageturn1.flac"
             }
         ]
 }

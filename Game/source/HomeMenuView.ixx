@@ -43,7 +43,6 @@ export namespace CR::Game {
 		void OnScrapbookClicked();
 		void OnHelpClicked();
 		void OnOptionsClicked();
-		void OnMoreGamesClicked();
 
 	  private:
 		CR::Engine::Graphics::Handles::Sprite menuBackground;
@@ -52,7 +51,6 @@ export namespace CR::Game {
 		InputButton* scrapbookButton;
 		InputButton* helpButton;
 		InputButton* optionsButton;
-		InputButton* moreGamesButton;
 	};
 }    // namespace CR::Game
 
@@ -88,14 +86,6 @@ cg::HomeMenuView::HomeMenuView() {
 	optionsButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnOptionsClicked);
 	optionsButton->SetSound(cecore::C_Hash64("shopopen"));
 
-	/*
-	moreGamesButton = new Input_Button();
-	moreGamesButton->SetSpriteAndBounds(205, 412, CR::AssetList::Menu_More_Games_Button, 80);
-	moreGamesButton->DesignSize(97, 57);
-	moreGamesButton->OnClicked += Delegate(this, &HomeMenuView::OnMoreGamesClicked);
-	moreGamesButton->SetSound(CR::AssetList::sounds::shopopen::ID);
-	input_objects.push_back(moreGamesButton);*/
-
 	menuBackground = cegraph::Sprites::Create(cecore::C_Hash64("MenuBG"));
 	cegraph::Sprites::SetPosition(menuBackground, glm::vec2(0, 0));
 	cegraph::Sprites::SetZOrder(menuBackground, 0);
@@ -107,7 +97,6 @@ cg::HomeMenuView::~HomeMenuView() {
 	delete scrapbookButton;
 	delete helpButton;
 	delete optionsButton;
-	// delete moreGamesButton;
 	cegraph::Sprites::Delete(menuBackground);
 }
 
@@ -117,7 +106,6 @@ void cg::HomeMenuView::Update() {
 	scrapbookButton->Update();
 	helpButton->Update();
 	optionsButton->Update();
-	// moreGamesButton->Update();
 }
 
 void cg::HomeMenuView::Render() {
@@ -126,7 +114,6 @@ void cg::HomeMenuView::Render() {
 	scrapbookButton->Render();
 	helpButton->Render();
 	optionsButton->Render();
-	// moreGamesButton->Render();
 }
 
 void cg::HomeMenuView::OnStoryModeClicked() {
@@ -147,8 +134,4 @@ void cg::HomeMenuView::OnHelpClicked() {
 
 void cg::HomeMenuView::OnOptionsClicked() {
 	OnShowOptionsMenu();
-}
-
-void cg::HomeMenuView::OnMoreGamesClicked() {
-	OnShowMoreGamesMenu();
 }

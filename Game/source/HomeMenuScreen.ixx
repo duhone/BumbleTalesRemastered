@@ -29,7 +29,6 @@ export namespace CR::Game {
 		void OnStartArcadeMode();
 		void OnShowOptionsMenu();
 		void OnShowHelpMenu();
-		void OnShowMoreGamesMenu();
 		void OnShowScrapbookMenu();
 
 		// IState
@@ -47,7 +46,6 @@ export namespace CR::Game {
 
 		bool m_requestShowOptionsMenu;
 		bool m_requestShowHelpMenu;
-		bool m_requestShowMoreGamesMenu;
 		bool m_requestShowScrapbookMenu;
 	};
 }    // namespace CR::Game
@@ -64,7 +62,6 @@ cg::HomeMenuScreen::HomeMenuScreen(std::move_only_function<void()> onStartStoryM
     m_onStartStoryMode(std::move(onStartStoryMode)), m_onStartArcadeMode(std::move(onStartArcadeMode)) {
 	m_requestShowOptionsMenu   = false;
 	m_requestShowHelpMenu      = false;
-	m_requestShowMoreGamesMenu = false;
 	m_requestShowScrapbookMenu = false;
 
 	m_musicHandle = ceaud::Music::GetHandle(cecore::C_Hash64("bgmMenu"));
@@ -81,7 +78,6 @@ bool cg::HomeMenuScreen::Begin() {
 	view->OnStartArcadeMode += Delegate(this, &HomeMenuScreen::OnStartArcadeMode);
 	view->OnShowOptionsMenu += Delegate(this, &HomeMenuScreen::OnShowOptionsMenu);
 	view->OnShowHelpMenu += Delegate(this, &HomeMenuScreen::OnShowHelpMenu);
-	view->OnShowMoreGamesMenu += Delegate(this, &HomeMenuScreen::OnShowMoreGamesMenu);
 	view->OnShowScrapbookMenu += Delegate(this, &HomeMenuScreen::OnShowScrapbookMenu);
 
 	ceaud::Music::Play(m_musicHandle);
@@ -104,9 +100,6 @@ int cg::HomeMenuScreen::Process() {
 	} else if(m_requestShowHelpMenu) {
 		m_requestShowHelpMenu = false;
 		return cg::Constants::HELP_MENU_STATE;
-	} else if(m_requestShowMoreGamesMenu) {
-		m_requestShowMoreGamesMenu = false;
-		return cg::Constants::MORE_GAMES_MENU_STATE;
 	} else if(m_requestShowScrapbookMenu) {
 		m_requestShowScrapbookMenu = false;
 		return cg::Constants::SCRAPBOOK_MENU_STATE;
@@ -124,16 +117,11 @@ void cg::HomeMenuScreen::OnStartArcadeMode() {
 }
 
 void cg::HomeMenuScreen::OnShowOptionsMenu() {
-	// mainMenuGameState->ShowOptionsMenu();
 	m_requestShowOptionsMenu = true;
 }
 
 void cg::HomeMenuScreen::OnShowHelpMenu() {
 	m_requestShowHelpMenu = true;
-}
-
-void cg::HomeMenuScreen::OnShowMoreGamesMenu() {
-	m_requestShowMoreGamesMenu = true;
 }
 
 void cg::HomeMenuScreen::OnShowScrapbookMenu() {

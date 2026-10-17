@@ -15,8 +15,7 @@ import CR.Game.FSM;
 import CR.Game.HomeMenuScreen;
 import CR.Game.HelpMenuScreen;
 import CR.Game.OptionsMenuScreen;
-// #include "MoreGamesMenuScreen.h"
-// #include "ScrapbookMenuScreen.h"
+import CR.Game.ScrapbookMenuScreen;
 
 import CR.Engine;
 
@@ -41,7 +40,6 @@ export namespace CR::Game {
 		CR::Utility::FSM stateMachine;
 		bool m_requestStartStoryMode;
 		bool m_requestStartArcadeMode;
-		// bool m_requestShowOptionsMenu;
 		bool m_showSplashScreen;
 	};
 }    // namespace CR::Game
@@ -54,9 +52,7 @@ namespace cg      = CR::Game;
 cg::MainMenuGameState::MainMenuGameState() {
 	stateMachine << new SplashScreenMenu()
 	             << new HomeMenuScreen([&] { StartStoryMode(); }, [&] { StartArcadeMode(); })
-	             << new OptionsMenuScreen() << new HelpMenuScreen() /*<< new MoreGamesMenuScreen(this)
-	                                            << new ScrapbookMenuScreen(this)*/
-	    ;
+	             << new OptionsMenuScreen() << new HelpMenuScreen() << new ScrapbookMenuScreen();
 	stateMachine.State = cg::Constants::SPLASH_MENU_STATE;
 	m_showSplashScreen = true;
 }
@@ -90,13 +86,6 @@ int cg::MainMenuGameState::Process() {
 	} else if(m_requestStartArcadeMode) {
 	    m_requestStartArcadeMode = false;
 	    return cg::Constants::ARCADE_MODE_STATE;
-	}*/
-
-	/*commented out in prev repo
-	else if (m_requestShowOptionsMenu)
-	{
-	    m_requestShowOptionsMenu = false;
-	    return OPTIONS_MENU_STATE;
 	}*/
 
 	return CR::Utility::IState::UNCHANGED;
