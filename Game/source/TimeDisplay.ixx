@@ -87,7 +87,9 @@ void cg::TimeDisplay::Render() {
 	}
 
 	colonFont->SetPosition((float)xPos, offset.y);
+	colonFont->Begin();
 	colonFont->RenderSpecial(11);
+	colonFont->End();
 	xPos += numberFont->GetDigitWidth();
 	numberFont->SetMinDigits(2);
 	numberFont->SetPosition((float)xPos, offset.y);

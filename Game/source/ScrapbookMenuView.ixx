@@ -84,39 +84,39 @@ namespace cg      = CR::Game;
 cg::ScrapbookMenuView::ScrapbookMenuView(bool wonGame) {
 	baseSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookBG"));
 	cegraph::Sprites::SetPosition(baseSprite, glm::vec2(0, 0));
-	cegraph::Sprites::SetZOrder(baseSprite, 50);
+	cegraph::Sprites::SetZOrder(baseSprite, 0);
 
 	rimSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCategoryRim"));
-	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(10, 10));
-	cegraph::Sprites::SetZOrder(rimSprite, 40);
+	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(11, 13));
+	cegraph::Sprites::SetZOrder(rimSprite, 30);
 
 	exitButton = new InputButton();
-	exitButton->SetSpriteAndBounds(224, 864, cecore::C_Hash64("ScrapbookButton_Exit"), 30);
+	exitButton->SetSpriteAndBounds(224, 864, cecore::C_Hash64("ScrapbookButton_Exit"), 40);
 	exitButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnExitButtonClicked);
 	exitButton->SetSound(cecore::C_Hash64("shopopen"));
 
 	prevButton = new InputButton();
-	prevButton->SetSpriteAndBounds(4, 864, cecore::C_Hash64("ScrapbookButton_LArrow"), 40);
+	prevButton->SetSpriteAndBounds(4, 864, cecore::C_Hash64("ScrapbookButton_LArrow"), 30);
 	prevButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnPrevButtonClicked);
 	prevButton->SetSound(cecore::C_Hash64("scrapbookpageturn1"));
 
 	nextButton = new InputButton();
-	nextButton->SetSpriteAndBounds(434, 864, cecore::C_Hash64("ScrapbookButton_RArrow"), 30);
+	nextButton->SetSpriteAndBounds(434, 864, cecore::C_Hash64("ScrapbookButton_RArrow"), 40);
 	nextButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnNextButtonClicked);
 	nextButton->SetSound(cecore::C_Hash64("scrapbookpageturn1"));
 
 	charactersButton = new InputButton();
-	charactersButton->SetSpriteAndBounds(2, 10, cecore::C_Hash64("ScrapbookButton_Characters"), 30);
+	charactersButton->SetSpriteAndBounds(2, 10, cecore::C_Hash64("ScrapbookButton_Characters"), 40);
 	charactersButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnCharactersButtonClicked);
 	charactersButton->SetSound(cecore::C_Hash64("shopopen"));
 
 	recordsButton = new InputButton();
-	recordsButton->SetSpriteAndBounds(212, 10, cecore::C_Hash64("ScrapbookButton_Records"), 30);
+	recordsButton->SetSpriteAndBounds(212, 10, cecore::C_Hash64("ScrapbookButton_Records"), 40);
 	recordsButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnRecordsButtonClicked);
 	recordsButton->SetSound(cecore::C_Hash64("shopopen"));
 
 	trophiesButton = new InputButton();
-	trophiesButton->SetSpriteAndBounds(422, 10, cecore::C_Hash64("ScrapbookButton_Trophies"), 30);
+	trophiesButton->SetSpriteAndBounds(422, 10, cecore::C_Hash64("ScrapbookButton_Trophies"), 40);
 	trophiesButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnTrophiesButtonClicked);
 	trophiesButton->SetSound(cecore::C_Hash64("shopopen"));
 
@@ -140,6 +140,12 @@ cg::ScrapbookMenuView::~ScrapbookMenuView() {
 
 void cg::ScrapbookMenuView::Update() {
 	m_currChapter->Update();
+	nextButton->Update();
+	prevButton->Update();
+	exitButton->Update();
+	charactersButton->Update();
+	recordsButton->Update();
+	trophiesButton->Update();
 }
 
 void cg::ScrapbookMenuView::Render() {
@@ -172,7 +178,7 @@ void cg::ScrapbookMenuView::OnCharactersButtonClicked() {
 	((SBCharacterChapter*)m_currChapter)->SetHasWonGame(storyModeSaveInfo->GetHasWonGame());
 	((SBCharacterChapter*)m_currChapter)->SetCharacterLevels(characterLevels);
 
-	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(20, 20));
+	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(11, 13));
 }
 
 void cg::ScrapbookMenuView::OnRecordsButtonClicked() {
@@ -183,7 +189,7 @@ void cg::ScrapbookMenuView::OnRecordsButtonClicked() {
 	((SBRecordChapter*)m_currChapter)->LoadFromArcadeSaveInfo(arcadeModeSaveInfo);
 	((SBRecordChapter*)m_currChapter)->LoadFromStorySaveInfo(storyModeSaveInfo);
 
-	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(220, 20));
+	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(221, 13));
 }
 
 void cg::ScrapbookMenuView::OnTrophiesButtonClicked() {
@@ -193,7 +199,7 @@ void cg::ScrapbookMenuView::OnTrophiesButtonClicked() {
 	m_currChapter = new SBTrophyChapter();
 	((SBTrophyChapter*)m_currChapter)->LoadFromTrophySaveInfo(trophySaveInfo);
 
-	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(430, 20));
+	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(431, 13));
 }
 
 void cg::ScrapbookMenuView::LoadFromSaveInfo(StoryModeSaveInfo* saveInfo) {
@@ -202,9 +208,7 @@ void cg::ScrapbookMenuView::LoadFromSaveInfo(StoryModeSaveInfo* saveInfo) {
 	characterLevels = saveInfo->GetCharacterLevels();
 	buildingLevels  = saveInfo->GetBuildingLevels();
 
-	// original code was doing a dynamic cast here, but we know that m_currChapter is a SBCharacterChapter at
-	// this point, so we can just static_cast it as far as I can tell. nonsense OOP code anyway, fix some day.
-	if(static_cast<SBCharacterChapter*>(m_currChapter) != nullptr) {
+	if(m_currChapter != nullptr && m_currChapter->GetChapterType() == CharactersChapter) {
 		((SBCharacterChapter*)m_currChapter)->SetCharacterLevels(characterLevels);
 		((SBCharacterChapter*)m_currChapter)->SetHasWonGame(storyModeSaveInfo->GetHasWonGame());
 	}

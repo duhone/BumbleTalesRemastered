@@ -63,13 +63,13 @@ namespace cg      = CR::Game;
 
 cg::StoryRecords::StoryRecords() {
 	bgSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookRecordsBase1"));
-	cegraph::Sprites::SetZOrder(bgSprite, 30);
-	cegraph::Sprites::SetPosition(bgSprite, {0, 0});
+	cegraph::Sprites::SetZOrder(bgSprite, 20);
+	cegraph::Sprites::SetPosition(bgSprite, {0, 152});
 
-	specialFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records1"), 20);
+	specialFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records1"), 30);
 	specialFont->SetAlignment(AlignFontRight);
 
-	smallNumFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records1"), 20);
+	smallNumFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records1"), 30);
 	smallNumFont->SetAlignment(AlignFontRight);
 }
 
@@ -85,53 +85,49 @@ void cg::StoryRecords::Render() {
 	smallNumFont->Begin();
 
 	smallNumFont->SetAlignment(AlignFontLeft);
-	smallNumFont->SetPosition(310, 95);
+	smallNumFont->SetPosition(608, 166);
 	smallNumFont->RenderNumber(currentLevel);
 
-	smallNumFont->SetPosition(272, 122);
+	smallNumFont->SetPosition(532, 228);
 	smallNumFont->RenderNumber(purchaseCompletion);
-	specialFont->SetPosition(273, 122);
+	specialFont->SetPosition(534, 228);
 	specialFont->RenderSpecial(12);
 	smallNumFont->SetAlignment(AlignFontRight);
-	smallNumFont->SetPosition(286, 122);
+	smallNumFont->SetPosition(560, 228);
 	smallNumFont->RenderNumber(90);
 
 	smallNumFont->SetAlignment(AlignFontLeft);
-	smallNumFont->SetPosition(310, 148);
+	smallNumFont->SetPosition(608, 280);
 	smallNumFont->RenderNumber(largestMatch);
 
-	smallNumFont->SetPosition(310, 174);
+	smallNumFont->SetPosition(608, 332);
 	smallNumFont->RenderNumber(largestChain);
 
-	smallNumFont->SetPosition(152, 236);
+	smallNumFont->SetPosition(292, 456);
 	smallNumFont->RenderNumber(blocksCleared[Constants::Brick]);
-	smallNumFont->SetPosition(152, 267);
+	smallNumFont->SetPosition(292, 518);
 	smallNumFont->RenderNumber(blocksCleared[Constants::Wood]);
-	smallNumFont->SetPosition(152, 298);
+	smallNumFont->SetPosition(292, 580);
 	smallNumFont->RenderNumber(blocksCleared[Constants::Leaf]);
-	smallNumFont->SetPosition(152, 329);
+	smallNumFont->SetPosition(292, 642);
 	smallNumFont->RenderNumber(blocksCleared[Constants::QTile]);
 
-	smallNumFont->SetPosition(290, 236);
+	smallNumFont->SetPosition(568, 456);
 	smallNumFont->RenderNumber(blocksCleared[Constants::Gold]);
-	smallNumFont->SetPosition(290, 267);
+	smallNumFont->SetPosition(568, 518);
 	smallNumFont->RenderNumber(blocksCleared[Constants::Crystal]);
-	smallNumFont->SetPosition(290, 298);
+	smallNumFont->SetPosition(568, 580);
 	smallNumFont->RenderNumber(blocksCleared[Constants::Diamond]);
-	smallNumFont->SetPosition(290, 329);
+	smallNumFont->SetPosition(568, 642);
 	smallNumFont->RenderNumber(blocksCleared[Constants::MTile]);
 
-	smallNumFont->SetPosition(121, 396);
-	// smallNumFont->SetAlignment(AlignFontRight);
-	// smallNumFont->SetPosition(55, 396);
+	smallNumFont->SetPosition(230, 776);
 	smallNumFont->RenderNumber(bronzeMedals);
 
-	smallNumFont->SetPosition(218, 396);
-	// smallNumFont->SetPosition(154, 396);
+	smallNumFont->SetPosition(424, 776);
 	smallNumFont->RenderNumber(silverMedals);
 
-	smallNumFont->SetPosition(315, 396);
-	// smallNumFont->SetPosition(253, 396);
+	smallNumFont->SetPosition(618, 776);
 	smallNumFont->RenderNumber(goldMedals);
 
 	smallNumFont->End();

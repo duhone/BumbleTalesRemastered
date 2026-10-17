@@ -34,10 +34,10 @@ export namespace CR::Game {
 
 	  private:
 		std::vector<CR::Engine::Graphics::Handles::Sprite> m_sprites;
-		int m_currentSprite;
-		bool m_singleSetMode;
-		int m_zInitial;
-		uint64_t m_imageHash;
+		int m_currentSprite{-1};
+		bool m_singleSetMode{};
+		int m_zInitial{};
+		uint64_t m_imageHash{};
 	};
 }    // namespace CR::Game
 

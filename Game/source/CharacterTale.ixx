@@ -29,12 +29,16 @@ export namespace CR::Game {
 
 		void SetPage(uint16_t page);
 		bool IsPageUnlocked(int page);
+		void SetDisabled(bool disabled) { m_disabled = disabled; }
+
+		void Update();
 
 	  private:
 		int m_currPage;
 		CR::Engine::Graphics::Handles::Sprite pageSprite;
 		CR::Engine::Graphics::Handles::Sprite lockedSprite;
 		bool pageLocked[3];
+		bool m_disabled{true};
 	};
 }    // namespace CR::Game
 
@@ -100,10 +104,10 @@ cg::CharacterTale::CharacterTale(CharacterName characterName, int level) {
 
 	SetPage(0);
 
-	cegraph::Sprites::SetPosition(pageSprite, glm::vec2(0, 0));
-	cegraph::Sprites::SetPosition(lockedSprite, glm::vec2(0, 0));
-	cegraph::Sprites::SetZOrder(pageSprite, 30);
-	cegraph::Sprites::SetZOrder(lockedSprite, 30);
+	cegraph::Sprites::SetPosition(pageSprite, glm::vec2(18, 166));
+	cegraph::Sprites::SetPosition(lockedSprite, glm::vec2(78, 396));
+	cegraph::Sprites::SetZOrder(pageSprite, 40);
+	cegraph::Sprites::SetZOrder(lockedSprite, 40);
 }
 
 cg::CharacterTale::~CharacterTale() {
@@ -114,8 +118,16 @@ cg::CharacterTale::~CharacterTale() {
 void cg::CharacterTale::SetPage(uint16_t page) {
 	m_currPage = page;
 	cegraph::Sprites::SetFrame(pageSprite, page);
+}
 
-	if(pageLocked[page]) {
+void cg::CharacterTale::Update() {
+	if(m_disabled) {
+		cegraph::Sprites::SetVisibility(lockedSprite, false);
+		cegraph::Sprites::SetVisibility(pageSprite, false);
+		return;
+	}
+
+	if(pageLocked[m_currPage]) {
 		cegraph::Sprites::SetVisibility(lockedSprite, true);
 		cegraph::Sprites::SetVisibility(pageSprite, false);
 	} else {

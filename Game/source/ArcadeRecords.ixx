@@ -64,13 +64,13 @@ namespace cg      = CR::Game;
 
 cg::ArcadeRecords::ArcadeRecords() {
 	bgSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookRecordsBase2"));
-	cegraph::Sprites::SetZOrder(bgSprite, 30);
-	cegraph::Sprites::SetPosition(bgSprite, {0, 0});
+	cegraph::Sprites::SetZOrder(bgSprite, 20);
+	cegraph::Sprites::SetPosition(bgSprite, {0, 152});
 
-	bigNumFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records2"), 20);
+	bigNumFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records2"), 30);
 	bigNumFont->SetAlignment(AlignFontRight);
 
-	smallNumFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records1"), 20);
+	smallNumFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records1"), 30);
 	smallNumFont->SetAlignment(AlignFontRight);
 
 	timeDisplay = new TimeDisplay(cecore::C_Hash64("ScrapbookFont_Records1"));
@@ -90,46 +90,46 @@ void cg::ArcadeRecords::Render() {
 	bigNumFont->Begin();
 
 	bigNumFont->SetAlignment(AlignFontRight);
-	bigNumFont->SetPosition(50, 135);
+	bigNumFont->SetPosition(86, 250);
 	bigNumFont->RenderNumber(highScores[0]);
-	bigNumFont->SetPosition(50, 160);
+	bigNumFont->SetPosition(86, 300);
 	bigNumFont->RenderNumber(highScores[1]);
-	bigNumFont->SetPosition(50, 186);
+	bigNumFont->SetPosition(86, 352);
 	bigNumFont->RenderNumber(highScores[2]);
-	bigNumFont->SetPosition(50, 212);
+	bigNumFont->SetPosition(86, 404);
 	bigNumFont->RenderNumber(highScores[3]);
-	bigNumFont->SetPosition(50, 238);
+	bigNumFont->SetPosition(86, 456);
 	bigNumFont->RenderNumber(highScores[4]);
 
 	bigNumFont->SetAlignment(AlignFontLeft);
-	bigNumFont->SetPosition(310, 135);
+	bigNumFont->SetPosition(606, 250);
 	bigNumFont->RenderNumber(highScoresLevels[0]);
-	bigNumFont->SetPosition(310, 160);
+	bigNumFont->SetPosition(606, 300);
 	bigNumFont->RenderNumber(highScoresLevels[1]);
-	bigNumFont->SetPosition(310, 186);
+	bigNumFont->SetPosition(606, 352);
 	bigNumFont->RenderNumber(highScoresLevels[2]);
-	bigNumFont->SetPosition(310, 212);
+	bigNumFont->SetPosition(606, 404);
 	bigNumFont->RenderNumber(highScoresLevels[3]);
-	bigNumFont->SetPosition(310, 238);
+	bigNumFont->SetPosition(606, 456);
 	bigNumFont->RenderNumber(highScoresLevels[4]);
 
 	smallNumFont->SetAlignment(AlignFontLeft);
-	smallNumFont->SetPosition(160, 279);
+	smallNumFont->SetPosition(308, 542);
 	smallNumFont->RenderNumber(largestMatch);
 
-	smallNumFont->SetPosition(310, 279);
+	smallNumFont->SetPosition(608, 542);
 	smallNumFont->RenderNumber(largestChain);
 
-	smallNumFont->SetPosition(310, 305);
+	smallNumFont->SetPosition(608, 594);
 	smallNumFont->RenderNumber(maxPointsOnSingleMove);
 
-	smallNumFont->SetPosition(310, 333);
+	smallNumFont->SetPosition(608, 650);
 	smallNumFont->RenderNumber(highestNumMoves);
 
-	smallNumFont->SetPosition(310, 361);
+	smallNumFont->SetPosition(608, 706);
 	smallNumFont->RenderNumber(mostPowersUsed);
 
-	timeDisplay->SetPosition(262, 391);
+	timeDisplay->SetPosition(512, 766);
 	timeDisplay->Render();
 
 	bigNumFont->End();

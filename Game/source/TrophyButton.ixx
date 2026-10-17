@@ -75,7 +75,7 @@ cg::TrophyButton::~TrophyButton() {
 }
 
 void cg::TrophyButton::Render() {
-	if(hasTrophy && !m_disabled) {
+	if(!m_disabled) {
 		ceinput::Regions::update(
 		    m_region, cecore::Rect2D<int32_t>{{bounds.left, bounds.top}, {bounds.right, bounds.bottom}});
 	} else {
@@ -98,9 +98,9 @@ void cg::TrophyButton::SetPosition(int xLoc, int yLoc) {
 
 	auto buttonSize = cegraph::Sprites::GetSize(trophySprite);
 
-	bounds.top    = yLoc - buttonSize.y / 2;
+	bounds.top    = yLoc;
 	bounds.bottom = buttonSize.y;
-	bounds.left   = xLoc - buttonSize.x / 2;
+	bounds.left   = xLoc;
 	bounds.right  = buttonSize.x;
 }
 

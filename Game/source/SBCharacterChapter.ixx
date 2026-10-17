@@ -60,11 +60,11 @@ cg::SBCharacterChapter::SBCharacterChapter(bool wonGame) {
 	m_currPage = 0;
 
 	scrapbookTags = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags1"));
-	cegraph::Sprites::SetZOrder(scrapbookTags, 30);
+	cegraph::Sprites::SetZOrder(scrapbookTags, 40);
 	cegraph::Sprites::SetPosition(scrapbookTags, glm::vec2(16, 98));
 
 	scrapbookTags2 = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags2"));
-	cegraph::Sprites::SetZOrder(scrapbookTags2, 30);
+	cegraph::Sprites::SetZOrder(scrapbookTags2, 40);
 	cegraph::Sprites::SetPosition(scrapbookTags2, glm::vec2(482, 104));
 
 	hasWonGame  = false;
@@ -110,7 +110,15 @@ void cg::SBCharacterChapter::UpdatePage() {
 	int currCharacter = m_currPage / 3;
 	int characterPage = m_currPage % 3;
 
-	if(currCharacter < characterTales.size()) characterTales[currCharacter]->SetPage((uint16_t)characterPage);
+	for(int i = 0; i < characterTales.size(); i++) {
+		if(currCharacter == i) {
+			characterTales[currCharacter]->SetPage((uint16_t)characterPage);
+			characterTales[i]->SetDisabled(false);
+		} else {
+			characterTales[i]->SetDisabled(true);
+		}
+		characterTales[i]->Update();
+	}
 
 	cegraph::Sprites::SetFrame(scrapbookTags, (uint16_t)currCharacter);
 	cegraph::Sprites::SetFrame(scrapbookTags2, (uint16_t)characterPage);

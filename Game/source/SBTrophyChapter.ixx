@@ -75,11 +75,11 @@ cg::SBTrophyChapter::SBTrophyChapter() {
 	currPageNum = 0;
 
 	bgSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyBase1"));
-	cegraph::Sprites::SetZOrder(bgSprite, 30);
+	cegraph::Sprites::SetZOrder(bgSprite, 0);
 	cegraph::Sprites::SetPosition(bgSprite, glm::vec2(0, 144));
 
 	trophyName = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyNames"));
-	cegraph::Sprites::SetZOrder(trophyName, 20);
+	cegraph::Sprites::SetZOrder(trophyName, 10);
 	cegraph::Sprites::SetPosition(trophyName, glm::vec2(42, 230));
 
 	scrapBookTags = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags1"));
@@ -92,7 +92,7 @@ cg::SBTrophyChapter::SBTrophyChapter() {
 	cegraph::Sprites::SetPosition(pageTags, glm::vec2(482, 104));
 
 	trophyInfo = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyInfo"));
-	cegraph::Sprites::SetZOrder(trophyInfo, 20);
+	cegraph::Sprites::SetZOrder(trophyInfo, 10);
 	cegraph::Sprites::SetPosition(trophyInfo, glm::vec2(68, 684));
 
 	selectedTrophy      = -1;
@@ -124,6 +124,7 @@ void cg::SBTrophyChapter::Render() {
 		} else {
 			trophyButtons[i]->Disabled(true);
 		}
+		trophyButtons[i]->Update();
 		trophyButtons[i]->Render();
 	}
 }
@@ -154,13 +155,13 @@ void cg::SBTrophyChapter::LoadFromTrophySaveInfo(TrophySaveInfo* saveInfo) {
 
 void cg::SBTrophyChapter::OnTrophyPressed(TrophyName tName) {
 	isTrophyNameVisible = true;
-	cegraph::Sprites::SetFrame(trophyName, (uint16_t)tName);
+	cegraph::Sprites::SetFrame(trophyInfo, (uint16_t)tName);
 }
 
 void cg::SBTrophyChapter::SetupTrophies() {
 	// Create the trophy buttons
 	for(int i = 0; i < 36; i++) {
-		TrophyButton* tButton = new TrophyButton((TrophyName)i, 20);
+		TrophyButton* tButton = new TrophyButton((TrophyName)i, 10);
 		tButton->SetHasTrophy(trophies->GetTrophy((TrophyName)i));
 		tButton->OnClicked +=
 		    Utility::Delegate1<SBTrophyChapter, TrophyName>(this, &SBTrophyChapter::OnTrophyPressed);
@@ -168,8 +169,8 @@ void cg::SBTrophyChapter::SetupTrophies() {
 	}
 
 	int tOffset = 0;
-	int xOffset = 48;
-	int yOffset = 126;
+	int xOffset = 12;
+	int yOffset = 168;
 	int iX      = 0;
 	int iY      = 0;
 
@@ -178,7 +179,7 @@ void cg::SBTrophyChapter::SetupTrophies() {
 		iX      = 0;
 		iY      = 0;
 		for(int j = tOffset; j < tOffset + 12; j++) {
-			trophyButtons[j]->SetPosition(iX * 77 + xOffset, iY * 81 + yOffset);
+			trophyButtons[j]->SetPosition(iX * 154 + xOffset, iY * 162 + yOffset);
 
 			iX++;
 			if(iX > 3) {

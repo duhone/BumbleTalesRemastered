@@ -37,7 +37,7 @@ export namespace CR::Game {
 		virtual int Process();
 
 	  private:
-		HomeMenuView* view;
+		HomeMenuView* view{};
 
 		CR::Engine::Audio::Handles::Music m_musicHandle;
 

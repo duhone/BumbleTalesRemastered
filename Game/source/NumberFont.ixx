@@ -137,6 +137,7 @@ void cg::NumberFont::RenderNumber(int _value) {
 }
 
 void cg::NumberFont::RenderSpecial(int _frame) {
+	m_spriteHelper.NewSprite();
 	m_spriteHelper.SetPosition((int)offset.x, (int)offset.y);
 	m_spriteHelper.SetFrame(_frame);
 }

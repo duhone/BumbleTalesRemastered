@@ -89,7 +89,7 @@ cg::SBRecordChapter::~SBRecordChapter() {
 
 void cg::SBRecordChapter::Update() {
 	currPage->Update();
-	cegraph::Sprites::SetFrame(pageTags, uint16_t(7 + currPageNum));
+	cegraph::Sprites::SetFrame(pageTags, uint16_t(3 + currPageNum));
 	cegraph::Sprites::SetFrame(scrapBookTags, uint16_t(13 + currPageNum));
 }
 
@@ -121,12 +121,12 @@ void cg::SBRecordChapter::SetCurrentPage() {
 	switch(currPageNum) {
 		case 0:    // Story Records
 			currPage = new StoryRecords();
-			currPage->SetPosition(160, 240);
+			currPage->SetPosition(320, 480);
 			((StoryRecords*)currPage)->LoadFromStorySaveInfo(storySaveInfo);
 			break;
 		case 1:    // Arcade Records
 			currPage = new ArcadeRecords();
-			currPage->SetPosition(160, 240);
+			currPage->SetPosition(320, 480);
 			((ArcadeRecords*)currPage)->LoadFromArcadeSaveInfo(arcadeSaveInfo);
 			break;
 		default:
