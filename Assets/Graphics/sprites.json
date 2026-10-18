@@ -212,6 +212,26 @@
             "name": "OptionsHeader",
             "texture": "OptionsHeader",
             "frame_rate": "FPS0"
+        },{
+            "name": "ScoreYouGotTags",
+            "texture": "ScoreYouGotTags",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ArcadeModeResourceBar3",
+            "texture": "ArcadeModeResourceBar3",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ArcadeModeResourceBar4",
+            "texture": "ArcadeModeResourceBar4",
+            "frame_rate": "FPS12"
+        },{
+            "name": "StoryModeResourceBar1",
+            "texture": "StoryModeResourceBar1",
+            "frame_rate": "FPS0"
+        },{
+            "name": "StoryModeResourceBar2",
+            "texture": "StoryModeResourceBar2",
+            "frame_rate": "FPS20"
         }
     ]
 }

@@ -41,6 +41,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/OptionsMenuView.ixx
     ${root}/source/Property.ixx
     ${root}/source/RadioButtonControl.ixx
+    ${root}/source/ResourceBar.ixx
     ${root}/source/RepeatedSpriteHelper.ixx
     ${root}/source/SaveInfo.ixx
     ${root}/source/SavedGame.ixx
@@ -61,6 +62,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/Trophies.ixx
     ${root}/source/TrophyButton.ixx
     ${root}/source/TrophySaveInfo.ixx
+    ${root}/source/YouGotSlider.ixx
 )
 
 set(CR_BUILD_FILES

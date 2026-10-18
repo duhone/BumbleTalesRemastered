@@ -159,6 +159,21 @@
         },{
             "name": "OptionsHeader",
             "path": "Graphics/Textures/Options/OptionsHeader.webp"
+        },{
+            "name": "ScoreYouGotTags",
+            "path": "Graphics/Textures/Score/YouGotTags.webp"
+        },{
+            "name": "ArcadeModeResourceBar3",
+            "path": "Graphics/Textures/ArcadeMode/ResourceBar3.webp"
+        },{
+            "name": "ArcadeModeResourceBar4",
+            "path": "Graphics/Textures/ArcadeMode/ResourceBar4.webp"
+        },{
+            "name": "StoryModeResourceBar1",
+            "path": "Graphics/Textures/StoryMode/ResourceBar1.webp"
+        },{
+            "name": "StoryModeResourceBar2",
+            "path": "Graphics/Textures/StoryMode/ResourceBar2.webp"
         }
     ]
 }
