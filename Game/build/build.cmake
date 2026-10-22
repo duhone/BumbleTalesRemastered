@@ -57,8 +57,10 @@ set(CR_IMPLEMENTATION
     ${root}/source/SplashScreenMenuView.ixx
     ${root}/source/StoryModeSaveInfo.ixx
     ${root}/source/StoryRecords.ixx
+    ${root}/source/TileSelector.ixx
     ${root}/source/TimeDisplay.ixx
     ${root}/source/Timer.ixx
+    ${root}/source/TimerBar.ixx
     ${root}/source/Trophies.ixx
     ${root}/source/TrophyButton.ixx
     ${root}/source/TrophySaveInfo.ixx

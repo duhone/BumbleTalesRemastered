@@ -169,11 +169,20 @@
             "name": "ArcadeModeResourceBar4",
             "path": "Graphics/Textures/ArcadeMode/ResourceBar4.webp"
         },{
+            "name": "ArcadeModeTimeBar",
+            "path": "Graphics/Textures/ArcadeMode/TimeBar.webp"
+        },{
+            "name": "ArcadeModeTimeTag",
+            "path": "Graphics/Textures/ArcadeMode/TimeTag.webp"
+        },{
             "name": "StoryModeResourceBar1",
             "path": "Graphics/Textures/StoryMode/ResourceBar1.webp"
         },{
             "name": "StoryModeResourceBar2",
             "path": "Graphics/Textures/StoryMode/ResourceBar2.webp"
+        },{
+            "name": "PiecesSelector1",
+            "path": "Graphics/Textures/pieces/Selector1.webp"
         }
     ]
 }

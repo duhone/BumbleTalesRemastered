@@ -225,6 +225,14 @@
             "texture": "ArcadeModeResourceBar4",
             "frame_rate": "FPS12"
         },{
+            "name": "ArcadeModeTimeBar",
+            "texture": "ArcadeModeTimeBar",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ArcadeModeTimeTag",
+            "texture": "ArcadeModeTimeTag",
+            "frame_rate": "FPS0"
+        },{
             "name": "StoryModeResourceBar1",
             "texture": "StoryModeResourceBar1",
             "frame_rate": "FPS0"
@@ -232,6 +240,10 @@
             "name": "StoryModeResourceBar2",
             "texture": "StoryModeResourceBar2",
             "frame_rate": "FPS20"
+        },{
+            "name": "PiecesSelector1",
+            "texture": "PiecesSelector1",
+            "frame_rate": "FPS10"
         }
     ]
 }

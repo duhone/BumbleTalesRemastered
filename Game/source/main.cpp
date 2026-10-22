@@ -87,8 +87,11 @@ namespace {
 											   cecore::C_Hash64("ScoreYouGotTags"),
 											   cecore::C_Hash64("ArcadeModeResourceBar3"),
 											   cecore::C_Hash64("ArcadeModeResourceBar4"),
+											   cecore::C_Hash64("ArcadeModeTimeBar"),
+											   cecore::C_Hash64("ArcadeModeTimeTag"),
 											   cecore::C_Hash64("StoryModeResourceBar1"),
-											   cecore::C_Hash64("StoryModeResourceBar2")};
+											   cecore::C_Hash64("StoryModeResourceBar2"),
+											   cecore::C_Hash64("PiecesSelector1")};
 	std::unique_ptr<CR::Game::Game> m_game;
 
 	void glfwErrorCallback(int error, const char* description) {
