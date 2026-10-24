@@ -25,7 +25,7 @@ export namespace CR::Game {
 		RepeatedSpriteHelper(uint64_t _image, int _zInitial);
 		~RepeatedSpriteHelper();
 		void Start();
-		void End();
+		void End(bool syncAnimations = false);
 		void NewSprite();
 		void SetPosition(int _x, int _y);
 		void SetFrame(int _frame);
@@ -81,12 +81,15 @@ void cg::RepeatedSpriteHelper::Start() {
 	m_currentSprite = -1;
 }
 
-void cg::RepeatedSpriteHelper::End() {
+void cg::RepeatedSpriteHelper::End(bool syncAnimations) {
 	if(m_currentSprite != -1 && m_sprites.size() > m_currentSprite + 1) {
 		for(int i = m_currentSprite + 1; i < m_sprites.size(); ++i) {
 			cegraph::Sprites::Delete(m_sprites[i]);
 		}
 		m_sprites.resize(m_currentSprite + 1);
+	}
+	if(syncAnimations && m_sprites.size() > 1) {
+		cegraph::Sprites::SyncAnimations(m_sprites[0], {m_sprites.begin() + 1, m_sprites.end()});
 	}
 }
 

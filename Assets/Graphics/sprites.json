@@ -244,6 +244,14 @@
             "name": "PiecesSelector1",
             "texture": "PiecesSelector1",
             "frame_rate": "FPS10"
+        },{
+            "name": "ShopStarMeter",
+            "texture": "ShopStarMeter",
+            "frame_rate": "FPS0"
+        },{
+            "name": "ShopStarMeterIndicator",
+            "texture": "ShopStarMeterIndicator",
+            "frame_rate": "FPS10"
         }
     ]
 }

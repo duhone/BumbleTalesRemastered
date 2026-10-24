@@ -91,7 +91,9 @@ namespace {
 											   cecore::C_Hash64("ArcadeModeTimeTag"),
 											   cecore::C_Hash64("StoryModeResourceBar1"),
 											   cecore::C_Hash64("StoryModeResourceBar2"),
-											   cecore::C_Hash64("PiecesSelector1")};
+											   cecore::C_Hash64("PiecesSelector1"),
+											   cecore::C_Hash64("ShopStarMeter"),
+											   cecore::C_Hash64("ShopStarMeterIndicator")};
 	std::unique_ptr<CR::Game::Game> m_game;
 
 	void glfwErrorCallback(int error, const char* description) {

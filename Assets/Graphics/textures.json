@@ -183,6 +183,12 @@
         },{
             "name": "PiecesSelector1",
             "path": "Graphics/Textures/pieces/Selector1.webp"
+        },{
+            "name": "ShopStarMeter",
+            "path": "Graphics/Textures/Shop/ShopStarMeter.webp"
+        },{
+            "name": "ShopStarMeterIndicator",
+            "path": "Graphics/Textures/Shop/StarMeterIndicator.webp"
         }
     ]
 }
