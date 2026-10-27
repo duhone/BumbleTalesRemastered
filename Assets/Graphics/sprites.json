@@ -252,6 +252,22 @@
             "name": "ShopStarMeterIndicator",
             "texture": "ShopStarMeterIndicator",
             "frame_rate": "FPS10"
+        },{
+            "name": "StoryModeMaxTag",
+            "texture": "StoryModeMaxTag",
+            "frame_rate": "FPS0"
+        },{
+            "name": "StoryModeStarHUD",
+            "texture": "StoryModeStarHUD",
+            "frame_rate": "FPS0"
+        },{
+            "name": "StoryModeStarHUDAnim",
+            "texture": "StoryModeStarHUDAnim",
+            "frame_rate": "FPS0"
+        },{
+            "name": "StoryModeFont_StarHUD",
+            "texture": "StoryModeFont_StarHUD",
+            "frame_rate": "FPS0"
         }
     ]
 }

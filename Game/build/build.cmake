@@ -56,6 +56,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/SplashScreen.ixx
     ${root}/source/SplashScreenMenu.ixx
     ${root}/source/SplashScreenMenuView.ixx
+    ${root}/source/StarHUD.ixx
     ${root}/source/StoryModeSaveInfo.ixx
     ${root}/source/StoryRecords.ixx
     ${root}/source/TileSelector.ixx

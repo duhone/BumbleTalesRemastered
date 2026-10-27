@@ -189,6 +189,18 @@
         },{
             "name": "ShopStarMeterIndicator",
             "path": "Graphics/Textures/Shop/StarMeterIndicator.webp"
+        },{
+            "name": "StoryModeMaxTag",
+            "path": "Graphics/Textures/StoryMode/MaxTag.webp"
+        },{
+            "name": "StoryModeStarHUD",
+            "path": "Graphics/Textures/StoryMode/StarHUD.webp"
+        },{
+            "name": "StoryModeStarHUDAnim",
+            "path": "Graphics/Textures/StoryMode/StarHUDAnim.webp"
+        },{
+            "name": "StoryModeFont_StarHUD",
+            "path": "Graphics/Textures/StoryMode/Font_StarHUD.webp"
         }
     ]
 }

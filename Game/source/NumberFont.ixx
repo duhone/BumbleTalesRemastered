@@ -38,6 +38,7 @@ export namespace CR::Game {
 		int GetDigitWidth();
 		void Begin();
 		void End();
+		void SetVisible(bool a_visible) { m_spriteHelper.SetVisible(a_visible); }
 		// void SetFontAsset(int _asset);
 
 	  private:

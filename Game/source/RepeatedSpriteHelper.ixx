@@ -29,10 +29,12 @@ export namespace CR::Game {
 		void NewSprite();
 		void SetPosition(int _x, int _y);
 		void SetFrame(int _frame);
+		void SetVisible(bool a_visible);
 		// void SetFrameRate(int _frameRate);
 		// void SetImage(int _image);
 
 	  private:
+		bool m_visible{true};
 		std::vector<CR::Engine::Graphics::Handles::Sprite> m_sprites;
 		int m_currentSprite{-1};
 		bool m_singleSetMode{};
@@ -60,6 +62,7 @@ void cg::RepeatedSpriteHelper::NewSprite() {
 		// there was something called single set mode in old hoopty engine. no clue what it was for.
 		m_sprites.push_back(cegraph::Sprites::Create(m_imageHash));
 		cegraph::Sprites::SetZOrder(m_sprites.back(), (uint8_t)m_zInitial);
+		cegraph::Sprites::SetVisibility(m_sprites.back(), m_visible);
 	}
 }
 
@@ -91,6 +94,11 @@ void cg::RepeatedSpriteHelper::End(bool syncAnimations) {
 	if(syncAnimations && m_sprites.size() > 1) {
 		cegraph::Sprites::SyncAnimations(m_sprites[0], {m_sprites.begin() + 1, m_sprites.end()});
 	}
+}
+
+void cg::RepeatedSpriteHelper::SetVisible(bool a_visible) {
+	m_visible = a_visible;
+	for(const auto sprite : m_sprites) { cegraph::Sprites::SetVisibility(sprite, m_visible); }
 }
 
 /* TODO: is this needed? if so need to recreate all the sprites
