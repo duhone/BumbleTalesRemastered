@@ -6,6 +6,10 @@
  *  Copyright 2009 Conjured Realms LLC. All rights reserved.
  *
  */
+module;
+
+#include <glm/glm.hpp>
+
 export module CR.Game.RadioButtonControl;
 
 import CR.Game.IInputObject;
@@ -57,7 +61,7 @@ namespace cg      = CR::Game;
 
 cg::RadioButtonControl::RadioButtonControl(uint64_t imgHash) {
 	radioSprite = CR::Engine::Graphics::Sprites::Create(imgHash);
-	cegraph::Sprites::SetZOrder(radioSprite, 40);
+	cegraph::Sprites::SetZOrders(radioSprite, 40);
 
 	m_isSelected = false;
 }
@@ -74,7 +78,8 @@ void cg::RadioButtonControl::Update() {
 	ceinput::Regions::update(
 	    m_region, cecore::Rect2D<int32_t>{{bounds.left, bounds.top}, {bounds.right, bounds.bottom}});
 
-	uint32_t state = ceinput::Regions::getState(m_region);
+	uint32_t state{};
+	ceinput::Regions::getStates(m_region, state);
 
 	if((state & ceinput::Regions::RegionStates::Pressed) != 0) {
 		m_isSelected = true;
@@ -84,13 +89,13 @@ void cg::RadioButtonControl::Update() {
 
 void cg::RadioButtonControl::Render() {
 	if(radioSprite.isValid()) {
-		cegraph::Sprites::SetVisibility(radioSprite, !m_disabled);
-		CR::Engine::Graphics::Sprites::SetPosition(radioSprite, {bounds.left, bounds.top});
+		cegraph::Sprites::SetVisibilities(radioSprite, !m_disabled);
+		CR::Engine::Graphics::Sprites::SetPositions(radioSprite, glm::vec2{bounds.left, bounds.top});
 
 		if(!m_isSelected) {
-			CR::Engine::Graphics::Sprites::SetFrame(radioSprite, 0);
+			CR::Engine::Graphics::Sprites::SetFrames(radioSprite, 0);
 		} else {
-			CR::Engine::Graphics::Sprites::SetFrame(radioSprite, 1);
+			CR::Engine::Graphics::Sprites::SetFrames(radioSprite, 1);
 		}
 	}
 }
@@ -100,7 +105,7 @@ void cg::RadioButtonControl::SetPositionAndBounds(int x, int y, int width, int h
 	bounds.top    = y;
 	bounds.right  = width;
 	bounds.bottom = height;
-	CR::Engine::Graphics::Sprites::SetPosition(radioSprite, {bounds.left, bounds.top});
+	CR::Engine::Graphics::Sprites::SetPositions(radioSprite, glm::vec2{bounds.left, bounds.top});
 }
 
 void cg::RadioButtonControl::Select() {

@@ -69,13 +69,13 @@ cg::SBRecordChapter::SBRecordChapter() {
 	currPage    = NULL;
 
 	pageTags = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags2"));
-	cegraph::Sprites::SetZOrder(pageTags, 19);
-	cegraph::Sprites::SetPosition(pageTags, glm::vec2(482, 104));
+	cegraph::Sprites::SetZOrders(pageTags, 19);
+	cegraph::Sprites::SetPositions(pageTags, glm::vec2(482, 104));
 
 	scrapBookTags = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags1"));
-	cegraph::Sprites::SetZOrder(scrapBookTags, 19);
-	cegraph::Sprites::SetPosition(scrapBookTags, glm::vec2(16, 98));
-	cegraph::Sprites::SetFrame(scrapBookTags, 16);
+	cegraph::Sprites::SetZOrders(scrapBookTags, 19);
+	cegraph::Sprites::SetPositions(scrapBookTags, glm::vec2(16, 98));
+	cegraph::Sprites::SetFrames(scrapBookTags, 16);
 
 	// SetCurrentPage();
 }
@@ -89,8 +89,8 @@ cg::SBRecordChapter::~SBRecordChapter() {
 
 void cg::SBRecordChapter::Update() {
 	currPage->Update();
-	cegraph::Sprites::SetFrame(pageTags, uint16_t(3 + currPageNum));
-	cegraph::Sprites::SetFrame(scrapBookTags, uint16_t(13 + currPageNum));
+	cegraph::Sprites::SetFrames(pageTags, uint16_t(3 + currPageNum));
+	cegraph::Sprites::SetFrames(scrapBookTags, uint16_t(13 + currPageNum));
 }
 
 void cg::SBRecordChapter::Render() {

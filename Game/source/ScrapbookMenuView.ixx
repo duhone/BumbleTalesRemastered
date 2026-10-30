@@ -83,12 +83,12 @@ namespace cg      = CR::Game;
 
 cg::ScrapbookMenuView::ScrapbookMenuView(bool wonGame) {
 	baseSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookBG"));
-	cegraph::Sprites::SetPosition(baseSprite, glm::vec2(0, 0));
-	cegraph::Sprites::SetZOrder(baseSprite, 0);
+	cegraph::Sprites::SetPositions(baseSprite, glm::vec2(0, 0));
+	cegraph::Sprites::SetZOrders(baseSprite, 0);
 
 	rimSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCategoryRim"));
-	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(11, 13));
-	cegraph::Sprites::SetZOrder(rimSprite, 30);
+	cegraph::Sprites::SetPositions(rimSprite, glm::vec2(11, 13));
+	cegraph::Sprites::SetZOrders(rimSprite, 30);
 
 	exitButton = new InputButton();
 	exitButton->SetSpriteAndBounds(224, 864, cecore::C_Hash64("ScrapbookButton_Exit"), 40);
@@ -178,7 +178,7 @@ void cg::ScrapbookMenuView::OnCharactersButtonClicked() {
 	((SBCharacterChapter*)m_currChapter)->SetHasWonGame(storyModeSaveInfo->GetHasWonGame());
 	((SBCharacterChapter*)m_currChapter)->SetCharacterLevels(characterLevels);
 
-	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(11, 13));
+	cegraph::Sprites::SetPositions(rimSprite, glm::vec2(11, 13));
 }
 
 void cg::ScrapbookMenuView::OnRecordsButtonClicked() {
@@ -189,7 +189,7 @@ void cg::ScrapbookMenuView::OnRecordsButtonClicked() {
 	((SBRecordChapter*)m_currChapter)->LoadFromArcadeSaveInfo(arcadeModeSaveInfo);
 	((SBRecordChapter*)m_currChapter)->LoadFromStorySaveInfo(storyModeSaveInfo);
 
-	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(221, 13));
+	cegraph::Sprites::SetPositions(rimSprite, glm::vec2(221, 13));
 }
 
 void cg::ScrapbookMenuView::OnTrophiesButtonClicked() {
@@ -199,7 +199,7 @@ void cg::ScrapbookMenuView::OnTrophiesButtonClicked() {
 	m_currChapter = new SBTrophyChapter();
 	((SBTrophyChapter*)m_currChapter)->LoadFromTrophySaveInfo(trophySaveInfo);
 
-	cegraph::Sprites::SetPosition(rimSprite, glm::vec2(431, 13));
+	cegraph::Sprites::SetPositions(rimSprite, glm::vec2(431, 13));
 }
 
 void cg::ScrapbookMenuView::LoadFromSaveInfo(StoryModeSaveInfo* saveInfo) {

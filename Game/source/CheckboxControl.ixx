@@ -6,6 +6,10 @@
  *  Copyright 2009 Conjured Realms LLC. All rights reserved.
  *
  */
+module;
+
+#include <glm/glm.hpp>
+
 export module CR.Game.CheckboxControl;
 
 import CR.Game.IInputObject;
@@ -70,7 +74,7 @@ cg::CheckboxControl::~CheckboxControl() {
 void cg::CheckboxControl::SetSpriteAndPosition(uint64_t spriteHash, int xLoc, int yLoc) {
 	SetSprite(spriteHash, 25);
 
-	CR::Engine::Graphics::Sprites::SetPosition(checkSprite, {xLoc, yLoc});
+	CR::Engine::Graphics::Sprites::SetPositions(checkSprite, glm::vec2{xLoc, yLoc});
 }
 
 void cg::CheckboxControl::SetButtonBounds(float left, float top, float width, float height) {
@@ -94,7 +98,7 @@ void cg::CheckboxControl::SetSpriteAndBounds(float left, float top, uint64_t spr
 	r.right  = size.x;
 	bounds   = r;
 
-	CR::Engine::Graphics::Sprites::SetPosition(checkSprite, {bounds.left, bounds.top});
+	CR::Engine::Graphics::Sprites::SetPositions(checkSprite, glm::vec2{bounds.left, bounds.top});
 }
 
 void cg::CheckboxControl::Update() {
@@ -105,7 +109,8 @@ void cg::CheckboxControl::Update() {
 	ceinput::Regions::update(
 	    m_region, cecore::Rect2D<int32_t>{{bounds.left, bounds.top}, {bounds.right, bounds.bottom}});
 
-	uint32_t state = ceinput::Regions::getState(m_region);
+	uint32_t state{};
+	ceinput::Regions::getStates(m_region, state);
 
 	if((state & ceinput::Regions::RegionStates::Pressed) != 0) {
 		m_isChecked = !m_isChecked;
@@ -116,12 +121,12 @@ void cg::CheckboxControl::Update() {
 void cg::CheckboxControl::Render() {
 	if(checkSprite.isValid()) {
 		auto size = CR::Engine::Graphics::Sprites::GetSize(checkSprite);
-		CR::Engine::Graphics::Sprites::SetPosition(checkSprite, {bounds.left, bounds.top});
+		CR::Engine::Graphics::Sprites::SetPositions(checkSprite, glm::vec2{bounds.left, bounds.top});
 
 		if(!m_isChecked) {
-			cegraph::Sprites::SetVisibility(checkSprite, false);
+			cegraph::Sprites::SetVisibilities(checkSprite, false);
 		} else {
-			cegraph::Sprites::SetVisibility(checkSprite, !m_disabled);
+			cegraph::Sprites::SetVisibilities(checkSprite, !m_disabled);
 		}
 	}
 }
@@ -133,5 +138,5 @@ void cg::CheckboxControl::FreeResources() {}
 void cg::CheckboxControl::SetSprite(uint64_t spriteHash, uint8_t zPos) {
 	if(checkSprite.isValid()) { CR::Engine::Graphics::Sprites::Delete(checkSprite); }
 	checkSprite = CR::Engine::Graphics::Sprites::Create(spriteHash);
-	cegraph::Sprites::SetZOrder(checkSprite, zPos);
+	cegraph::Sprites::SetZOrders(checkSprite, zPos);
 }

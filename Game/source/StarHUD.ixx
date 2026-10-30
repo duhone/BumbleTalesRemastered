@@ -63,13 +63,13 @@ cg::StarHUD::StarHUD() {
 	SetSpriteAndBounds(0, 0, "StoryModeStarHUD"_hash64, 90);
 
 	starSprite = cegraph::Sprites::Create("StoryModeStarHUDAnim"_hash64);
-	cegraph::Sprites::SetZOrder(starSprite, 80);
+	cegraph::Sprites::SetZOrders(starSprite, 80);
 
 	numberFont = new NumberFont("StoryModeFont_StarHUD"_hash64, 70);
 	m_numStars = 0;
 
 	maxTag = cegraph::Sprites::Create("StoryModeMaxTag"_hash64);
-	cegraph::Sprites::SetZOrder(maxTag, 80);
+	cegraph::Sprites::SetZOrders(maxTag, 80);
 
 	maxedOut = false;
 }
@@ -82,10 +82,10 @@ cg::StarHUD::~StarHUD() {
 
 void cg::StarHUD::Update() {
 	if(m_numStars > 0) {
-		CR::Engine::Graphics::Sprites::SetAnimationPaused(starSprite, false);
+		CR::Engine::Graphics::Sprites::SetAnimationPauses(starSprite, false);
 	} else if(m_numStars == 0) {
-		CR::Engine::Graphics::Sprites::SetAnimationPaused(starSprite, true);
-		CR::Engine::Graphics::Sprites::SetFrame(starSprite, 0);
+		CR::Engine::Graphics::Sprites::SetAnimationPauses(starSprite, true);
+		CR::Engine::Graphics::Sprites::SetFrames(starSprite, 0);
 	}
 }
 
@@ -93,7 +93,7 @@ void cg::StarHUD::Render() {
 	InputButton::Render();
 
 	numberFont->RenderNumber(m_numStars);
-	CR::Engine::Graphics::Sprites::SetVisibility(maxTag, maxedOut);
+	CR::Engine::Graphics::Sprites::SetVisibilities(maxTag, maxedOut);
 	numberFont->SetVisible(!maxedOut);
 }
 void cg::StarHUD::SetPosition(float xLoc, float yLoc) {
@@ -101,14 +101,14 @@ void cg::StarHUD::SetPosition(float xLoc, float yLoc) {
 	offset.y = yLoc;
 
 	InputButton::SetPosition((int)xLoc, (int)yLoc);
-	CR::Engine::Graphics::Sprites::SetPosition(starSprite, offset);
+	CR::Engine::Graphics::Sprites::SetPositions(starSprite, offset);
 
 	numberFont->SetPosition(xLoc + 30, yLoc + 43);
-	CR::Engine::Graphics::Sprites::SetPosition(maxTag, offset);
+	CR::Engine::Graphics::Sprites::SetPositions(maxTag, offset);
 }
 
 void cg::StarHUD::PauseAnimation(bool pause) {
-	CR::Engine::Graphics::Sprites::SetAnimationPaused(starSprite, pause);
+	CR::Engine::Graphics::Sprites::SetAnimationPauses(starSprite, pause);
 }
 
 void cg::StarHUD::AddStar() {

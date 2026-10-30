@@ -56,7 +56,7 @@ namespace cg      = CR::Game;
 
 cg::StarMeter::StarMeter() : m_spriteHelper(cecore::C_Hash64("ShopStarMeterIndicator"), 50) {
 	meterSprite = cegraph::Sprites::Create(cecore::C_Hash64("ShopStarMeter"));
-	cegraph::Sprites::SetZOrder(meterSprite, 50);
+	cegraph::Sprites::SetZOrders(meterSprite, 50);
 
 	m_starCount     = 0;
 	m_starIndicator = 0;
@@ -87,7 +87,7 @@ void cg::StarMeter::SetPosition(float xLoc, float yLoc) {
 	offset.x = xLoc;
 	offset.y = yLoc;
 
-	cegraph::Sprites::SetPosition(meterSprite, offset);
+	cegraph::Sprites::SetPositions(meterSprite, offset);
 }
 
 void cg::StarMeter::PauseAnimation([[maybe_unused]] bool pause) {}
@@ -96,7 +96,7 @@ void cg::StarMeter::SetFilledStars(int _value) {
 	if(_value == -1 || m_starCount == _value) return;
 
 	m_starCount = _value;
-	cegraph::Sprites::SetFrame(meterSprite, (uint16_t)m_starCount);
+	cegraph::Sprites::SetFrames(meterSprite, (uint16_t)m_starCount);
 }
 
 void cg::StarMeter::SetStarIndicator(int _value) {

@@ -63,8 +63,8 @@ namespace cg      = CR::Game;
 
 cg::StoryRecords::StoryRecords() {
 	bgSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookRecordsBase1"));
-	cegraph::Sprites::SetZOrder(bgSprite, 20);
-	cegraph::Sprites::SetPosition(bgSprite, {0, 152});
+	cegraph::Sprites::SetZOrders(bgSprite, 20);
+	cegraph::Sprites::SetPositions(bgSprite, glm::vec2{0, 152});
 
 	specialFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records1"), 30);
 	specialFont->SetAlignment(AlignFontRight);

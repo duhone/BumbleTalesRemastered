@@ -63,7 +63,7 @@ namespace cg      = CR::Game;
 
 cg::YouGotSlider::YouGotSlider() {
 	youGotTagsSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScoreYouGotTags"));
-	cegraph::Sprites::SetZOrder(youGotTagsSprite, 40);
+	cegraph::Sprites::SetZOrders(youGotTagsSprite, 40);
 
 	m_gotTrophy = false;
 	m_gotStar   = false;
@@ -95,7 +95,7 @@ void cg::YouGotSlider::Update() {
 		}
 	}
 
-	cegraph::Sprites::SetFrame(youGotTagsSprite, (uint16_t)currTagDisplay);
+	cegraph::Sprites::SetFrames(youGotTagsSprite, (uint16_t)currTagDisplay);
 
 	if(sliding) {
 		SetPosition(offset.x + xStep, offset.y);
@@ -107,14 +107,14 @@ void cg::YouGotSlider::Update() {
 }
 
 void cg::YouGotSlider::Render() {
-	cegraph::Sprites::SetVisibility(youGotTagsSprite, m_gotTrophy || m_gotStar);
+	cegraph::Sprites::SetVisibilities(youGotTagsSprite, m_gotTrophy || m_gotStar);
 }
 
 void cg::YouGotSlider::SetPosition(float xLoc, float yLoc) {
 	offset.x = xLoc;
 	offset.y = yLoc;
 
-	cegraph::Sprites::SetPosition(youGotTagsSprite, glm::vec2(offset.x, offset.y));
+	cegraph::Sprites::SetPositions(youGotTagsSprite, glm::vec2(offset.x, offset.y));
 }
 
 void cg::YouGotSlider::PauseAnimation([[maybe_unused]] bool pause) {}

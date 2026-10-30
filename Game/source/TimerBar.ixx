@@ -61,12 +61,12 @@ namespace cg      = CR::Game;
 
 cg::TimerBar::TimerBar(int xLoc, int yLoc) {
 	timeSprite = cegraph::Sprites::Create(cecore::C_Hash64("ArcadeModeTimeTag"));
-	cegraph::Sprites::SetZOrder(timeSprite, 80);
-	cegraph::Sprites::SetPosition(timeSprite, offset);
+	cegraph::Sprites::SetZOrders(timeSprite, 80);
+	cegraph::Sprites::SetPositions(timeSprite, offset);
 
 	barSprite = cegraph::Sprites::Create(cecore::C_Hash64("ArcadeModeTimeBar"));
-	cegraph::Sprites::SetZOrder(barSprite, 80);
-	cegraph::Sprites::SetPosition(barSprite, offset);
+	cegraph::Sprites::SetZOrders(barSprite, 80);
+	cegraph::Sprites::SetPositions(barSprite, offset);
 
 	maxTime  = 30;
 	currTime = maxTime;
@@ -81,7 +81,7 @@ cg::TimerBar::~TimerBar() {
 
 void cg::TimerBar::Update() {
 	float frame = (1 - ((float)currTime / (float)maxTime)) * 52.0f;
-	cegraph::Sprites::SetFrame(barSprite, (uint16_t)frame);
+	cegraph::Sprites::SetFrames(barSprite, (uint16_t)frame);
 }
 
 void cg::TimerBar::Render() {}
@@ -90,8 +90,8 @@ void cg::TimerBar::SetPosition(float xLoc, float yLoc) {
 	offset.x = xLoc;
 	offset.y = yLoc;
 
-	cegraph::Sprites::SetPosition(timeSprite, offset);
-	cegraph::Sprites::SetPosition(barSprite, offset + glm::vec2(123, 0));
+	cegraph::Sprites::SetPositions(timeSprite, offset);
+	cegraph::Sprites::SetPositions(barSprite, offset + glm::vec2(123, 0));
 }
 
 void cg::TimerBar::PauseAnimation([[maybe_unused]] bool pause) {}

@@ -61,17 +61,17 @@ void cg::RepeatedSpriteHelper::NewSprite() {
 	if(m_currentSprite >= m_sprites.size()) {
 		// there was something called single set mode in old hoopty engine. no clue what it was for.
 		m_sprites.push_back(cegraph::Sprites::Create(m_imageHash));
-		cegraph::Sprites::SetZOrder(m_sprites.back(), (uint8_t)m_zInitial);
-		cegraph::Sprites::SetVisibility(m_sprites.back(), m_visible);
+		cegraph::Sprites::SetZOrders(m_sprites.back(), (uint8_t)m_zInitial);
+		cegraph::Sprites::SetVisibilities(m_sprites.back(), m_visible);
 	}
 }
 
 void cg::RepeatedSpriteHelper::SetPosition(int _x, int _y) {
-	if(m_currentSprite != -1) { cegraph::Sprites::SetPosition(m_sprites[m_currentSprite], {_x, _y}); }
+	if(m_currentSprite != -1) { cegraph::Sprites::SetPositions(m_sprites[m_currentSprite], glm::vec2{_x, _y}); }
 }
 
 void cg::RepeatedSpriteHelper::SetFrame(int _frame) {
-	if(m_currentSprite != -1) { cegraph::Sprites::SetFrame(m_sprites[m_currentSprite], (uint16_t)_frame); }
+	if(m_currentSprite != -1) { cegraph::Sprites::SetFrames(m_sprites[m_currentSprite], (uint16_t)_frame); }
 }
 
 /* TODO: ill figure out what to do with this once I see it used. we used fixed frame rates these days for
@@ -98,7 +98,7 @@ void cg::RepeatedSpriteHelper::End(bool syncAnimations) {
 
 void cg::RepeatedSpriteHelper::SetVisible(bool a_visible) {
 	m_visible = a_visible;
-	for(const auto sprite : m_sprites) { cegraph::Sprites::SetVisibility(sprite, m_visible); }
+	for(const auto sprite : m_sprites) { cegraph::Sprites::SetVisibilities(sprite, m_visible); }
 }
 
 /* TODO: is this needed? if so need to recreate all the sprites

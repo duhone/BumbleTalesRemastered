@@ -104,10 +104,10 @@ cg::CharacterTale::CharacterTale(CharacterName characterName, int level) {
 
 	SetPage(0);
 
-	cegraph::Sprites::SetPosition(pageSprite, glm::vec2(18, 166));
-	cegraph::Sprites::SetPosition(lockedSprite, glm::vec2(78, 396));
-	cegraph::Sprites::SetZOrder(pageSprite, 40);
-	cegraph::Sprites::SetZOrder(lockedSprite, 40);
+	cegraph::Sprites::SetPositions(pageSprite, glm::vec2(18, 166));
+	cegraph::Sprites::SetPositions(lockedSprite, glm::vec2(78, 396));
+	cegraph::Sprites::SetZOrders(pageSprite, 40);
+	cegraph::Sprites::SetZOrders(lockedSprite, 40);
 }
 
 cg::CharacterTale::~CharacterTale() {
@@ -117,22 +117,22 @@ cg::CharacterTale::~CharacterTale() {
 
 void cg::CharacterTale::SetPage(uint16_t page) {
 	m_currPage = page;
-	cegraph::Sprites::SetFrame(pageSprite, page);
+	cegraph::Sprites::SetFrames(pageSprite, page);
 }
 
 void cg::CharacterTale::Update() {
 	if(m_disabled) {
-		cegraph::Sprites::SetVisibility(lockedSprite, false);
-		cegraph::Sprites::SetVisibility(pageSprite, false);
+		cegraph::Sprites::SetVisibilities(lockedSprite, false);
+		cegraph::Sprites::SetVisibilities(pageSprite, false);
 		return;
 	}
 
 	if(pageLocked[m_currPage]) {
-		cegraph::Sprites::SetVisibility(lockedSprite, true);
-		cegraph::Sprites::SetVisibility(pageSprite, false);
+		cegraph::Sprites::SetVisibilities(lockedSprite, true);
+		cegraph::Sprites::SetVisibilities(pageSprite, false);
 	} else {
-		cegraph::Sprites::SetVisibility(lockedSprite, false);
-		cegraph::Sprites::SetVisibility(pageSprite, true);
+		cegraph::Sprites::SetVisibilities(lockedSprite, false);
+		cegraph::Sprites::SetVisibilities(pageSprite, true);
 	}
 }
 

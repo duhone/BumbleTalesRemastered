@@ -75,25 +75,25 @@ cg::SBTrophyChapter::SBTrophyChapter() {
 	currPageNum = 0;
 
 	bgSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyBase1"));
-	cegraph::Sprites::SetZOrder(bgSprite, 0);
-	cegraph::Sprites::SetPosition(bgSprite, glm::vec2(0, 144));
+	cegraph::Sprites::SetZOrders(bgSprite, 0);
+	cegraph::Sprites::SetPositions(bgSprite, glm::vec2(0, 144));
 
 	trophyName = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyNames"));
-	cegraph::Sprites::SetZOrder(trophyName, 10);
-	cegraph::Sprites::SetPosition(trophyName, glm::vec2(42, 230));
+	cegraph::Sprites::SetZOrders(trophyName, 10);
+	cegraph::Sprites::SetPositions(trophyName, glm::vec2(42, 230));
 
 	scrapBookTags = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags1"));
-	cegraph::Sprites::SetZOrder(scrapBookTags, 19);
-	cegraph::Sprites::SetPosition(scrapBookTags, glm::vec2(14, 98));
-	cegraph::Sprites::SetFrame(scrapBookTags, 16);
+	cegraph::Sprites::SetZOrders(scrapBookTags, 19);
+	cegraph::Sprites::SetPositions(scrapBookTags, glm::vec2(14, 98));
+	cegraph::Sprites::SetFrames(scrapBookTags, 16);
 
 	pageTags = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags2"));
-	cegraph::Sprites::SetZOrder(pageTags, 19);
-	cegraph::Sprites::SetPosition(pageTags, glm::vec2(482, 104));
+	cegraph::Sprites::SetZOrders(pageTags, 19);
+	cegraph::Sprites::SetPositions(pageTags, glm::vec2(482, 104));
 
 	trophyInfo = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyInfo"));
-	cegraph::Sprites::SetZOrder(trophyInfo, 10);
-	cegraph::Sprites::SetPosition(trophyInfo, glm::vec2(68, 684));
+	cegraph::Sprites::SetZOrders(trophyInfo, 10);
+	cegraph::Sprites::SetPositions(trophyInfo, glm::vec2(68, 684));
 
 	selectedTrophy      = -1;
 	isTrophyNameVisible = false;
@@ -110,12 +110,12 @@ cg::SBTrophyChapter::~SBTrophyChapter() {
 }
 
 void cg::SBTrophyChapter::Update() {
-	cegraph::Sprites::SetFrame(trophyName, uint16_t(currPageNum));
-	cegraph::Sprites::SetFrame(pageTags, uint16_t(3 + currPageNum));
+	cegraph::Sprites::SetFrames(trophyName, uint16_t(currPageNum));
+	cegraph::Sprites::SetFrames(pageTags, uint16_t(3 + currPageNum));
 }
 
 void cg::SBTrophyChapter::Render() {
-	cegraph::Sprites::SetVisibility(trophyInfo, isTrophyNameVisible);
+	cegraph::Sprites::SetVisibilities(trophyInfo, isTrophyNameVisible);
 
 	int tOffset = currPageNum * 12;
 	for(int i = 0; i < trophyButtons.size(); i++) {
@@ -155,7 +155,7 @@ void cg::SBTrophyChapter::LoadFromTrophySaveInfo(TrophySaveInfo* saveInfo) {
 
 void cg::SBTrophyChapter::OnTrophyPressed(TrophyName tName) {
 	isTrophyNameVisible = true;
-	cegraph::Sprites::SetFrame(trophyInfo, (uint16_t)tName);
+	cegraph::Sprites::SetFrames(trophyInfo, (uint16_t)tName);
 }
 
 void cg::SBTrophyChapter::SetupTrophies() {

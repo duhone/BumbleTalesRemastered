@@ -10,6 +10,10 @@
  *	Frame 1: Up Image
  *	Frame 2: Down Image
  */
+module;
+
+#include <glm/glm.hpp>
+
 export module CR.Game.InputButton;
 
 import CR.Game.IInputObject;
@@ -137,7 +141,7 @@ void cg::InputButton::SetSpriteAndBounds(float left, float top, uint64_t spriteH
 void cg::InputButton::SetSprite(uint64_t spriteHash, uint8_t zPos) {
 	if(objectSprite.isValid()) { CR::Engine::Graphics::Sprites::Delete(objectSprite); }
 	objectSprite = CR::Engine::Graphics::Sprites::Create(spriteHash);
-	cegraph::Sprites::SetZOrder(objectSprite, zPos);
+	cegraph::Sprites::SetZOrders(objectSprite, zPos);
 }
 
 void cg::InputButton::Update() {
@@ -148,7 +152,8 @@ void cg::InputButton::Update() {
 	ceinput::Regions::update(
 	    m_region, cecore::Rect2D<int32_t>{{bounds.left, bounds.top}, {bounds.right, bounds.bottom}});
 
-	uint32_t state = ceinput::Regions::getState(m_region);
+	uint32_t state{};
+	ceinput::Regions::getStates(m_region, state);
 
 	if((state & ceinput::Regions::RegionStates::Pressed) != 0) {
 		if(soundOn) { CR::Engine::Audio::SoundFX::Play(m_soundFX); }
@@ -169,14 +174,14 @@ void cg::InputButton::Reset() {
 
 void cg::InputButton::Render() {
 	if(objectSprite.isValid()) {
-		cegraph::Sprites::SetVisibility(objectSprite, !m_disabled);
+		cegraph::Sprites::SetVisibilities(objectSprite, !m_disabled);
 		auto size = CR::Engine::Graphics::Sprites::GetSize(objectSprite);
-		CR::Engine::Graphics::Sprites::SetPosition(objectSprite, {position.left, position.top});
+		CR::Engine::Graphics::Sprites::SetPositions(objectSprite, glm::vec2{position.left, position.top});
 
 		if(!isDown) {
-			CR::Engine::Graphics::Sprites::SetFrame(objectSprite, 0);
+			CR::Engine::Graphics::Sprites::SetFrames(objectSprite, 0);
 		} else {
-			CR::Engine::Graphics::Sprites::SetFrame(objectSprite, 1);
+			CR::Engine::Graphics::Sprites::SetFrames(objectSprite, 1);
 		}
 	}
 }

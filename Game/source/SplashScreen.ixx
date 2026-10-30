@@ -68,7 +68,7 @@ cg::SplashScreen::~SplashScreen() {
 }
 
 void cg::SplashScreen::SetSplashFrame(uint32_t frame, float delayTime) {
-	cegraph::Sprites::SetFrame(splashSprite, (uint16_t)frame);
+	cegraph::Sprites::SetFrames(splashSprite, (uint16_t)frame);
 	SetPosition(0, 0);
 	m_baseDelayTime = delayTime;
 	m_delayTime     = delayTime;
@@ -92,7 +92,7 @@ void cg::SplashScreen::Update() {
 		SplashFinished();
 	}
 
-	if(isFade) { cegraph::Sprites::SetColor(splashSprite, glm::u8vec4(255, 255, 255, fadeAlpha)); }
+	if(isFade) { cegraph::Sprites::SetColors(splashSprite, glm::u8vec4(255, 255, 255, fadeAlpha)); }
 }
 
 void cg::SplashScreen::Render() {
@@ -106,7 +106,7 @@ void cg::SplashScreen::ForceRender() {
 }
 
 void cg::SplashScreen::SetPosition(float xLoc, float yLoc) {
-	cegraph::Sprites::SetPosition(splashSprite, glm::vec2(xLoc, yLoc));
+	cegraph::Sprites::SetPositions(splashSprite, glm::vec2(xLoc, yLoc));
 }
 
 void cg::SplashScreen::PauseAnimation([[maybe_unused]] bool pause) {}

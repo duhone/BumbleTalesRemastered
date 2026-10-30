@@ -84,8 +84,8 @@ cg::HelpMenuView::HelpMenuView(bool showCredits) {
 	rightButton->SetSound(cecore::C_Hash64("shopopen"));
 
 	menuBackground = cegraph::Sprites::Create(cecore::C_Hash64("HelpInfoBG"));
-	cegraph::Sprites::SetPosition(menuBackground, glm::vec2(0, 0));
-	cegraph::Sprites::SetZOrder(menuBackground, 0);
+	cegraph::Sprites::SetPositions(menuBackground, glm::vec2(0, 0));
+	cegraph::Sprites::SetZOrders(menuBackground, 0);
 
 	if(showCredits)
 		SetScreen(InfoHelpCredits);
@@ -135,20 +135,20 @@ void cg::HelpMenuView::SetScreen(HelpMenuScreenType screenType) {
 			break;
 		case InfoHelp1:
 			SetCurrentSprite(cecore::C_Hash64("HelpInfoHelp"));
-			cegraph::Sprites::SetFrame(m_currScreenSprite, 0);
+			cegraph::Sprites::SetFrames(m_currScreenSprite, 0);
 			break;
 		case InfoHelp2:
 			SetCurrentSprite(cecore::C_Hash64("HelpInfoHelp"));
-			cegraph::Sprites::SetFrame(m_currScreenSprite, 1);
+			cegraph::Sprites::SetFrames(m_currScreenSprite, 1);
 			break;
 		case InfoHelp3:
 			SetCurrentSprite(cecore::C_Hash64("HelpInfoHelp"));
-			cegraph::Sprites::SetFrame(m_currScreenSprite, 2);
+			cegraph::Sprites::SetFrames(m_currScreenSprite, 2);
 			break;
 			break;
 		case InfoHelp4:
 			SetCurrentSprite(cecore::C_Hash64("HelpInfoHelp"));
-			cegraph::Sprites::SetFrame(m_currScreenSprite, 3);
+			cegraph::Sprites::SetFrames(m_currScreenSprite, 3);
 			break;
 		default:
 			break;
@@ -160,7 +160,7 @@ void cg::HelpMenuView::SetScreen(HelpMenuScreenType screenType) {
 		rightButton->Disabled(true);
 		leftButton->Disabled(true);
 		exitButton->SetSpriteAndBounds(4, 864, cecore::C_Hash64("HelpButton_MainMenu2"), 40);
-		cegraph::Sprites::SetPosition(m_currScreenSprite, glm::vec2(8, 6));
+		cegraph::Sprites::SetPositions(m_currScreenSprite, glm::vec2(8, 6));
 	} else {
 		howToPlayButton->Disabled(true);
 
@@ -175,7 +175,7 @@ void cg::HelpMenuView::SetScreen(HelpMenuScreenType screenType) {
 			rightButton->Disabled(false);
 
 		exitButton->SetSpriteAndBounds(224, 864, cecore::C_Hash64("ScrapbookButton_Exit"), 40);
-		cegraph::Sprites::SetPosition(m_currScreenSprite, glm::vec2(4, 6));
+		cegraph::Sprites::SetPositions(m_currScreenSprite, glm::vec2(4, 6));
 	}
 }
 

@@ -64,8 +64,8 @@ namespace cg      = CR::Game;
 
 cg::ArcadeRecords::ArcadeRecords() {
 	bgSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookRecordsBase2"));
-	cegraph::Sprites::SetZOrder(bgSprite, 20);
-	cegraph::Sprites::SetPosition(bgSprite, {0, 152});
+	cegraph::Sprites::SetZOrders(bgSprite, 20);
+	cegraph::Sprites::SetPositions(bgSprite, glm::vec2{0, 152});
 
 	bigNumFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records2"), 30);
 	bigNumFont->SetAlignment(AlignFontRight);

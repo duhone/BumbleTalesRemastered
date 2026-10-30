@@ -6,6 +6,10 @@
  *  Copyright 2009 Conjured Realms LLC. All rights reserved.
  *
  */
+module;
+
+#include <glm/glm.hpp>
+
 export module CR.Game.ConfirmEraseDialog;
 
 import CR.Game.IInputObject;
@@ -58,7 +62,7 @@ namespace cg      = CR::Game;
 
 cg::ConfirmEraseDialog::ConfirmEraseDialog() {
 	confirmEraseSprite = cegraph::Sprites::Create(cecore::C_Hash64("OptionsConfirmErase"));
-	cegraph::Sprites::SetZOrder(confirmEraseSprite, 30);
+	cegraph::Sprites::SetZOrders(confirmEraseSprite, 30);
 
 	yesButton = new InputButton();
 	yesButton->SetSpriteAndBounds(0, 0, cecore::C_Hash64("OptionsButton_Yes2"), 40);
@@ -84,7 +88,7 @@ cg::ConfirmEraseDialog::~ConfirmEraseDialog() {
 void cg::ConfirmEraseDialog::Update() {
 	yesButton->Disabled(m_disabled);
 	noButton->Disabled(m_disabled);
-	cegraph::Sprites::SetVisibility(confirmEraseSprite, !m_disabled);
+	cegraph::Sprites::SetVisibilities(confirmEraseSprite, !m_disabled);
 
 	yesButton->Update();
 	noButton->Update();
@@ -96,7 +100,7 @@ void cg::ConfirmEraseDialog::Render() {
 }
 
 void cg::ConfirmEraseDialog::SetPosition(float xLoc, float yLoc) {
-	CR::Engine::Graphics::Sprites::SetPosition(confirmEraseSprite, {0, 0});
+	CR::Engine::Graphics::Sprites::SetPositions(confirmEraseSprite, glm::vec2{0, 0});
 	yesButton->SetPosition(uint32_t(xLoc) - 270, uint32_t(yLoc) + 10);
 	noButton->SetPosition(uint32_t(xLoc) + 16, uint32_t(yLoc) + 10);
 }

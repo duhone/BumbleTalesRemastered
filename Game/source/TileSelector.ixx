@@ -63,7 +63,7 @@ cg::TileSelector::TileSelector(ResourcePuzzle* parentPuzzle) {
 	m_visible      = true;
 
 	m_selectorSprite = cegraph::Sprites::Create(cecore::C_Hash64("PiecesSelector1"));
-	cegraph::Sprites::SetZOrder(m_selectorSprite, 80);
+	cegraph::Sprites::SetZOrders(m_selectorSprite, 80);
 
 	m_position.x = 0;
 	m_position.y = 0;
@@ -83,7 +83,7 @@ void cg::TileSelector::SetPosition([[maybe_unused]] glm::ivec2 position) {
 
 	// set the position of te selection sprite
 	m_position = position;
-	cegraph::Sprites::SetPosition(
+	cegraph::Sprites::SetPositions(
 	    m_selectorSprite,
 	    glm::vec2(m_position.x * tile_width + tile_width / 2 + (m_position.x * m_parentPuzzle->Spacing()) +
 	                  m_parentPuzzle->Offset_X(),
@@ -95,9 +95,9 @@ void cg::TileSelector::SetPosition([[maybe_unused]] glm::ivec2 position) {
 void cg::TileSelector::Update() {}
 
 void cg::TileSelector::Render() {
-	cegraph::Sprites::SetVisibility(m_selectorSprite, m_visible);
+	cegraph::Sprites::SetVisibilities(m_selectorSprite, m_visible);
 }
 
 void cg::TileSelector::PauseAnimation(bool pause) {
-	cegraph::Sprites::SetAnimationPaused(m_selectorSprite, pause);
+	cegraph::Sprites::SetAnimationPauses(m_selectorSprite, pause);
 }
