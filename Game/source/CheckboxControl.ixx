@@ -89,7 +89,8 @@ void cg::CheckboxControl::SetButtonBounds(float left, float top, float width, fl
 void cg::CheckboxControl::SetSpriteAndBounds(float left, float top, uint64_t spriteHash) {
 	SetSprite(spriteHash, 25);
 
-	auto size = cegraph::Sprites::GetSize(checkSprite);
+	glm::uvec2 size;
+	cegraph::Sprites::GetSizes(checkSprite, size);
 
 	Rect r;
 	r.top    = (int)top;
@@ -120,7 +121,6 @@ void cg::CheckboxControl::Update() {
 
 void cg::CheckboxControl::Render() {
 	if(checkSprite.isValid()) {
-		auto size = CR::Engine::Graphics::Sprites::GetSize(checkSprite);
 		CR::Engine::Graphics::Sprites::SetPositions(checkSprite, glm::vec2{bounds.left, bounds.top});
 
 		if(!m_isChecked) {
@@ -137,6 +137,6 @@ void cg::CheckboxControl::FreeResources() {}
 
 void cg::CheckboxControl::SetSprite(uint64_t spriteHash, uint8_t zPos) {
 	if(checkSprite.isValid()) { CR::Engine::Graphics::Sprites::Delete(checkSprite); }
-	checkSprite = CR::Engine::Graphics::Sprites::Create(spriteHash);
+	CR::Engine::Graphics::Sprites::Create(spriteHash, checkSprite);
 	cegraph::Sprites::SetZOrders(checkSprite, zPos);
 }

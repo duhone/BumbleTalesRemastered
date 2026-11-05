@@ -62,7 +62,7 @@ namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
 cg::StoryRecords::StoryRecords() {
-	bgSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookRecordsBase1"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookRecordsBase1"), bgSprite);
 	cegraph::Sprites::SetZOrders(bgSprite, 20);
 	cegraph::Sprites::SetPositions(bgSprite, glm::vec2{0, 152});
 

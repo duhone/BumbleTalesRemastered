@@ -68,11 +68,11 @@ cg::SBRecordChapter::SBRecordChapter() {
 	currPageNum = 0;
 	currPage    = NULL;
 
-	pageTags = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags2"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags2"), pageTags);
 	cegraph::Sprites::SetZOrders(pageTags, 19);
 	cegraph::Sprites::SetPositions(pageTags, glm::vec2(482, 104));
 
-	scrapBookTags = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags1"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags1"), scrapBookTags);
 	cegraph::Sprites::SetZOrders(scrapBookTags, 19);
 	cegraph::Sprites::SetPositions(scrapBookTags, glm::vec2(16, 98));
 	cegraph::Sprites::SetFrames(scrapBookTags, 16);

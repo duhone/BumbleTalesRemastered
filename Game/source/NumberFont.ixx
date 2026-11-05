@@ -60,11 +60,11 @@ namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
 cg::NumberFont::NumberFont(uint64_t fontHash, int zPos) :
-    m_fontHash(fontHash), m_spriteHelper(fontHash, zPos), m_helperLock(false) {
+	m_fontHash(fontHash), m_spriteHelper(fontHash, zPos), m_helperLock(false) {
 	// numberSprite = graphics_engine->CreateSprite1(true, zPos);
 	// numberSprite->SetImage(fontAsset);
-	m_fontDimensions = cegraph::Sprites::GetSize(fontHash);
-	m_minDigits      = 0;
+	cegraph::Sprites::GetSizes(fontHash, m_fontDimensions);
+	m_minDigits = 0;
 	SetPosition(0, 0);
 	m_align = AlignFontCenter;
 }

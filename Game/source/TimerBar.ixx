@@ -60,11 +60,11 @@ namespace cecore  = CR::Engine::Core;
 namespace cg      = CR::Game;
 
 cg::TimerBar::TimerBar(int xLoc, int yLoc) {
-	timeSprite = cegraph::Sprites::Create(cecore::C_Hash64("ArcadeModeTimeTag"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ArcadeModeTimeTag"), timeSprite);
 	cegraph::Sprites::SetZOrders(timeSprite, 80);
 	cegraph::Sprites::SetPositions(timeSprite, offset);
 
-	barSprite = cegraph::Sprites::Create(cecore::C_Hash64("ArcadeModeTimeBar"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ArcadeModeTimeBar"), barSprite);
 	cegraph::Sprites::SetZOrders(barSprite, 80);
 	cegraph::Sprites::SetPositions(barSprite, offset);
 

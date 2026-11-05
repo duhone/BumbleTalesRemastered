@@ -56,7 +56,7 @@ namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
 cg::SplashScreen::SplashScreen(uint64_t splashAsset, float delayTime, [[maybe_unused]] int zPos) {
-	splashSprite = cegraph::Sprites::Create(splashAsset);
+	cegraph::Sprites::Create(splashAsset, splashSprite);
 	SetSplashFrame(0, delayTime);
 	m_running = false;
 	isFade    = false;

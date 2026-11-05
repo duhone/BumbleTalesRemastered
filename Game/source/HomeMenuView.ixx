@@ -86,7 +86,7 @@ cg::HomeMenuView::HomeMenuView() {
 	optionsButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnOptionsClicked);
 	optionsButton->SetSound(cecore::C_Hash64("shopopen"));
 
-	menuBackground = cegraph::Sprites::Create(cecore::C_Hash64("MenuBG"));
+	cegraph::Sprites::Create(cecore::C_Hash64("MenuBG"), menuBackground);
 	cegraph::Sprites::SetPositions(menuBackground, glm::vec2(0, 0));
 	cegraph::Sprites::SetZOrders(menuBackground, 0);
 }

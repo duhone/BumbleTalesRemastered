@@ -62,13 +62,13 @@ using namespace CR::Engine::Core::Literals;
 cg::StarHUD::StarHUD() {
 	SetSpriteAndBounds(0, 0, "StoryModeStarHUD"_hash64, 90);
 
-	starSprite = cegraph::Sprites::Create("StoryModeStarHUDAnim"_hash64);
+	cegraph::Sprites::Create("StoryModeStarHUDAnim"_hash64, starSprite);
 	cegraph::Sprites::SetZOrders(starSprite, 80);
 
 	numberFont = new NumberFont("StoryModeFont_StarHUD"_hash64, 70);
 	m_numStars = 0;
 
-	maxTag = cegraph::Sprites::Create("StoryModeMaxTag"_hash64);
+	cegraph::Sprites::Create("StoryModeMaxTag"_hash64, maxTag);
 	cegraph::Sprites::SetZOrders(maxTag, 80);
 
 	maxedOut = false;

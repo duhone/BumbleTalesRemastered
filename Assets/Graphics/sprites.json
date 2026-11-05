@@ -245,6 +245,15 @@
             "texture": "PiecesSelector1",
             "frame_rate": "FPS10"
         },{
+            "name": "PiecesSelector2",
+            "texture": "PiecesSelector2",
+            "frame_rate": "FPS10"
+        },{
+            "name": "PiecesSelector3",
+            "texture": "PiecesSelector3",
+            "frame_rate": "FPS10",
+            "looping": false
+        },{
             "name": "ShopStarMeter",
             "texture": "ShopStarMeter",
             "frame_rate": "FPS0"

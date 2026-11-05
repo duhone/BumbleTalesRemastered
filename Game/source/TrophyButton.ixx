@@ -59,7 +59,7 @@ namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
 cg::TrophyButton::TrophyButton(TrophyName trophyName, int zPos) : m_touchID(-1) {
-	trophySprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyIcon"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyIcon"), trophySprite);
 	cegraph::Sprites::SetZOrders(trophySprite, (uint8_t)zPos);
 	cegraph::Sprites::SetPositions(trophySprite, glm::vec2(0, 144));
 	cegraph::Sprites::SetFrames(trophySprite, (uint16_t)trophyName);
@@ -97,7 +97,8 @@ void cg::TrophyButton::SetPosition(int xLoc, int yLoc) {
 
 	cegraph::Sprites::SetPositions(trophySprite, glm::vec2(xLoc, yLoc));
 
-	auto buttonSize = cegraph::Sprites::GetSize(trophySprite);
+	glm::uvec2 buttonSize;
+	cegraph::Sprites::GetSizes(trophySprite, buttonSize);
 
 	bounds.top    = yLoc;
 	bounds.bottom = buttonSize.y;

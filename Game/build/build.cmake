@@ -53,6 +53,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/ScrapbookMenuView.ixx
     ${root}/source/SettingsSaveInfo.ixx
     ${root}/source/StarMeter.ixx
+    ${root}/source/SpecialSelector.ixx
     ${root}/source/SplashScreen.ixx
     ${root}/source/SplashScreenMenu.ixx
     ${root}/source/SplashScreenMenuView.ixx

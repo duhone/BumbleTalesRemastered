@@ -81,7 +81,7 @@ cg::ResourceBar::ResourceBar(int xLoc, int yLoc, ResourceBarSize rSize) {
 		barFrames                = 21;
 	}
 
-	resourceBarSprite = cegraph::Sprites::Create(assetResourceBarHash);
+	cegraph::Sprites::Create(assetResourceBarHash, resourceBarSprite);
 	cegraph::Sprites::SetZOrders(resourceBarSprite, 80);
 	cegraph::Sprites::SetPositions(resourceBarSprite, offset);
 }
@@ -129,7 +129,7 @@ void cg::ResourceBar::ResetValue() {
 
 	if(resourceBarSprite.isValid()) { cegraph::Sprites::Delete(resourceBarSprite); }
 
-	resourceBarSprite = cegraph::Sprites::Create(assetResourceBarHash);
+	cegraph::Sprites::Create(assetResourceBarHash, resourceBarSprite);
 	cegraph::Sprites::SetZOrders(resourceBarSprite, 80);
 	cegraph::Sprites::SetPositions(resourceBarSprite, offset);
 }
@@ -139,7 +139,7 @@ void cg::ResourceBar::SetResourceBarSprite() {
 		if(!isFullAnimation) {
 			if(resourceBarSprite.isValid()) { cegraph::Sprites::Delete(resourceBarSprite); }
 
-			resourceBarSprite = cegraph::Sprites::Create(assetResourceBarFullHash);
+			cegraph::Sprites::Create(assetResourceBarFullHash, resourceBarSprite);
 			cegraph::Sprites::SetZOrders(resourceBarSprite, 80);
 			cegraph::Sprites::SetPositions(resourceBarSprite, offset);
 		}
@@ -149,7 +149,7 @@ void cg::ResourceBar::SetResourceBarSprite() {
 		if(isFullAnimation) {
 			if(resourceBarSprite.isValid()) { cegraph::Sprites::Delete(resourceBarSprite); }
 
-			resourceBarSprite = cegraph::Sprites::Create(assetResourceBarHash);
+			cegraph::Sprites::Create(assetResourceBarHash, resourceBarSprite);
 			cegraph::Sprites::SetZOrders(resourceBarSprite, 80);
 			cegraph::Sprites::SetPositions(resourceBarSprite, offset);
 		}

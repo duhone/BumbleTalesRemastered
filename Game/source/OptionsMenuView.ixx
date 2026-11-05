@@ -80,7 +80,7 @@ cg::OptionsMenuView::OptionsMenuView(bool allowEraseData) {
 	exitButton->OnClicked += CR::Utility::Delegate(this, &OptionsMenuView::OnExitButtonClicked);
 	exitButton->SetSound(cecore::C_Hash64("shopopen"));
 
-	headerSprite = cegraph::Sprites::Create(cecore::C_Hash64("OptionsHeader"));
+	cegraph::Sprites::Create(cecore::C_Hash64("OptionsHeader"), headerSprite);
 	cegraph::Sprites::SetPositions(headerSprite, glm::vec2(130, 46));
 	cegraph::Sprites::SetZOrders(headerSprite, 40);
 
@@ -93,7 +93,7 @@ cg::OptionsMenuView::OptionsMenuView(bool allowEraseData) {
 		cegraph::Sprites::SetPositions(headerSprite, glm::vec2(20, 46));
 	}
 
-	menuBackground = cegraph::Sprites::Create(cecore::C_Hash64("OptionsBase"));
+	cegraph::Sprites::Create(cecore::C_Hash64("OptionsBase"), menuBackground);
 	cegraph::Sprites::SetPositions(menuBackground, glm::vec2(0, 0));
 
 	confirmEraseDialog = new ConfirmEraseDialog();

@@ -82,11 +82,11 @@ namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
 cg::ScrapbookMenuView::ScrapbookMenuView(bool wonGame) {
-	baseSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookBG"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookBG"), baseSprite);
 	cegraph::Sprites::SetPositions(baseSprite, glm::vec2(0, 0));
 	cegraph::Sprites::SetZOrders(baseSprite, 0);
 
-	rimSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCategoryRim"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCategoryRim"), rimSprite);
 	cegraph::Sprites::SetPositions(rimSprite, glm::vec2(11, 13));
 	cegraph::Sprites::SetZOrders(rimSprite, 30);
 

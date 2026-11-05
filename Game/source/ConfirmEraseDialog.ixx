@@ -61,7 +61,7 @@ namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
 cg::ConfirmEraseDialog::ConfirmEraseDialog() {
-	confirmEraseSprite = cegraph::Sprites::Create(cecore::C_Hash64("OptionsConfirmErase"));
+	cegraph::Sprites::Create(cecore::C_Hash64("OptionsConfirmErase"), confirmEraseSprite);
 	cegraph::Sprites::SetZOrders(confirmEraseSprite, 30);
 
 	yesButton = new InputButton();

@@ -83,7 +83,7 @@ cg::HelpMenuView::HelpMenuView(bool showCredits) {
 	rightButton->SetSpriteAndBounds(442, 864, cecore::C_Hash64("ScrapbookButton_RArrow"), 40);
 	rightButton->SetSound(cecore::C_Hash64("shopopen"));
 
-	menuBackground = cegraph::Sprites::Create(cecore::C_Hash64("HelpInfoBG"));
+	cegraph::Sprites::Create(cecore::C_Hash64("HelpInfoBG"), menuBackground);
 	cegraph::Sprites::SetPositions(menuBackground, glm::vec2(0, 0));
 	cegraph::Sprites::SetZOrders(menuBackground, 0);
 
@@ -122,7 +122,7 @@ void cg::HelpMenuView::SetCurrentSprite(uint64_t spriteHash) {
 
 	if(m_currScreenSprite.isValid()) { cegraph::Sprites::Delete(m_currScreenSprite); }
 	m_currScreenSpriteHash = spriteHash;
-	m_currScreenSprite     = cegraph::Sprites::Create(spriteHash);
+	cegraph::Sprites::Create(spriteHash, m_currScreenSprite);
 }
 
 void cg::HelpMenuView::SetScreen(HelpMenuScreenType screenType) {

@@ -74,24 +74,24 @@ namespace cg      = CR::Game;
 cg::SBTrophyChapter::SBTrophyChapter() {
 	currPageNum = 0;
 
-	bgSprite = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyBase1"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyBase1"), bgSprite);
 	cegraph::Sprites::SetZOrders(bgSprite, 0);
 	cegraph::Sprites::SetPositions(bgSprite, glm::vec2(0, 144));
 
-	trophyName = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyNames"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyNames"), trophyName);
 	cegraph::Sprites::SetZOrders(trophyName, 10);
 	cegraph::Sprites::SetPositions(trophyName, glm::vec2(42, 230));
 
-	scrapBookTags = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags1"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags1"), scrapBookTags);
 	cegraph::Sprites::SetZOrders(scrapBookTags, 19);
 	cegraph::Sprites::SetPositions(scrapBookTags, glm::vec2(14, 98));
 	cegraph::Sprites::SetFrames(scrapBookTags, 16);
 
-	pageTags = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags2"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags2"), pageTags);
 	cegraph::Sprites::SetZOrders(pageTags, 19);
 	cegraph::Sprites::SetPositions(pageTags, glm::vec2(482, 104));
 
-	trophyInfo = cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyInfo"));
+	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyInfo"), trophyInfo);
 	cegraph::Sprites::SetZOrders(trophyInfo, 10);
 	cegraph::Sprites::SetPositions(trophyInfo, glm::vec2(68, 684));
 

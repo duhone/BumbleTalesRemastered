@@ -184,6 +184,12 @@
             "name": "PiecesSelector1",
             "path": "Graphics/Textures/pieces/Selector1.webp"
         },{
+            "name": "PiecesSelector2",
+            "path": "Graphics/Textures/pieces/Selector2.webp"
+        },{
+            "name": "PiecesSelector3",
+            "path": "Graphics/Textures/pieces/Selector3.webp"
+        },{
             "name": "ShopStarMeter",
             "path": "Graphics/Textures/Shop/ShopStarMeter.webp"
         },{

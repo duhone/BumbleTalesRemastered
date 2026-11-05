@@ -60,7 +60,7 @@ void cg::RepeatedSpriteHelper::NewSprite() {
 	++m_currentSprite;
 	if(m_currentSprite >= m_sprites.size()) {
 		// there was something called single set mode in old hoopty engine. no clue what it was for.
-		m_sprites.push_back(cegraph::Sprites::Create(m_imageHash));
+		cegraph::Sprites::Create(m_imageHash, m_sprites.emplace_back());
 		cegraph::Sprites::SetZOrders(m_sprites.back(), (uint8_t)m_zInitial);
 		cegraph::Sprites::SetVisibilities(m_sprites.back(), m_visible);
 	}

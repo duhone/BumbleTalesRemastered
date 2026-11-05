@@ -60,7 +60,7 @@ namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
 cg::RadioButtonControl::RadioButtonControl(uint64_t imgHash) {
-	radioSprite = CR::Engine::Graphics::Sprites::Create(imgHash);
+	CR::Engine::Graphics::Sprites::Create(imgHash, radioSprite);
 	cegraph::Sprites::SetZOrders(radioSprite, 40);
 
 	m_isSelected = false;

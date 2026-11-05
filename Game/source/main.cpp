@@ -92,6 +92,8 @@ namespace {
 											   cecore::C_Hash64("StoryModeResourceBar1"),
 											   cecore::C_Hash64("StoryModeResourceBar2"),
 											   cecore::C_Hash64("PiecesSelector1"),
+											   cecore::C_Hash64("PiecesSelector2"),
+											   cecore::C_Hash64("PiecesSelector3"),
 											   cecore::C_Hash64("ShopStarMeter"),
 											   cecore::C_Hash64("ShopStarMeterIndicator"),
 											   cecore::C_Hash64("StoryModeMaxTag"),

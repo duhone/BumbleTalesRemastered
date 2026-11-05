@@ -62,7 +62,7 @@ cg::TileSelector::TileSelector(ResourcePuzzle* parentPuzzle) {
 	m_parentPuzzle = parentPuzzle;
 	m_visible      = true;
 
-	m_selectorSprite = cegraph::Sprites::Create(cecore::C_Hash64("PiecesSelector1"));
+	cegraph::Sprites::Create(cecore::C_Hash64("PiecesSelector1"), m_selectorSprite);
 	cegraph::Sprites::SetZOrders(m_selectorSprite, 80);
 
 	m_position.x = 0;

@@ -127,7 +127,8 @@ void cg::InputButton::SetButtonBounds(float left, float top, float width, float 
 void cg::InputButton::SetSpriteAndBounds(float left, float top, uint64_t spriteHash, uint8_t zPos) {
 	SetSprite(spriteHash, zPos);
 
-	auto size = cegraph::Sprites::GetSize(objectSprite);
+	glm::uvec2 size;
+	cegraph::Sprites::GetSizes(objectSprite, size);
 
 	Rect r;
 	r.top    = (int)round(top);
@@ -140,7 +141,7 @@ void cg::InputButton::SetSpriteAndBounds(float left, float top, uint64_t spriteH
 
 void cg::InputButton::SetSprite(uint64_t spriteHash, uint8_t zPos) {
 	if(objectSprite.isValid()) { CR::Engine::Graphics::Sprites::Delete(objectSprite); }
-	objectSprite = CR::Engine::Graphics::Sprites::Create(spriteHash);
+	CR::Engine::Graphics::Sprites::Create(spriteHash, objectSprite);
 	cegraph::Sprites::SetZOrders(objectSprite, zPos);
 }
 
@@ -175,7 +176,6 @@ void cg::InputButton::Reset() {
 void cg::InputButton::Render() {
 	if(objectSprite.isValid()) {
 		cegraph::Sprites::SetVisibilities(objectSprite, !m_disabled);
-		auto size = CR::Engine::Graphics::Sprites::GetSize(objectSprite);
 		CR::Engine::Graphics::Sprites::SetPositions(objectSprite, glm::vec2{position.left, position.top});
 
 		if(!isDown) {
