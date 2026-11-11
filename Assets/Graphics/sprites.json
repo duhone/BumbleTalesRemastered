@@ -1,282 +1,360 @@
 {
     "sprites": [
         {
-            "name": "MenuSplash",
-            "texture": "MenuSplash",
-            "frame_rate": "FPS0"
-        },{
-            "name": "MenuBG",
-            "texture": "MenuBG",
-            "frame_rate": "FPS0"
-        },{
-            "name": "MenuButton_ArcadeMode",
-            "texture": "MenuButton_ArcadeMode",
-            "frame_rate": "FPS0"
-        },{
-            "name": "MenuButton_StoryMode",
-            "texture": "MenuButton_StoryMode",
-            "frame_rate": "FPS0"
-        },{
-            "name": "MenuButton_ResumeGame",
-            "texture": "MenuButton_ResumeGame",
-            "frame_rate": "FPS0"
-        },{
-            "name": "MenuButton_Scrapbook",
-            "texture": "MenuButton_Scrapbook",
-            "frame_rate": "FPS0"
-        },{
-            "name": "MenuButton_HelpInfo",
-            "texture": "MenuButton_HelpInfo",
-            "frame_rate": "FPS0"
-        },{
-            "name": "MenuButton_Options",
-            "texture": "MenuButton_Options",
-            "frame_rate": "FPS0"
-        },{
-            "name": "HelpButton_HowToPlay2",
-            "texture": "HelpButton_HowToPlay2",
-            "frame_rate": "FPS0"
-        },{
-            "name": "HelpButton_MainMenu2",
-            "texture": "HelpButton_MainMenu2",
-            "frame_rate": "FPS0"
-        },{
-            "name": "HelpCredits2",
-            "texture": "HelpCredits2",
-            "frame_rate": "FPS0"
-        },{
-            "name": "HelpInfoBG",
-            "texture": "HelpInfoBG",
-            "frame_rate": "FPS0"
-        },{
-            "name": "HelpInfoHelp",
-            "texture": "HelpInfoHelp",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookButton_Characters",
-            "texture": "ScrapbookButton_Characters",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookButton_Exit",
-            "texture": "ScrapbookButton_Exit",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookButton_LArrow",
-            "texture": "ScrapbookButton_LArrow",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookButton_RArrow",
-            "texture": "ScrapbookButton_RArrow",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookButton_Records",
-            "texture": "ScrapbookButton_Records",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookButton_Trophies",
-            "texture": "ScrapbookButton_Trophies",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCategoryRim",
-            "texture": "ScrapbookCategoryRim",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookFont_Records1",
-            "texture": "ScrapbookFont_Records1",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookFont_Records2",
-            "texture": "ScrapbookFont_Records2",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookLockedTaleImage",
-            "texture": "ScrapbookLockedTaleImage",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookRecordsBase1",
-            "texture": "ScrapbookRecordsBase1",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookRecordsBase2",
-            "texture": "ScrapbookRecordsBase2",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookBG",
-            "texture": "ScrapbookBG",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookTags1",
-            "texture": "ScrapbookTags1",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookTags2",
-            "texture": "ScrapbookTags2",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookTrophyBase1",
-            "texture": "ScrapbookTrophyBase1",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookTrophyIcon",
-            "texture": "ScrapbookTrophyIcon",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookTrophyInfo",
-            "texture": "ScrapbookTrophyInfo",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookTrophyNames",
-            "texture": "ScrapbookTrophyNames",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale01",
-            "texture": "ScrapbookCharTale01",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale02",
-            "texture": "ScrapbookCharTale02",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale03",
-            "texture": "ScrapbookCharTale03",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale04",
-            "texture": "ScrapbookCharTale04",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale05",
-            "texture": "ScrapbookCharTale05",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale06",
-            "texture": "ScrapbookCharTale06",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale07",
-            "texture": "ScrapbookCharTale07",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale08",
-            "texture": "ScrapbookCharTale08",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale09",
-            "texture": "ScrapbookCharTale09",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale10",
-            "texture": "ScrapbookCharTale10",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale11",
-            "texture": "ScrapbookCharTale11",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale12",
-            "texture": "ScrapbookCharTale12",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScrapbookCharTale13",
-            "texture": "ScrapbookCharTale13",
-            "frame_rate": "FPS0"
-        },{
-            "name": "OptionsButton_EraseData",
-            "texture": "OptionsButton_EraseData",
-            "frame_rate": "FPS0"
-        },{
-            "name": "OptionsButton_Exit2",
-            "texture": "OptionsButton_Exit2",
-            "frame_rate": "FPS0"
-        },{
-            "name": "OptionsButton_No2",
-            "texture": "OptionsButton_No2",
-            "frame_rate": "FPS0"
-        },{
-            "name": "OptionsButton_Yes2",
-            "texture": "OptionsButton_Yes2",
-            "frame_rate": "FPS0"
-        },{
-            "name": "OptionsCheck",
-            "texture": "OptionsCheck",
-            "frame_rate": "FPS0"
-        },{
-            "name": "OptionsConfirmErase",
-            "texture": "OptionsConfirmErase",
-            "frame_rate": "FPS0"
-        },{
-            "name": "OptionsBase",
-            "texture": "OptionsBase",
-            "frame_rate": "FPS0"
-        },{
-            "name": "OptionsHeader",
-            "texture": "OptionsHeader",
-            "frame_rate": "FPS0"
-        },{
-            "name": "ScoreYouGotTags",
-            "texture": "ScoreYouGotTags",
-            "frame_rate": "FPS0"
-        },{
             "name": "ArcadeModeResourceBar3",
             "texture": "ArcadeModeResourceBar3",
-            "frame_rate": "FPS0"
+            "frame_rate": "FPS0",
+            "looping": true
         },{
             "name": "ArcadeModeResourceBar4",
             "texture": "ArcadeModeResourceBar4",
-            "frame_rate": "FPS12"
+            "frame_rate": "FPS12",
+            "looping": true
         },{
             "name": "ArcadeModeTimeBar",
             "texture": "ArcadeModeTimeBar",
-            "frame_rate": "FPS0"
+            "frame_rate": "FPS0",
+            "looping": true
         },{
             "name": "ArcadeModeTimeTag",
             "texture": "ArcadeModeTimeTag",
-            "frame_rate": "FPS0"
+            "frame_rate": "FPS0",
+            "looping": true
         },{
-            "name": "StoryModeResourceBar1",
-            "texture": "StoryModeResourceBar1",
-            "frame_rate": "FPS0"
+            "name": "HelpButton_HowToPlay2",
+            "texture": "HelpButton_HowToPlay2",
+            "frame_rate": "FPS0",
+            "looping": true
         },{
-            "name": "StoryModeResourceBar2",
-            "texture": "StoryModeResourceBar2",
-            "frame_rate": "FPS20"
+            "name": "HelpButton_MainMenu2",
+            "texture": "HelpButton_MainMenu2",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "HelpCredits2",
+            "texture": "HelpCredits2",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "HelpInfoBG",
+            "texture": "HelpInfoBG",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "HelpInfoHelp",
+            "texture": "HelpInfoHelp",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "MenuBG",
+            "texture": "MenuBG",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "MenuButton_ArcadeMode",
+            "texture": "MenuButton_ArcadeMode",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "MenuButton_HelpInfo",
+            "texture": "MenuButton_HelpInfo",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "MenuButton_Options",
+            "texture": "MenuButton_Options",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "MenuButton_ResumeGame",
+            "texture": "MenuButton_ResumeGame",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "MenuButton_Scrapbook",
+            "texture": "MenuButton_Scrapbook",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "MenuButton_StoryMode",
+            "texture": "MenuButton_StoryMode",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "MenuSplash",
+            "texture": "MenuSplash",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "OptionsBase",
+            "texture": "OptionsBase",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "OptionsButton_EraseData",
+            "texture": "OptionsButton_EraseData",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "OptionsButton_Exit2",
+            "texture": "OptionsButton_Exit2",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "OptionsButton_No2",
+            "texture": "OptionsButton_No2",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "OptionsButton_Yes2",
+            "texture": "OptionsButton_Yes2",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "OptionsCheck",
+            "texture": "OptionsCheck",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "OptionsConfirmErase",
+            "texture": "OptionsConfirmErase",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "OptionsHeader",
+            "texture": "OptionsHeader",
+            "frame_rate": "FPS0",
+            "looping": true
         },{
             "name": "PiecesSelector1",
             "texture": "PiecesSelector1",
-            "frame_rate": "FPS10"
+            "frame_rate": "FPS10",
+            "looping": true
         },{
             "name": "PiecesSelector2",
             "texture": "PiecesSelector2",
-            "frame_rate": "FPS10"
+            "frame_rate": "FPS10",
+            "looping": true
         },{
             "name": "PiecesSelector3",
             "texture": "PiecesSelector3",
             "frame_rate": "FPS10",
             "looping": false
         },{
+            "name": "ScoreYouGotTags",
+            "texture": "ScoreYouGotTags",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookBG",
+            "texture": "ScrapbookBG",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookButton_Characters",
+            "texture": "ScrapbookButton_Characters",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookButton_Exit",
+            "texture": "ScrapbookButton_Exit",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookButton_LArrow",
+            "texture": "ScrapbookButton_LArrow",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookButton_RArrow",
+            "texture": "ScrapbookButton_RArrow",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookButton_Records",
+            "texture": "ScrapbookButton_Records",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookButton_Trophies",
+            "texture": "ScrapbookButton_Trophies",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCategoryRim",
+            "texture": "ScrapbookCategoryRim",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale01",
+            "texture": "ScrapbookCharTale01",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale02",
+            "texture": "ScrapbookCharTale02",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale03",
+            "texture": "ScrapbookCharTale03",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale04",
+            "texture": "ScrapbookCharTale04",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale05",
+            "texture": "ScrapbookCharTale05",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale06",
+            "texture": "ScrapbookCharTale06",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale07",
+            "texture": "ScrapbookCharTale07",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale08",
+            "texture": "ScrapbookCharTale08",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale09",
+            "texture": "ScrapbookCharTale09",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale10",
+            "texture": "ScrapbookCharTale10",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale11",
+            "texture": "ScrapbookCharTale11",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale12",
+            "texture": "ScrapbookCharTale12",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookCharTale13",
+            "texture": "ScrapbookCharTale13",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookFont_Records1",
+            "texture": "ScrapbookFont_Records1",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookFont_Records2",
+            "texture": "ScrapbookFont_Records2",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookLockedTaleImage",
+            "texture": "ScrapbookLockedTaleImage",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookRecordsBase1",
+            "texture": "ScrapbookRecordsBase1",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookRecordsBase2",
+            "texture": "ScrapbookRecordsBase2",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookTags1",
+            "texture": "ScrapbookTags1",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookTags2",
+            "texture": "ScrapbookTags2",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookTrophyBase1",
+            "texture": "ScrapbookTrophyBase1",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookTrophyIcon",
+            "texture": "ScrapbookTrophyIcon",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookTrophyInfo",
+            "texture": "ScrapbookTrophyInfo",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ScrapbookTrophyNames",
+            "texture": "ScrapbookTrophyNames",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ShopButton_Plus",
+            "texture": "ShopButton_Plus",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ShopPlusDimmer",
+            "texture": "ShopPlusDimmer",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
             "name": "ShopStarMeter",
             "texture": "ShopStarMeter",
-            "frame_rate": "FPS0"
+            "frame_rate": "FPS0",
+            "looping": true
         },{
             "name": "ShopStarMeterIndicator",
             "texture": "ShopStarMeterIndicator",
-            "frame_rate": "FPS10"
-        },{
-            "name": "StoryModeMaxTag",
-            "texture": "StoryModeMaxTag",
-            "frame_rate": "FPS0"
-        },{
-            "name": "StoryModeStarHUD",
-            "texture": "StoryModeStarHUD",
-            "frame_rate": "FPS0"
-        },{
-            "name": "StoryModeStarHUDAnim",
-            "texture": "StoryModeStarHUDAnim",
-            "frame_rate": "FPS0"
+            "frame_rate": "FPS10",
+            "looping": true
         },{
             "name": "StoryModeFont_StarHUD",
             "texture": "StoryModeFont_StarHUD",
-            "frame_rate": "FPS0"
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "StoryModeMaxTag",
+            "texture": "StoryModeMaxTag",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "StoryModeResourceBar1",
+            "texture": "StoryModeResourceBar1",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "StoryModeResourceBar2",
+            "texture": "StoryModeResourceBar2",
+            "frame_rate": "FPS20",
+            "looping": true
+        },{
+            "name": "StoryModeStarHUD",
+            "texture": "StoryModeStarHUD",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "StoryModeStarHUDAnim",
+            "texture": "StoryModeStarHUDAnim",
+            "frame_rate": "FPS0",
+            "looping": true
         }
     ]
 }

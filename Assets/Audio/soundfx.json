@@ -1,14 +1,14 @@
 {
     "soundfx" : [
             {
-                "name" : "tanlogo",
-                "path" : "Audio/FX/tanlogo.flac"
+                "name" : "scrapbookpageturn1",
+                "path" : "Audio/FX/scrapbookpageturn1.flac"
             }, {
                 "name" : "shopopen",
                 "path" : "Audio/FX/shopopen.flac"
             }, {
-                "name" : "scrapbookpageturn1",
-                "path" : "Audio/FX/scrapbookpageturn1.flac"
+                "name" : "tanlogo",
+                "path" : "Audio/FX/tanlogo.flac"
             }
         ]
 }

@@ -39,6 +39,8 @@ export namespace CR::Game {
 		void SetStarIndicator(int _value);
 		int GetStarIndicator() const { return m_starIndicator; }
 
+		void SetVisible(bool visible);
+
 	  private:
 		glm::vec2 offset;
 		CR::Engine::Graphics::Handles::Sprite meterSprite;
@@ -101,4 +103,9 @@ void cg::StarMeter::SetFilledStars(int _value) {
 
 void cg::StarMeter::SetStarIndicator(int _value) {
 	m_starIndicator = _value;
+}
+
+void cg::StarMeter::SetVisible(bool visible) {
+	cegraph::Sprites::SetVisibilities(meterSprite, visible);
+	m_spriteHelper.SetVisible(visible);
 }

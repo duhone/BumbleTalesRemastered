@@ -1,29 +1,17 @@
 {
     "textures": [
         {
-            "name": "MenuSplash",
-            "path": "Graphics/Textures/Menu/Splash.webp"
+            "name": "ArcadeModeResourceBar3",
+            "path": "Graphics/Textures/ArcadeMode/ResourceBar3.webp"
         },{
-            "name": "MenuBG",
-            "path": "Graphics/Textures/Menu/MenuBG.webp"
+            "name": "ArcadeModeResourceBar4",
+            "path": "Graphics/Textures/ArcadeMode/ResourceBar4.webp"
         },{
-            "name": "MenuButton_ArcadeMode",
-            "path": "Graphics/Textures/Menu/Button_ArcadeMode.webp"
+            "name": "ArcadeModeTimeBar",
+            "path": "Graphics/Textures/ArcadeMode/TimeBar.webp"
         },{
-            "name": "MenuButton_StoryMode",
-            "path": "Graphics/Textures/Menu/Button_StoryMode.webp"
-        },{
-            "name": "MenuButton_ResumeGame",
-            "path": "Graphics/Textures/Menu/Button_ResumeGame.webp"
-        },{
-            "name": "MenuButton_Scrapbook",
-            "path": "Graphics/Textures/Menu/Button_Scrapbook.webp"
-        },{
-            "name": "MenuButton_HelpInfo",
-            "path": "Graphics/Textures/Menu/Button_HelpInfo.webp"
-        },{
-            "name": "MenuButton_Options",
-            "path": "Graphics/Textures/Menu/Button_Options.webp"
+            "name": "ArcadeModeTimeTag",
+            "path": "Graphics/Textures/ArcadeMode/TimeTag.webp"
         },{
             "name": "HelpButton_HowToPlay2",
             "path": "Graphics/Textures/InfoHelp/Button_HowToPlay2.webp"
@@ -39,6 +27,69 @@
         },{
             "name": "HelpInfoHelp",
             "path": "Graphics/Textures/InfoHelp/InfoHelp.webp"
+        },{
+            "name": "MenuBG",
+            "path": "Graphics/Textures/Menu/MenuBG.webp"
+        },{
+            "name": "MenuButton_ArcadeMode",
+            "path": "Graphics/Textures/Menu/Button_ArcadeMode.webp"
+        },{
+            "name": "MenuButton_HelpInfo",
+            "path": "Graphics/Textures/Menu/Button_HelpInfo.webp"
+        },{
+            "name": "MenuButton_Options",
+            "path": "Graphics/Textures/Menu/Button_Options.webp"
+        },{
+            "name": "MenuButton_ResumeGame",
+            "path": "Graphics/Textures/Menu/Button_ResumeGame.webp"
+        },{
+            "name": "MenuButton_Scrapbook",
+            "path": "Graphics/Textures/Menu/Button_Scrapbook.webp"
+        },{
+            "name": "MenuButton_StoryMode",
+            "path": "Graphics/Textures/Menu/Button_StoryMode.webp"
+        },{
+            "name": "MenuSplash",
+            "path": "Graphics/Textures/Menu/Splash.webp"
+        },{
+            "name": "OptionsBase",
+            "path": "Graphics/Textures/Options/OptionsBase.webp"
+        },{
+            "name": "OptionsButton_EraseData",
+            "path": "Graphics/Textures/Options/Button_EraseData.webp"
+        },{
+            "name": "OptionsButton_Exit2",
+            "path": "Graphics/Textures/Options/Button_Exit2.webp"
+        },{
+            "name": "OptionsButton_No2",
+            "path": "Graphics/Textures/Options/Button_No2.webp"
+        },{
+            "name": "OptionsButton_Yes2",
+            "path": "Graphics/Textures/Options/Button_Yes2.webp"
+        },{
+            "name": "OptionsCheck",
+            "path": "Graphics/Textures/Options/Check.webp"
+        },{
+            "name": "OptionsConfirmErase",
+            "path": "Graphics/Textures/Options/ConfirmErase.webp"
+        },{
+            "name": "OptionsHeader",
+            "path": "Graphics/Textures/Options/OptionsHeader.webp"
+        },{
+            "name": "PiecesSelector1",
+            "path": "Graphics/Textures/pieces/Selector1.webp"
+        },{
+            "name": "PiecesSelector2",
+            "path": "Graphics/Textures/pieces/Selector2.webp"
+        },{
+            "name": "PiecesSelector3",
+            "path": "Graphics/Textures/pieces/Selector3.webp"
+        },{
+            "name": "ScoreYouGotTags",
+            "path": "Graphics/Textures/Score/YouGotTags.webp"
+        },{
+            "name": "ScrapbookBG",
+            "path": "Graphics/Textures/Scrapbook/ScrapbookBG.webp"
         },{
             "name": "ScrapbookButton_Characters",
             "path": "Graphics/Textures/Scrapbook/Button_Characters.webp"
@@ -60,42 +111,6 @@
         },{
             "name": "ScrapbookCategoryRim",
             "path": "Graphics/Textures/Scrapbook/CategoryRim.webp"
-        },{
-            "name": "ScrapbookFont_Records1",
-            "path": "Graphics/Textures/Scrapbook/Font_Records1.webp"
-        },{
-            "name": "ScrapbookFont_Records2",
-            "path": "Graphics/Textures/Scrapbook/Font_Records2.webp"
-        },{
-            "name": "ScrapbookLockedTaleImage",
-            "path": "Graphics/Textures/Scrapbook/LockedTaleImage.webp"
-        },{
-            "name": "ScrapbookRecordsBase1",
-            "path": "Graphics/Textures/Scrapbook/RecordsBase1.webp"
-        },{
-            "name": "ScrapbookRecordsBase2",
-            "path": "Graphics/Textures/Scrapbook/RecordsBase2.webp"
-        },{
-            "name": "ScrapbookBG",
-            "path": "Graphics/Textures/Scrapbook/ScrapbookBG.webp"
-        },{
-            "name": "ScrapbookTags1",
-            "path": "Graphics/Textures/Scrapbook/ScrapbookTags1.webp"
-        },{
-            "name": "ScrapbookTags2",
-            "path": "Graphics/Textures/Scrapbook/ScrapbookTags2.webp"
-        },{
-            "name": "ScrapbookTrophyBase1",
-            "path": "Graphics/Textures/Scrapbook/TrophyBase1.webp"
-        },{
-            "name": "ScrapbookTrophyIcon",
-            "path": "Graphics/Textures/Scrapbook/TrophyIcon.webp"
-        },{
-            "name": "ScrapbookTrophyInfo",
-            "path": "Graphics/Textures/Scrapbook/TrophyInfo.webp"
-        },{
-            "name": "ScrapbookTrophyNames",
-            "path": "Graphics/Textures/Scrapbook/TrophyNames.webp"
         },{
             "name": "ScrapbookCharTale01",
             "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale01.webp"
@@ -136,59 +151,44 @@
             "name": "ScrapbookCharTale13",
             "path": "Graphics/Textures/Scrapbook/CharacterTales/CharTale13.webp"
         },{
-            "name": "OptionsButton_EraseData",
-            "path": "Graphics/Textures/Options/Button_EraseData.webp"
+            "name": "ScrapbookFont_Records1",
+            "path": "Graphics/Textures/Scrapbook/Font_Records1.webp"
         },{
-            "name": "OptionsButton_Exit2",
-            "path": "Graphics/Textures/Options/Button_Exit2.webp"
+            "name": "ScrapbookFont_Records2",
+            "path": "Graphics/Textures/Scrapbook/Font_Records2.webp"
         },{
-            "name": "OptionsButton_No2",
-            "path": "Graphics/Textures/Options/Button_No2.webp"
+            "name": "ScrapbookLockedTaleImage",
+            "path": "Graphics/Textures/Scrapbook/LockedTaleImage.webp"
         },{
-            "name": "OptionsButton_Yes2",
-            "path": "Graphics/Textures/Options/Button_Yes2.webp"
+            "name": "ScrapbookRecordsBase1",
+            "path": "Graphics/Textures/Scrapbook/RecordsBase1.webp"
         },{
-            "name": "OptionsCheck",
-            "path": "Graphics/Textures/Options/Check.webp"
+            "name": "ScrapbookRecordsBase2",
+            "path": "Graphics/Textures/Scrapbook/RecordsBase2.webp"
         },{
-            "name": "OptionsConfirmErase",
-            "path": "Graphics/Textures/Options/ConfirmErase.webp"
+            "name": "ScrapbookTags1",
+            "path": "Graphics/Textures/Scrapbook/ScrapbookTags1.webp"
         },{
-            "name": "OptionsBase",
-            "path": "Graphics/Textures/Options/OptionsBase.webp"
+            "name": "ScrapbookTags2",
+            "path": "Graphics/Textures/Scrapbook/ScrapbookTags2.webp"
         },{
-            "name": "OptionsHeader",
-            "path": "Graphics/Textures/Options/OptionsHeader.webp"
+            "name": "ScrapbookTrophyBase1",
+            "path": "Graphics/Textures/Scrapbook/TrophyBase1.webp"
         },{
-            "name": "ScoreYouGotTags",
-            "path": "Graphics/Textures/Score/YouGotTags.webp"
+            "name": "ScrapbookTrophyIcon",
+            "path": "Graphics/Textures/Scrapbook/TrophyIcon.webp"
         },{
-            "name": "ArcadeModeResourceBar3",
-            "path": "Graphics/Textures/ArcadeMode/ResourceBar3.webp"
+            "name": "ScrapbookTrophyInfo",
+            "path": "Graphics/Textures/Scrapbook/TrophyInfo.webp"
         },{
-            "name": "ArcadeModeResourceBar4",
-            "path": "Graphics/Textures/ArcadeMode/ResourceBar4.webp"
+            "name": "ScrapbookTrophyNames",
+            "path": "Graphics/Textures/Scrapbook/TrophyNames.webp"
         },{
-            "name": "ArcadeModeTimeBar",
-            "path": "Graphics/Textures/ArcadeMode/TimeBar.webp"
+            "name": "ShopButton_Plus",
+            "path": "Graphics/Textures/Shop/Button_Plus.webp"
         },{
-            "name": "ArcadeModeTimeTag",
-            "path": "Graphics/Textures/ArcadeMode/TimeTag.webp"
-        },{
-            "name": "StoryModeResourceBar1",
-            "path": "Graphics/Textures/StoryMode/ResourceBar1.webp"
-        },{
-            "name": "StoryModeResourceBar2",
-            "path": "Graphics/Textures/StoryMode/ResourceBar2.webp"
-        },{
-            "name": "PiecesSelector1",
-            "path": "Graphics/Textures/pieces/Selector1.webp"
-        },{
-            "name": "PiecesSelector2",
-            "path": "Graphics/Textures/pieces/Selector2.webp"
-        },{
-            "name": "PiecesSelector3",
-            "path": "Graphics/Textures/pieces/Selector3.webp"
+            "name": "ShopPlusDimmer",
+            "path": "Graphics/Textures/Shop/PlusDimmer.webp"
         },{
             "name": "ShopStarMeter",
             "path": "Graphics/Textures/Shop/ShopStarMeter.webp"
@@ -196,17 +196,23 @@
             "name": "ShopStarMeterIndicator",
             "path": "Graphics/Textures/Shop/StarMeterIndicator.webp"
         },{
+            "name": "StoryModeFont_StarHUD",
+            "path": "Graphics/Textures/StoryMode/Font_StarHUD.webp"
+        },{
             "name": "StoryModeMaxTag",
             "path": "Graphics/Textures/StoryMode/MaxTag.webp"
+        },{
+            "name": "StoryModeResourceBar1",
+            "path": "Graphics/Textures/StoryMode/ResourceBar1.webp"
+        },{
+            "name": "StoryModeResourceBar2",
+            "path": "Graphics/Textures/StoryMode/ResourceBar2.webp"
         },{
             "name": "StoryModeStarHUD",
             "path": "Graphics/Textures/StoryMode/StarHUD.webp"
         },{
             "name": "StoryModeStarHUDAnim",
             "path": "Graphics/Textures/StoryMode/StarHUDAnim.webp"
-        },{
-            "name": "StoryModeFont_StarHUD",
-            "path": "Graphics/Textures/StoryMode/Font_StarHUD.webp"
         }
     ]
 }
