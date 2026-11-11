@@ -58,11 +58,13 @@ namespace cegraph = CR::Engine::Graphics;
 namespace cecore  = CR::Engine::Core;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::TileSelector::TileSelector(ResourcePuzzle* parentPuzzle) {
 	m_parentPuzzle = parentPuzzle;
 	m_visible      = true;
 
-	cegraph::Sprites::Create(cecore::C_Hash64("PiecesSelector1"), m_selectorSprite);
+	cegraph::Sprites::Create("PiecesSelector1"_hash64, m_selectorSprite);
 	cegraph::Sprites::SetZOrders(m_selectorSprite, 80);
 
 	m_position.x = 0;

@@ -61,8 +61,10 @@ namespace cegraph = CR::Engine::Graphics;
 namespace cecore  = CR::Engine::Core;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::YouGotSlider::YouGotSlider() {
-	cegraph::Sprites::Create(cecore::C_Hash64("ScoreYouGotTags"), youGotTagsSprite);
+	cegraph::Sprites::Create("ScoreYouGotTags"_hash64, youGotTagsSprite);
 	cegraph::Sprites::SetZOrders(youGotTagsSprite, 40);
 
 	m_gotTrophy = false;

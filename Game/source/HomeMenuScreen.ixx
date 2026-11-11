@@ -57,6 +57,8 @@ namespace ceaud   = CR::Engine::Audio;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::HomeMenuScreen::HomeMenuScreen(std::move_only_function<void()> onStartStoryMode,
                                    std::move_only_function<void()> onStartArcadeMode) :
     m_onStartStoryMode(std::move(onStartStoryMode)), m_onStartArcadeMode(std::move(onStartArcadeMode)) {
@@ -64,7 +66,7 @@ cg::HomeMenuScreen::HomeMenuScreen(std::move_only_function<void()> onStartStoryM
 	m_requestShowHelpMenu      = false;
 	m_requestShowScrapbookMenu = false;
 
-	m_musicHandle = ceaud::Music::GetHandle(cecore::C_Hash64("bgmMenu"));
+	m_musicHandle = ceaud::Music::GetHandle("bgmMenu"_hash64);
 }
 
 cg::HomeMenuScreen::~HomeMenuScreen() {

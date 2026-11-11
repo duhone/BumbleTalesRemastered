@@ -69,6 +69,8 @@ namespace cecore  = CR::Engine::Core;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::SpecialSelector::SpecialSelector(ResourcePuzzle* parentPuzzle) {
 	SetupSprite(Type::Selector2);
 	m_parentPuzzle = parentPuzzle;
@@ -146,13 +148,13 @@ void cg::SpecialSelector::SetupSprite(Type a_type) {
 	if(selectorSprite.isValid()) { cegraph::Sprites::Delete(selectorSprite); }
 	switch(a_type) {
 		case Type::Selector2:
-			cegraph::Sprites::Create(cecore::C_Hash64("PiecesSelector2"), selectorSprite);
+			cegraph::Sprites::Create("PiecesSelector2"_hash64, selectorSprite);
 			cegraph::Sprites::SetPositions(selectorSprite, offset);
 			cegraph::Sprites::SetZOrders(selectorSprite, 80);
 			m_isSelector3 = false;
 			break;
 		case Type::Selector3:
-			cegraph::Sprites::Create(cecore::C_Hash64("PiecesSelector3"), selectorSprite);
+			cegraph::Sprites::Create("PiecesSelector3"_hash64, selectorSprite);
 			cegraph::Sprites::SetPositions(selectorSprite, offset);
 			cegraph::Sprites::SetZOrders(selectorSprite, 80);
 			cegraph::Sprites::StartAnimations(selectorSprite);

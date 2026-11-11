@@ -38,13 +38,15 @@ module :private;
 namespace cecore = CR::Engine::Core;
 namespace cg     = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::SeparatorItem::SeparatorItem(cg::HeaderType headerType) : m_headerType(headerType) {
 	switch(m_headerType) {
 		case HeaderType::CharacterHeader:
-			SetItemSprite(cecore::C_Hash64("ShopHeader_Characters"));
+			SetItemSprite("ShopHeader_Characters"_hash64);
 			break;
 		case HeaderType::BuildingHeader:
-			SetItemSprite(cecore::C_Hash64("ShopHeader_Buildings"));
+			SetItemSprite("ShopHeader_Buildings"_hash64);
 			break;
 	}
 

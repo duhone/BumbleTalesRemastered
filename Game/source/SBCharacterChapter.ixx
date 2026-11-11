@@ -56,14 +56,16 @@ namespace cecore  = CR::Engine::Core;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::SBCharacterChapter::SBCharacterChapter(bool wonGame) {
 	m_currPage = 0;
 
-	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags1"), scrapbookTags);
+	cegraph::Sprites::Create("ScrapbookTags1"_hash64, scrapbookTags);
 	cegraph::Sprites::SetZOrders(scrapbookTags, 40);
 	cegraph::Sprites::SetPositions(scrapbookTags, glm::vec2(16, 98));
 
-	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags2"), scrapbookTags2);
+	cegraph::Sprites::Create("ScrapbookTags2"_hash64, scrapbookTags2);
 	cegraph::Sprites::SetZOrders(scrapbookTags2, 40);
 	cegraph::Sprites::SetPositions(scrapbookTags2, glm::vec2(482, 104));
 

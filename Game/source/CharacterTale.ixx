@@ -48,8 +48,10 @@ namespace cecore  = CR::Engine::Core;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::CharacterTale::CharacterTale(CharacterName characterName, int level) {
-	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookLockedTaleImage"), lockedSprite);
+	cegraph::Sprites::Create("ScrapbookLockedTaleImage"_hash64, lockedSprite);
 
 	m_currPage = 0;
 
@@ -59,43 +61,43 @@ cg::CharacterTale::CharacterTale(CharacterName characterName, int level) {
 
 	switch(characterName) {
 		case Mayor:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale01"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale01"_hash64, pageSprite);
 			break;
 		case Elder:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale02"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale02"_hash64, pageSprite);
 			break;
 		case Fireman:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale03"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale03"_hash64, pageSprite);
 			break;
 		case Dog:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale04"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale04"_hash64, pageSprite);
 			break;
 		case Baker:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale05"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale05"_hash64, pageSprite);
 			break;
 		case Teacher:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale06"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale06"_hash64, pageSprite);
 			break;
 		case Librarian:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale07"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale07"_hash64, pageSprite);
 			break;
 		case Romeo:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale08"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale08"_hash64, pageSprite);
 			break;
 		case Felicia:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale09"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale09"_hash64, pageSprite);
 			break;
 		case Bruiser:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale10"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale10"_hash64, pageSprite);
 			break;
 		case Marla:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale11"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale11"_hash64, pageSprite);
 			break;
 		case ChopChop:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale12"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale12"_hash64, pageSprite);
 			break;
 		case WonGameChapter:
-			cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCharTale13"), pageSprite);
+			cegraph::Sprites::Create("ScrapbookCharTale13"_hash64, pageSprite);
 			break;
 		default:
 			CR_ASSERT(false, "Unknown character name in CharacterTale constructor");

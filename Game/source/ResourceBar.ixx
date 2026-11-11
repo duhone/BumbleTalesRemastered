@@ -63,6 +63,8 @@ namespace cegraph = CR::Engine::Graphics;
 namespace cecore  = CR::Engine::Core;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::ResourceBar::ResourceBar(int xLoc, int yLoc, ResourceBarSize rSize) {
 	offset.x = (float)xLoc;
 	offset.y = (float)yLoc;
@@ -72,12 +74,12 @@ cg::ResourceBar::ResourceBar(int xLoc, int yLoc, ResourceBarSize rSize) {
 	currValue       = 0;
 
 	if(rSize == NormalResourceBar) {
-		assetResourceBarHash     = cecore::C_Hash64("StoryModeResourceBar1");
-		assetResourceBarFullHash = cecore::C_Hash64("StoryModeResourceBar1");
+		assetResourceBarHash     = "StoryModeResourceBar1"_hash64;
+		assetResourceBarFullHash = "StoryModeResourceBar1"_hash64;
 		barFrames                = 51;
 	} else if(rSize == TinyResourceBar) {
-		assetResourceBarHash     = cecore::C_Hash64("ArcadeModeResourceBar3");
-		assetResourceBarFullHash = cecore::C_Hash64("ArcadeModeResourceBar4");
+		assetResourceBarHash     = "ArcadeModeResourceBar3"_hash64;
+		assetResourceBarFullHash = "ArcadeModeResourceBar4"_hash64;
 		barFrames                = 21;
 	}
 

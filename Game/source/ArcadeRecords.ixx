@@ -62,18 +62,20 @@ namespace cecore  = CR::Engine::Core;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::ArcadeRecords::ArcadeRecords() {
-	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookRecordsBase2"), bgSprite);
+	cegraph::Sprites::Create("ScrapbookRecordsBase2"_hash64, bgSprite);
 	cegraph::Sprites::SetZOrders(bgSprite, 20);
 	cegraph::Sprites::SetPositions(bgSprite, glm::vec2{0, 152});
 
-	bigNumFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records2"), 30);
+	bigNumFont = new NumberFont("ScrapbookFont_Records2"_hash64, 30);
 	bigNumFont->SetAlignment(AlignFontRight);
 
-	smallNumFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records1"), 30);
+	smallNumFont = new NumberFont("ScrapbookFont_Records1"_hash64, 30);
 	smallNumFont->SetAlignment(AlignFontRight);
 
-	timeDisplay = new TimeDisplay(cecore::C_Hash64("ScrapbookFont_Records1"));
+	timeDisplay = new TimeDisplay("ScrapbookFont_Records1"_hash64);
 }
 
 cg::ArcadeRecords::~ArcadeRecords() {

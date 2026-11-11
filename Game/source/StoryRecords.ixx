@@ -61,15 +61,17 @@ namespace cecore  = CR::Engine::Core;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::StoryRecords::StoryRecords() {
-	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookRecordsBase1"), bgSprite);
+	cegraph::Sprites::Create("ScrapbookRecordsBase1"_hash64, bgSprite);
 	cegraph::Sprites::SetZOrders(bgSprite, 20);
 	cegraph::Sprites::SetPositions(bgSprite, glm::vec2{0, 152});
 
-	specialFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records1"), 30);
+	specialFont = new NumberFont("ScrapbookFont_Records1"_hash64, 30);
 	specialFont->SetAlignment(AlignFontRight);
 
-	smallNumFont = new NumberFont(cecore::C_Hash64("ScrapbookFont_Records1"), 30);
+	smallNumFont = new NumberFont("ScrapbookFont_Records1"_hash64, 30);
 	smallNumFont->SetAlignment(AlignFontRight);
 }
 

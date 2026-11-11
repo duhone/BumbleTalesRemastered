@@ -81,48 +81,50 @@ namespace ceaudio = CR::Engine::Audio;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::ScrapbookMenuView::ScrapbookMenuView(bool wonGame) {
-	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookBG"), baseSprite);
+	cegraph::Sprites::Create("ScrapbookBG"_hash64, baseSprite);
 	cegraph::Sprites::SetPositions(baseSprite, glm::vec2(0, 0));
 	cegraph::Sprites::SetZOrders(baseSprite, 0);
 
-	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookCategoryRim"), rimSprite);
+	cegraph::Sprites::Create("ScrapbookCategoryRim"_hash64, rimSprite);
 	cegraph::Sprites::SetPositions(rimSprite, glm::vec2(11, 13));
 	cegraph::Sprites::SetZOrders(rimSprite, 30);
 
 	exitButton = new InputButton();
-	exitButton->SetSpriteAndBounds(224, 864, cecore::C_Hash64("ScrapbookButton_Exit"), 40);
+	exitButton->SetSpriteAndBounds(224, 864, "ScrapbookButton_Exit"_hash64, 40);
 	exitButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnExitButtonClicked);
-	exitButton->SetSound(cecore::C_Hash64("shopopen"));
+	exitButton->SetSound("shopopen"_hash64);
 
 	prevButton = new InputButton();
-	prevButton->SetSpriteAndBounds(4, 864, cecore::C_Hash64("ScrapbookButton_LArrow"), 30);
+	prevButton->SetSpriteAndBounds(4, 864, "ScrapbookButton_LArrow"_hash64, 30);
 	prevButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnPrevButtonClicked);
-	prevButton->SetSound(cecore::C_Hash64("scrapbookpageturn1"));
+	prevButton->SetSound("scrapbookpageturn1"_hash64);
 
 	nextButton = new InputButton();
-	nextButton->SetSpriteAndBounds(434, 864, cecore::C_Hash64("ScrapbookButton_RArrow"), 40);
+	nextButton->SetSpriteAndBounds(434, 864, "ScrapbookButton_RArrow"_hash64, 40);
 	nextButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnNextButtonClicked);
-	nextButton->SetSound(cecore::C_Hash64("scrapbookpageturn1"));
+	nextButton->SetSound("scrapbookpageturn1"_hash64);
 
 	charactersButton = new InputButton();
-	charactersButton->SetSpriteAndBounds(2, 10, cecore::C_Hash64("ScrapbookButton_Characters"), 40);
+	charactersButton->SetSpriteAndBounds(2, 10, "ScrapbookButton_Characters"_hash64, 40);
 	charactersButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnCharactersButtonClicked);
-	charactersButton->SetSound(cecore::C_Hash64("shopopen"));
+	charactersButton->SetSound("shopopen"_hash64);
 
 	recordsButton = new InputButton();
-	recordsButton->SetSpriteAndBounds(212, 10, cecore::C_Hash64("ScrapbookButton_Records"), 40);
+	recordsButton->SetSpriteAndBounds(212, 10, "ScrapbookButton_Records"_hash64, 40);
 	recordsButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnRecordsButtonClicked);
-	recordsButton->SetSound(cecore::C_Hash64("shopopen"));
+	recordsButton->SetSound("shopopen"_hash64);
 
 	trophiesButton = new InputButton();
-	trophiesButton->SetSpriteAndBounds(422, 10, cecore::C_Hash64("ScrapbookButton_Trophies"), 40);
+	trophiesButton->SetSpriteAndBounds(422, 10, "ScrapbookButton_Trophies"_hash64, 40);
 	trophiesButton->OnClicked += Utility::Delegate(this, &ScrapbookMenuView::OnTrophiesButtonClicked);
-	trophiesButton->SetSound(cecore::C_Hash64("shopopen"));
+	trophiesButton->SetSound("shopopen"_hash64);
 
 	m_currChapter = new SBCharacterChapter(wonGame);
 
-	auto musicHandle = ceaudio::Music::GetHandle(cecore::C_Hash64("bgmScrapbook"));
+	auto musicHandle = ceaudio::Music::GetHandle("bgmScrapbook"_hash64);
 	ceaudio::Music::Play(musicHandle);
 }
 

@@ -63,27 +63,29 @@ namespace cecore  = CR::Engine::Core;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::HelpMenuView::HelpMenuView(bool showCredits) {
 	exitButton = new InputButton();
 	exitButton->OnClicked += CR::Utility::Delegate(this, &HelpMenuView::OnExitButtonClicked);
-	exitButton->SetSound(cecore::C_Hash64("shopopen"));
+	exitButton->SetSound("shopopen"_hash64);
 
 	howToPlayButton = new InputButton();
 	howToPlayButton->OnClicked += CR::Utility::Delegate(this, &HelpMenuView::OnHowToPlayClicked);
-	howToPlayButton->SetSpriteAndBounds(322, 864, cecore::C_Hash64("HelpButton_HowToPlay2"), 40);
-	howToPlayButton->SetSound(cecore::C_Hash64("shopopen"));
+	howToPlayButton->SetSpriteAndBounds(322, 864, "HelpButton_HowToPlay2"_hash64, 40);
+	howToPlayButton->SetSound("shopopen"_hash64);
 
 	leftButton = new InputButton();
 	leftButton->OnClicked += CR::Utility::Delegate(this, &HelpMenuView::OnLeftClicked);
-	leftButton->SetSpriteAndBounds(4, 864, cecore::C_Hash64("ScrapbookButton_LArrow"), 40);
-	leftButton->SetSound(cecore::C_Hash64("shopopen"));
+	leftButton->SetSpriteAndBounds(4, 864, "ScrapbookButton_LArrow"_hash64, 40);
+	leftButton->SetSound("shopopen"_hash64);
 
 	rightButton = new InputButton();
 	rightButton->OnClicked += CR::Utility::Delegate(this, &HelpMenuView::OnRightClicked);
-	rightButton->SetSpriteAndBounds(442, 864, cecore::C_Hash64("ScrapbookButton_RArrow"), 40);
-	rightButton->SetSound(cecore::C_Hash64("shopopen"));
+	rightButton->SetSpriteAndBounds(442, 864, "ScrapbookButton_RArrow"_hash64, 40);
+	rightButton->SetSound("shopopen"_hash64);
 
-	cegraph::Sprites::Create(cecore::C_Hash64("HelpInfoBG"), menuBackground);
+	cegraph::Sprites::Create("HelpInfoBG"_hash64, menuBackground);
 	cegraph::Sprites::SetPositions(menuBackground, glm::vec2(0, 0));
 	cegraph::Sprites::SetZOrders(menuBackground, 0);
 
@@ -131,23 +133,23 @@ void cg::HelpMenuView::SetScreen(HelpMenuScreenType screenType) {
 	// Screen Backdrop
 	switch(screenType) {
 		case InfoHelpCredits:
-			SetCurrentSprite(cecore::C_Hash64("HelpCredits2"));
+			SetCurrentSprite("HelpCredits2"_hash64);
 			break;
 		case InfoHelp1:
-			SetCurrentSprite(cecore::C_Hash64("HelpInfoHelp"));
+			SetCurrentSprite("HelpInfoHelp"_hash64);
 			cegraph::Sprites::SetFrames(m_currScreenSprite, 0);
 			break;
 		case InfoHelp2:
-			SetCurrentSprite(cecore::C_Hash64("HelpInfoHelp"));
+			SetCurrentSprite("HelpInfoHelp"_hash64);
 			cegraph::Sprites::SetFrames(m_currScreenSprite, 1);
 			break;
 		case InfoHelp3:
-			SetCurrentSprite(cecore::C_Hash64("HelpInfoHelp"));
+			SetCurrentSprite("HelpInfoHelp"_hash64);
 			cegraph::Sprites::SetFrames(m_currScreenSprite, 2);
 			break;
 			break;
 		case InfoHelp4:
-			SetCurrentSprite(cecore::C_Hash64("HelpInfoHelp"));
+			SetCurrentSprite("HelpInfoHelp"_hash64);
 			cegraph::Sprites::SetFrames(m_currScreenSprite, 3);
 			break;
 		default:
@@ -162,7 +164,7 @@ void cg::HelpMenuView::SetScreen(HelpMenuScreenType screenType) {
 		rightButton->SetVisible(false);
 		leftButton->Disabled(true);
 		leftButton->SetVisible(false);
-		exitButton->SetSpriteAndBounds(4, 864, cecore::C_Hash64("HelpButton_MainMenu2"), 40);
+		exitButton->SetSpriteAndBounds(4, 864, "HelpButton_MainMenu2"_hash64, 40);
 		cegraph::Sprites::SetPositions(m_currScreenSprite, glm::vec2(8, 6));
 	} else {
 		howToPlayButton->Disabled(true);
@@ -184,7 +186,7 @@ void cg::HelpMenuView::SetScreen(HelpMenuScreenType screenType) {
 			rightButton->SetVisible(true);
 		}
 
-		exitButton->SetSpriteAndBounds(224, 864, cecore::C_Hash64("ScrapbookButton_Exit"), 40);
+		exitButton->SetSpriteAndBounds(224, 864, "ScrapbookButton_Exit"_hash64, 40);
 		cegraph::Sprites::SetPositions(m_currScreenSprite, glm::vec2(4, 6));
 	}
 }

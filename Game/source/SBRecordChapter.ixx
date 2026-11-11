@@ -64,15 +64,17 @@ namespace cecore  = CR::Engine::Core;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::SBRecordChapter::SBRecordChapter() {
 	currPageNum = 0;
 	currPage    = NULL;
 
-	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags2"), pageTags);
+	cegraph::Sprites::Create("ScrapbookTags2"_hash64, pageTags);
 	cegraph::Sprites::SetZOrders(pageTags, 19);
 	cegraph::Sprites::SetPositions(pageTags, glm::vec2(482, 104));
 
-	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTags1"), scrapBookTags);
+	cegraph::Sprites::Create("ScrapbookTags1"_hash64, scrapBookTags);
 	cegraph::Sprites::SetZOrders(scrapBookTags, 19);
 	cegraph::Sprites::SetPositions(scrapBookTags, glm::vec2(16, 98));
 	cegraph::Sprites::SetFrames(scrapBookTags, 16);

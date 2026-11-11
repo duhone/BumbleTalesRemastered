@@ -60,19 +60,21 @@ namespace ceinput = CR::Engine::Input;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::ConfirmEraseDialog::ConfirmEraseDialog() {
-	cegraph::Sprites::Create(cecore::C_Hash64("OptionsConfirmErase"), confirmEraseSprite);
+	cegraph::Sprites::Create("OptionsConfirmErase"_hash64, confirmEraseSprite);
 	cegraph::Sprites::SetZOrders(confirmEraseSprite, 30);
 
 	yesButton = new InputButton();
-	yesButton->SetSpriteAndBounds(0, 0, cecore::C_Hash64("OptionsButton_Yes2"), 40);
+	yesButton->SetSpriteAndBounds(0, 0, "OptionsButton_Yes2"_hash64, 40);
 	yesButton->OnClicked += CR::Utility::Delegate(this, &ConfirmEraseDialog::OnYesClicked);
-	yesButton->SetSound(cecore::C_Hash64("shopopen"));
+	yesButton->SetSound("shopopen"_hash64);
 
 	noButton = new InputButton();
-	noButton->SetSpriteAndBounds(0, 0, cecore::C_Hash64("OptionsButton_No2"), 40);
+	noButton->SetSpriteAndBounds(0, 0, "OptionsButton_No2"_hash64, 40);
 	noButton->OnClicked += CR::Utility::Delegate(this, &ConfirmEraseDialog::OnNoClicked);
-	noButton->SetSound(cecore::C_Hash64("shopopen"));
+	noButton->SetSound("shopopen"_hash64);
 
 	SetPosition(320, 480);
 }

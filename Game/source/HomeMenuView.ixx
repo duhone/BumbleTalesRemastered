@@ -60,33 +60,35 @@ namespace cecore  = CR::Engine::Core;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::HomeMenuView::HomeMenuView() {
 	storyModeButton = new InputButton();
-	storyModeButton->SetSpriteAndBounds(26, 464, cecore::C_Hash64("MenuButton_StoryMode"), 80);
+	storyModeButton->SetSpriteAndBounds(26, 464, "MenuButton_StoryMode"_hash64, 80);
 	storyModeButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnStoryModeClicked);
-	storyModeButton->SetSound(cecore::C_Hash64("shopopen"));
+	storyModeButton->SetSound("shopopen"_hash64);
 
 	arcadeModeButton = new InputButton();
-	arcadeModeButton->SetSpriteAndBounds(26, 584, cecore::C_Hash64("MenuButton_ArcadeMode"), 80);
+	arcadeModeButton->SetSpriteAndBounds(26, 584, "MenuButton_ArcadeMode"_hash64, 80);
 	arcadeModeButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnArcadeModeClicked);
-	arcadeModeButton->SetSound(cecore::C_Hash64("shopopen"));
+	arcadeModeButton->SetSound("shopopen"_hash64);
 
 	scrapbookButton = new InputButton();
-	scrapbookButton->SetSpriteAndBounds(26, 704, cecore::C_Hash64("MenuButton_Scrapbook"), 80);
+	scrapbookButton->SetSpriteAndBounds(26, 704, "MenuButton_Scrapbook"_hash64, 80);
 	scrapbookButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnScrapbookClicked);
-	scrapbookButton->SetSound(cecore::C_Hash64("shopopen"));
+	scrapbookButton->SetSound("shopopen"_hash64);
 
 	helpButton = new InputButton();
-	helpButton->SetSpriteAndBounds(26, 824, cecore::C_Hash64("MenuButton_HelpInfo"), 80);
+	helpButton->SetSpriteAndBounds(26, 824, "MenuButton_HelpInfo"_hash64, 80);
 	helpButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnHelpClicked);
-	helpButton->SetSound(cecore::C_Hash64("shopopen"));
+	helpButton->SetSound("shopopen"_hash64);
 
 	optionsButton = new InputButton();
-	optionsButton->SetSpriteAndBounds(315, 824, cecore::C_Hash64("MenuButton_Options"), 80);
+	optionsButton->SetSpriteAndBounds(315, 824, "MenuButton_Options"_hash64, 80);
 	optionsButton->OnClicked += CR::Utility::Delegate(this, &HomeMenuView::OnOptionsClicked);
-	optionsButton->SetSound(cecore::C_Hash64("shopopen"));
+	optionsButton->SetSound("shopopen"_hash64);
 
-	cegraph::Sprites::Create(cecore::C_Hash64("MenuBG"), menuBackground);
+	cegraph::Sprites::Create("MenuBG"_hash64, menuBackground);
 	cegraph::Sprites::SetPositions(menuBackground, glm::vec2(0, 0));
 	cegraph::Sprites::SetZOrders(menuBackground, 0);
 }

@@ -72,28 +72,30 @@ namespace ceaudio = CR::Engine::Audio;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::OptionsMenuView::OptionsMenuView(bool allowEraseData) {
 	eraseDataVisible = allowEraseData;
 
 	exitButton = new InputButton();
-	exitButton->SetSpriteAndBounds(102, 840, cecore::C_Hash64("OptionsButton_Exit2"), 40);
+	exitButton->SetSpriteAndBounds(102, 840, "OptionsButton_Exit2"_hash64, 40);
 	exitButton->OnClicked += CR::Utility::Delegate(this, &OptionsMenuView::OnExitButtonClicked);
-	exitButton->SetSound(cecore::C_Hash64("shopopen"));
+	exitButton->SetSound("shopopen"_hash64);
 
-	cegraph::Sprites::Create(cecore::C_Hash64("OptionsHeader"), headerSprite);
+	cegraph::Sprites::Create("OptionsHeader"_hash64, headerSprite);
 	cegraph::Sprites::SetPositions(headerSprite, glm::vec2(130, 46));
 	cegraph::Sprites::SetZOrders(headerSprite, 40);
 
 	eraseDataButton = nullptr;
 	if(eraseDataVisible) {
 		eraseDataButton = new InputButton();
-		eraseDataButton->SetSpriteAndBounds(404, 16, cecore::C_Hash64("OptionsButton_EraseData"), 40);
+		eraseDataButton->SetSpriteAndBounds(404, 16, "OptionsButton_EraseData"_hash64, 40);
 		eraseDataButton->OnClicked += CR::Utility::Delegate(this, &OptionsMenuView::OnEraseDataButtonClicked);
-		eraseDataButton->SetSound(cecore::C_Hash64("shopopen"));
+		eraseDataButton->SetSound("shopopen"_hash64);
 		cegraph::Sprites::SetPositions(headerSprite, glm::vec2(20, 46));
 	}
 
-	cegraph::Sprites::Create(cecore::C_Hash64("OptionsBase"), menuBackground);
+	cegraph::Sprites::Create("OptionsBase"_hash64, menuBackground);
 	cegraph::Sprites::SetPositions(menuBackground, glm::vec2(0, 0));
 
 	confirmEraseDialog = new ConfirmEraseDialog();
@@ -103,16 +105,16 @@ cg::OptionsMenuView::OptionsMenuView(bool allowEraseData) {
 
 	// Checkboxes
 	hintsCheckbox = new CheckboxControl();
-	hintsCheckbox->SetSpriteAndPosition(cecore::C_Hash64("OptionsCheck"), 94, 180);
+	hintsCheckbox->SetSpriteAndPosition("OptionsCheck"_hash64, 94, 180);
 	hintsCheckbox->SetButtonBounds(60, 204, 140, 140);
 
 	musicCheckbox = new CheckboxControl();
-	musicCheckbox->SetSpriteAndPosition(cecore::C_Hash64("OptionsCheck"), 94, 388);
+	musicCheckbox->SetSpriteAndPosition("OptionsCheck"_hash64, 94, 388);
 	musicCheckbox->SetButtonBounds(60, 414, 140, 240);
 	musicCheckbox->OnCheckChanged += CR::Utility::Delegate(this, &OptionsMenuView::OnMusicToggled);
 
 	soundCheckbox = new CheckboxControl();
-	soundCheckbox->SetSpriteAndPosition(cecore::C_Hash64("OptionsCheck"), 94, 600);
+	soundCheckbox->SetSpriteAndPosition("OptionsCheck"_hash64, 94, 600);
 	soundCheckbox->SetButtonBounds(60, 626, 140, 140);
 	soundCheckbox->OnCheckChanged += CR::Utility::Delegate(this, &OptionsMenuView::OnSoundToggled);
 }

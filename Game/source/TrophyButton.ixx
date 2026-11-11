@@ -58,8 +58,10 @@ namespace ceinput = CR::Engine::Input;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
+using namespace cecore::Literals;
+
 cg::TrophyButton::TrophyButton(TrophyName trophyName, int zPos) : m_touchID(-1) {
-	cegraph::Sprites::Create(cecore::C_Hash64("ScrapbookTrophyIcon"), trophySprite);
+	cegraph::Sprites::Create("ScrapbookTrophyIcon"_hash64, trophySprite);
 	cegraph::Sprites::SetZOrders(trophySprite, (uint8_t)zPos);
 	cegraph::Sprites::SetPositions(trophySprite, glm::vec2(0, 144));
 	cegraph::Sprites::SetFrames(trophySprite, (uint16_t)trophyName);

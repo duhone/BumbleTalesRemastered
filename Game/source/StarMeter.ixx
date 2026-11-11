@@ -56,8 +56,10 @@ namespace cecore  = CR::Engine::Core;
 namespace cegraph = CR::Engine::Graphics;
 namespace cg      = CR::Game;
 
-cg::StarMeter::StarMeter() : m_spriteHelper(cecore::C_Hash64("ShopStarMeterIndicator"), 50) {
-	cegraph::Sprites::Create(cecore::C_Hash64("ShopStarMeter"), meterSprite);
+using namespace cecore::Literals;
+
+cg::StarMeter::StarMeter() : m_spriteHelper("ShopStarMeterIndicator"_hash64, 50) {
+	cegraph::Sprites::Create("ShopStarMeter"_hash64, meterSprite);
 	cegraph::Sprites::SetZOrders(meterSprite, 50);
 
 	m_starCount     = 0;
