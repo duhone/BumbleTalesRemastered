@@ -101,10 +101,10 @@ void cg::StarHUD::SetPosition(float xLoc, float yLoc) {
 	offset.y = yLoc;
 
 	InputButton::SetPosition((int)xLoc, (int)yLoc);
-	CR::Engine::Graphics::Sprites::SetPositions(starSprite, offset);
+	CR::Engine::Graphics::Sprites::SetPositions(starSprite, offset + glm::vec2{21, 12});
 
-	numberFont->SetPosition(xLoc + 30, yLoc + 43);
-	CR::Engine::Graphics::Sprites::SetPositions(maxTag, offset);
+	numberFont->SetPosition(xLoc + 50, yLoc + 72);
+	CR::Engine::Graphics::Sprites::SetPositions(maxTag, offset + glm::vec2{16, 71});
 }
 
 void cg::StarHUD::PauseAnimation(bool pause) {

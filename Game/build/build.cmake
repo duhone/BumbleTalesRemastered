@@ -52,6 +52,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/ScrapbookMenuScreen.ixx
     ${root}/source/ScrapbookMenuView.ixx
     ${root}/source/SettingsSaveInfo.ixx
+    ${root}/source/ShopItem.ixx
     ${root}/source/StarMeter.ixx
     ${root}/source/SpecialSelector.ixx
     ${root}/source/SplashScreen.ixx

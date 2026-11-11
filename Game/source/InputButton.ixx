@@ -33,6 +33,7 @@ export namespace CR::Game {
 		void SetButtonBounds(float left, float top, float width, float height);
 		void SetSpriteAndBounds(float left, float top, uint64_t spriteHash, uint8_t zPos = 50);
 		void SetSound(uint64_t hash);
+		void SetVisible(bool visible) { m_visible = visible; }
 
 		bool IsDown() const { return isDown; }
 		bool WasPressed() {
@@ -70,6 +71,7 @@ export namespace CR::Game {
 		bool isActing;
 		bool isDown;
 		bool wasPressed;
+		bool m_visible;
 		CR::Engine::Graphics::Handles::Sprite objectSprite;
 
 		bool soundOn;
@@ -91,6 +93,7 @@ namespace cg      = CR::Game;
 cg::InputButton::InputButton() {
 	isDown        = false;
 	wasPressed    = false;
+	m_visible     = true;
 	bounds.top    = 0;
 	bounds.left   = 0;
 	bounds.bottom = 0;
@@ -169,13 +172,14 @@ void cg::InputButton::Update() {
 }
 
 void cg::InputButton::Reset() {
+	isDown     = false;
 	isActing   = false;
 	wasPressed = false;
 }
 
 void cg::InputButton::Render() {
 	if(objectSprite.isValid()) {
-		cegraph::Sprites::SetVisibilities(objectSprite, !m_disabled);
+		cegraph::Sprites::SetVisibilities(objectSprite, m_visible);
 		CR::Engine::Graphics::Sprites::SetPositions(objectSprite, glm::vec2{position.left, position.top});
 
 		if(!isDown) {

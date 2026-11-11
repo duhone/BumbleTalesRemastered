@@ -90,8 +90,8 @@ void cg::TimerBar::SetPosition(float xLoc, float yLoc) {
 	offset.x = xLoc;
 	offset.y = yLoc;
 
-	cegraph::Sprites::SetPositions(timeSprite, offset);
-	cegraph::Sprites::SetPositions(barSprite, offset + glm::vec2(123, 0));
+	cegraph::Sprites::SetPositions(timeSprite, offset + glm::vec2(-26, -7));
+	cegraph::Sprites::SetPositions(barSprite, offset + glm::vec2(33, -11));
 }
 
 void cg::TimerBar::PauseAnimation([[maybe_unused]] bool pause) {}

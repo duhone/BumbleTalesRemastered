@@ -88,6 +88,8 @@ cg::ConfirmEraseDialog::~ConfirmEraseDialog() {
 void cg::ConfirmEraseDialog::Update() {
 	yesButton->Disabled(m_disabled);
 	noButton->Disabled(m_disabled);
+	yesButton->SetVisible(!m_disabled);
+	noButton->SetVisible(!m_disabled);
 	cegraph::Sprites::SetVisibilities(confirmEraseSprite, !m_disabled);
 
 	yesButton->Update();

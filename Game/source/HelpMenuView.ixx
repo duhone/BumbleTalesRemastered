@@ -157,22 +157,32 @@ void cg::HelpMenuView::SetScreen(HelpMenuScreenType screenType) {
 	// Screen Buttons
 	if(screenType == InfoHelpCredits) {
 		howToPlayButton->Disabled(false);
+		howToPlayButton->SetVisible(true);
 		rightButton->Disabled(true);
+		rightButton->SetVisible(false);
 		leftButton->Disabled(true);
+		leftButton->SetVisible(false);
 		exitButton->SetSpriteAndBounds(4, 864, cecore::C_Hash64("HelpButton_MainMenu2"), 40);
 		cegraph::Sprites::SetPositions(m_currScreenSprite, glm::vec2(8, 6));
 	} else {
 		howToPlayButton->Disabled(true);
+		howToPlayButton->SetVisible(false);
 
-		if(screenType == InfoHelp1)
+		if(screenType == InfoHelp1) {
 			leftButton->Disabled(true);
-		else
+			leftButton->SetVisible(false);
+		} else {
 			leftButton->Disabled(false);
+			leftButton->SetVisible(true);
+		}
 
-		if(screenType == InfoHelp4)
+		if(screenType == InfoHelp4) {
 			rightButton->Disabled(true);
-		else
+			rightButton->SetVisible(false);
+		} else {
 			rightButton->Disabled(false);
+			rightButton->SetVisible(true);
+		}
 
 		exitButton->SetSpriteAndBounds(224, 864, cecore::C_Hash64("ScrapbookButton_Exit"), 40);
 		cegraph::Sprites::SetPositions(m_currScreenSprite, glm::vec2(4, 6));

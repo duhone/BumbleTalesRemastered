@@ -78,7 +78,7 @@ void cg::StarMeter::Render() {
 	for(int i = 0; i < 5; i++) {
 		if(i >= m_starCount && availableStars > 0) {
 			m_spriteHelper.NewSprite();
-			m_spriteHelper.SetPosition(int(offset.x + 53 - (26 * i)), int(offset.y - 3));
+			m_spriteHelper.SetPosition(int(offset.x + 229 - (52 * i)), int(offset.y + 11));
 			availableStars--;
 		}
 	}
