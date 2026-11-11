@@ -95,11 +95,11 @@ cg::ShopItem::ShopItem() {
 	starMeter   = new StarMeter();
 
 	plusButton = new InputButton();
-	plusButton->SetSpriteAndBounds(0, 0, "ShopButton_Plus"_hash64, 40);
+	plusButton->SetSpriteAndBounds(0, 0, "ShopButton_Plus"_hash64, 60);
 	plusButton->OnClicked += CR::Utility::Delegate(this, &ShopItem::PlusClicked);
 
 	cegraph::Sprites::Create("ShopPlusDimmer"_hash64, plusDimmerSprite);
-	cegraph::Sprites::SetZOrders(plusDimmerSprite, 30);
+	cegraph::Sprites::SetZOrders(plusDimmerSprite, 80);
 	cegraph::Sprites::SetVisibilities(plusDimmerSprite, false);
 }
 

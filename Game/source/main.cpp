@@ -94,6 +94,8 @@ namespace {
 											   "ScrapbookTrophyInfo"_hash64,
 											   "ScrapbookTrophyNames"_hash64,
 											   "ShopButton_Plus"_hash64,
+											   "ShopHeader_Buildings"_hash64,
+											   "ShopHeader_Characters"_hash64,
 											   "ShopPlusDimmer"_hash64,
 											   "ShopStarMeter"_hash64,
 											   "ShopStarMeterIndicator"_hash64,

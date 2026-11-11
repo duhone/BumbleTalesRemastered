@@ -187,6 +187,12 @@
             "name": "ShopButton_Plus",
             "path": "Graphics/Textures/Shop/Button_Plus.webp"
         },{
+            "name": "ShopHeader_Buildings",
+            "path": "Graphics/Textures/Shop/Header_Buildings.webp"
+        },{
+            "name": "ShopHeader_Characters",
+            "path": "Graphics/Textures/Shop/Header_Characters.webp"
+        },{
             "name": "ShopPlusDimmer",
             "path": "Graphics/Textures/Shop/PlusDimmer.webp"
         },{

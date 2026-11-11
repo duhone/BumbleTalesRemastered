@@ -49,6 +49,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/SBCharacterChapter.ixx
     ${root}/source/SBRecordChapter.ixx
     ${root}/source/SBTrophyChapter.ixx
+    ${root}/source/SeparatorItem.ixx
     ${root}/source/ScrapbookMenuScreen.ixx
     ${root}/source/ScrapbookMenuView.ixx
     ${root}/source/SettingsSaveInfo.ixx

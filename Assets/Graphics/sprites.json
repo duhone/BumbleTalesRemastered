@@ -311,6 +311,16 @@
             "frame_rate": "FPS0",
             "looping": true
         },{
+            "name": "ShopHeader_Buildings",
+            "texture": "ShopHeader_Buildings",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ShopHeader_Characters",
+            "texture": "ShopHeader_Characters",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
             "name": "ShopPlusDimmer",
             "texture": "ShopPlusDimmer",
             "frame_rate": "FPS0",
