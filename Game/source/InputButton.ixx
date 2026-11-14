@@ -149,24 +149,14 @@ void cg::InputButton::SetSprite(uint64_t spriteHash, uint8_t zPos) {
 }
 
 void cg::InputButton::Update() {
-	if(m_disabled) {
-		ceinput::Regions::update(m_region, cecore::Rect2D<int32_t>{{0, 0}, {0, 0}});
-		return;
-	}
-	ceinput::Regions::update(
-	    m_region, cecore::Rect2D<int32_t>{{bounds.left, bounds.top}, {bounds.right, bounds.bottom}});
-
-	uint32_t state{};
-	ceinput::Regions::getStates(m_region, state);
-
-	if((state & ceinput::Regions::RegionStates::Pressed) != 0) {
+	if(PollClick(bounds) == ClickEvent::Clicked) {
 		if(soundOn) { CR::Engine::Audio::SoundFX::Play(m_soundFX); }
 		if(OnClicked.Size() > 0)
 			OnClicked();
 		else
 			wasPressed = true;
 	}
-	isDown = (state & ceinput::Regions::RegionStates::Down) != 0;
+	isDown = IsHeld();
 	// Not sure what the purpose of isActing was?
 	isActing = isDown;
 }
@@ -175,6 +165,7 @@ void cg::InputButton::Reset() {
 	isDown     = false;
 	isActing   = false;
 	wasPressed = false;
+	ResetClick();
 }
 
 void cg::InputButton::Render() {

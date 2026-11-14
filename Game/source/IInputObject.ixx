@@ -20,6 +20,8 @@ export namespace CR::Game {
 		int top, bottom, left, right;
 	};
 
+	enum class ClickEvent { None, Pressed, Clicked, Cancelled };
+
 	class IInputObject {
 	  public:
 		IInputObject();
@@ -38,9 +40,18 @@ export namespace CR::Game {
 		virtual void FreeResources() = 0;
 
 	  protected:
+		// Updates the input region to bounds (or clears it when disabled) and returns this frame's click event.
+		// A press must start inside the region. Releasing inside the region clicks, dragging out cancels.
+		ClickEvent PollClick(const Rect& bounds);
+		bool IsHeld() const { return m_held; }
+		void ResetClick() { m_held = false; }
+
 		bool m_disabled;
 		CR::Engine::Audio::Handles::SoundFX m_soundFX;
 		CR::Engine::Input::Handles::Region m_region;
+
+	  private:
+		bool m_held{false};
 	};
 }    // namespace CR::Game
 
@@ -56,4 +67,31 @@ cg::IInputObject::IInputObject() : m_disabled(false) {
 
 cg::IInputObject::~IInputObject() {
 	CR::Engine::Input::Regions::release(m_region);
+}
+
+cg::ClickEvent cg::IInputObject::PollClick(const Rect& bounds) {
+	if(m_disabled) {
+		ceinput::Regions::update(m_region, cecore::Rect2D<int32_t>{{0, 0}, {0, 0}});
+		m_held = false;
+		return ClickEvent::None;
+	}
+	ceinput::Regions::update(
+		m_region, cecore::Rect2D<int32_t>{{bounds.left, bounds.top}, {bounds.right, bounds.bottom}});
+
+	uint32_t state{};
+	ceinput::Regions::getStates(m_region, state);
+
+	if(!m_held) {
+		if((state & ceinput::Regions::RegionStates::Pressed) != 0) {
+			m_held = true;
+			return ClickEvent::Pressed;
+		}
+		return ClickEvent::None;
+	}
+
+	if((state & ceinput::Regions::RegionStates::Down) != 0) { return ClickEvent::None; }
+
+	m_held = false;
+	if((state & ceinput::Regions::RegionStates::Released) != 0) { return ClickEvent::Clicked; }
+	return ClickEvent::Cancelled;
 }

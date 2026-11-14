@@ -1,6 +1,12 @@
 {
     "soundfx" : [
             {
+                "name" : "building_notcharged_1a",
+                "path" : "Audio/FX/building_notcharged_1a.flac"
+            }, {
+                "name" : "building_readied_1",
+                "path" : "Audio/FX/building_readied_1.flac"
+            }, {
                 "name" : "scrapbookpageturn1",
                 "path" : "Audio/FX/scrapbookpageturn1.flac"
             }, {

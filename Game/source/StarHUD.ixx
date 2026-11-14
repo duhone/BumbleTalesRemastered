@@ -81,6 +81,9 @@ cg::StarHUD::~StarHUD() {
 }
 
 void cg::StarHUD::Update() {
+	// Legacy input came from touch callbacks; here the base Update polls the button region.
+	InputButton::Update();
+
 	if(m_numStars > 0) {
 		CR::Engine::Graphics::Sprites::SetAnimationPauses(starSprite, false);
 	} else if(m_numStars == 0) {

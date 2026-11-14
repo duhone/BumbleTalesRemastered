@@ -85,7 +85,7 @@ void cg::SpecialSelector::Update() {
 	if(m_isSelector3) {
 		bool animatingDone;
 		cegraph::Sprites::AreAnimationsDone(selectorSprite, animatingDone);
-		if(!animatingDone) {
+		if(animatingDone) {
 			OnDoneAnimating();
 			ShowSelector2();
 			tilesExploded = false;

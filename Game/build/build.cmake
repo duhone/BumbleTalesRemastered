@@ -12,6 +12,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/AppConfig.ixx
     ${root}/source/ArcadeModeSaveInfo.ixx
     ${root}/source/ArcadeRecords.ixx
+    ${root}/source/BuildingButtonControl.ixx
     ${root}/source/BuildingLevels.ixx
     ${root}/source/CharacterTale.ixx
     ${root}/source/CheckboxControl.ixx

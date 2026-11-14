@@ -202,6 +202,9 @@
             "name": "ShopStarMeterIndicator",
             "path": "Graphics/Textures/Shop/StarMeterIndicator.webp"
         },{
+            "name": "StoryModeDust",
+            "path": "Graphics/Textures/StoryMode/Dust.webp"
+        },{
             "name": "StoryModeFont_StarHUD",
             "path": "Graphics/Textures/StoryMode/Font_StarHUD.webp"
         },{

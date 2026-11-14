@@ -46,7 +46,7 @@ export namespace CR::Game {
 		glm::vec2 offset;
 		bool hasTrophy;
 		TrophyName trophyName;
-		int m_touchID;
+		bool m_wasDown{false};
 		Rect bounds;
 	};
 }    // namespace CR::Game
@@ -60,7 +60,7 @@ namespace cg      = CR::Game;
 
 using namespace cecore::Literals;
 
-cg::TrophyButton::TrophyButton(TrophyName trophyName, int zPos) : m_touchID(-1) {
+cg::TrophyButton::TrophyButton(TrophyName trophyName, int zPos) {
 	cegraph::Sprites::Create("ScrapbookTrophyIcon"_hash64, trophySprite);
 	cegraph::Sprites::SetZOrders(trophySprite, (uint8_t)zPos);
 	cegraph::Sprites::SetPositions(trophySprite, glm::vec2(0, 144));
@@ -88,9 +88,11 @@ void cg::TrophyButton::Render() {
 	uint32_t state{};
 	ceinput::Regions::getStates(m_region, state);
 
-	if((state & ceinput::Regions::RegionStates::Down) != 0) {
+	bool isDown = !m_disabled && (state & ceinput::Regions::RegionStates::Down) != 0;
+	if(isDown && !m_wasDown) {
 		if(OnClicked.Size() > 0) OnClicked(trophyName);
 	}
+	m_wasDown = isDown;
 }
 
 void cg::TrophyButton::SetPosition(int xLoc, int yLoc) {

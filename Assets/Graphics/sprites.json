@@ -336,6 +336,11 @@
             "frame_rate": "FPS10",
             "looping": true
         },{
+            "name": "StoryModeDust",
+            "texture": "StoryModeDust",
+            "frame_rate": "FPS15",
+            "looping": false
+        },{
             "name": "StoryModeFont_StarHUD",
             "texture": "StoryModeFont_StarHUD",
             "frame_rate": "FPS0",

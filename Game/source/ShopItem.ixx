@@ -63,6 +63,7 @@ export namespace CR::Game {
 
 		Rect bounds;
 		CR::Engine::Input::Handles::Region m_region;
+		bool m_wasDown{false};
 
 		bool isLevelable;
 		StarMeter* starMeter;
@@ -130,6 +131,7 @@ void cg::ShopItem::Update() {
 
 	if(disableInput) {
 		ceinput::Regions::update(m_region, cecore::Rect2D<int32_t>{{0, 0}, {0, 0}});
+		m_wasDown = false;
 		return;
 	}
 	ceinput::Regions::update(
@@ -137,7 +139,9 @@ void cg::ShopItem::Update() {
 
 	uint32_t state{};
 	ceinput::Regions::getStates(m_region, state);
-	if((state & ceinput::Regions::RegionStates::Down) != 0) { OnClicked(this); }
+	bool isDown = (state & ceinput::Regions::RegionStates::Down) != 0;
+	if(isDown && !m_wasDown) { OnClicked(this); }
+	m_wasDown = isDown;
 }
 
 void cg::ShopItem::Render() {

@@ -103,17 +103,7 @@ void cg::CheckboxControl::SetSpriteAndBounds(float left, float top, uint64_t spr
 }
 
 void cg::CheckboxControl::Update() {
-	if(m_disabled) {
-		ceinput::Regions::update(m_region, cecore::Rect2D<int32_t>{{0, 0}, {0, 0}});
-		return;
-	}
-	ceinput::Regions::update(
-	    m_region, cecore::Rect2D<int32_t>{{bounds.left, bounds.top}, {bounds.right, bounds.bottom}});
-
-	uint32_t state{};
-	ceinput::Regions::getStates(m_region, state);
-
-	if((state & ceinput::Regions::RegionStates::Pressed) != 0) {
+	if(PollClick(bounds) == ClickEvent::Pressed) {
 		m_isChecked = !m_isChecked;
 		OnCheckChanged();
 	}
