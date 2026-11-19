@@ -30,6 +30,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/IInputObject.ixx
     ${root}/source/InputButton.ixx
     ${root}/source/IParticle.ixx
+    ${root}/source/IParticleSystem.ixx
     ${root}/source/IRenderable.ixx
     ${root}/source/ISavableView.ixx
     ${root}/source/ISaveOnTerminate.ixx
