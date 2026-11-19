@@ -52,6 +52,7 @@ The skill may edit any needed files under `Game/source/`, `Game/build/build.cmak
 9. Graphics normally need matching entries in `Assets/Graphics/textures.json` and `sprites.json`, plus a matching hash in `Game/source/main.cpp` (`c_textureSetHashes`). `.webp` assets should already in `Assets`; if only legacy art exists, report that it needs to be converted/added rather than converting legacy assets as part of the port. If `.webp` exists, but no entries in the json files, then go ahead and use the `refresh-assets` skill to fix this. 
 10. Check for related hand-ported z-order, visibility, coordinate, or input assumptions in files touched by the new class. Fix tightly coupled game-side issues; report broader suspected issues separately rather than making unrelated changes.
 11. Build the smallest useful target when practical. The port may remain non-compiling if the remastered engine or assets do not yet provide a required feature, but report every blocker explicitly, including file and symbol names.
+12. Do not keep any commented out code that is in the original game.
 
 ## Conventions
 

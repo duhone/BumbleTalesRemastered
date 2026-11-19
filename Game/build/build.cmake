@@ -29,6 +29,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/HomeMenuView.ixx
     ${root}/source/IInputObject.ixx
     ${root}/source/InputButton.ixx
+    ${root}/source/IParticle.ixx
     ${root}/source/IRenderable.ixx
     ${root}/source/ISavableView.ixx
     ${root}/source/ISaveOnTerminate.ixx
@@ -44,6 +45,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/RadioButtonControl.ixx
     ${root}/source/ResourceBar.ixx
     ${root}/source/RepeatedSpriteHelper.ixx
+    ${root}/source/ResourceTile.ixx
     ${root}/source/SaveInfo.ixx
     ${root}/source/SavedGame.ixx
     ${root}/source/SaveGameManager.ixx

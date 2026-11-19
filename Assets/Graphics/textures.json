@@ -85,6 +85,9 @@
             "name": "PiecesSelector3",
             "path": "Graphics/Textures/pieces/Selector3.webp"
         },{
+            "name": "Piecestiles",
+            "path": "Graphics/Textures/pieces/tiles.webp"
+        },{
             "name": "ScoreYouGotTags",
             "path": "Graphics/Textures/Score/YouGotTags.webp"
         },{

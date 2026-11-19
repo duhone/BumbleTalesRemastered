@@ -141,6 +141,11 @@
             "frame_rate": "FPS10",
             "looping": false
         },{
+            "name": "Piecestiles",
+            "texture": "Piecestiles",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
             "name": "ScoreYouGotTags",
             "texture": "ScoreYouGotTags",
             "frame_rate": "FPS0",

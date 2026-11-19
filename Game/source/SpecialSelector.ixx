@@ -49,6 +49,7 @@ export namespace CR::Game {
 		CR::Utility::Event OnExplodeTiles;
 
 		int GetCurrFrame() const;
+		CR::Engine::Graphics::Handles::Sprite GetSprite() const { return selectorSprite; }
 
 	  private:
 		enum class Type { Selector2, Selector3 };

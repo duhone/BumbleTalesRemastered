@@ -60,6 +60,7 @@ namespace {
 											   "PiecesSelector1"_hash64,
 											   "PiecesSelector2"_hash64,
 											   "PiecesSelector3"_hash64,
+											   "Piecestiles"_hash64,
 											   "ScoreYouGotTags"_hash64,
 											   "ScrapbookBG"_hash64,
 											   "ScrapbookButton_Characters"_hash64,

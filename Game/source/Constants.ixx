@@ -15,8 +15,8 @@ export namespace CR::Game::Constants {
 	constexpr uint32_t STORY_MODE_STATE  = 1;
 	constexpr uint32_t ARCADE_MODE_STATE = 2;
 
-	constexpr int c_resourceTileWidth  = 44;
-	constexpr int c_resourceTileHeight = 44;
+	constexpr int c_resourceTileWidth  = 88;
+	constexpr int c_resourceTileHeight = 88;
 	constexpr int c_resourceTileTypes  = 8;
 
 	constexpr int c_puzzleXTiles          = 7;
