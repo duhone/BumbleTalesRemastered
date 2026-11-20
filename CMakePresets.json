@@ -1,0 +1,91 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 4,
+    "minor": 5,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "windows-x64",
+      "displayName": "Windows x64 (Ninja)",
+      "description": "Out-of-source build in <parent of repo>/../source_build/<repo>-<preset>",
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceParentDir}/../source_build/${sourceDirName}-${presetName}",
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "toolset": {
+        "value": "host=x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe",
+        "CMAKE_CONFIGURATION_TYPES": "Debug;RelWithDebInfo;Profile;Final"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug",
+      "displayName": "Debug",
+      "configurePreset": "windows-x64",
+      "configuration": "Debug"
+    },
+    {
+      "name": "relwithdebinfo",
+      "displayName": "RelWithDebInfo",
+      "configurePreset": "windows-x64",
+      "configuration": "RelWithDebInfo"
+    },
+    {
+      "name": "profile",
+      "displayName": "Profile",
+      "configurePreset": "windows-x64",
+      "configuration": "Profile"
+    },
+    {
+      "name": "final",
+      "displayName": "Final",
+      "configurePreset": "windows-x64",
+      "configuration": "Final"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "debug",
+      "displayName": "Debug",
+      "configurePreset": "windows-x64",
+      "configuration": "Debug",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "relwithdebinfo",
+      "displayName": "RelWithDebInfo",
+      "configurePreset": "windows-x64",
+      "configuration": "RelWithDebInfo",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "profile",
+      "displayName": "Profile",
+      "configurePreset": "windows-x64",
+      "configuration": "Profile",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "final",
+      "displayName": "Final",
+      "configurePreset": "windows-x64",
+      "configuration": "Final",
+      "output": { "outputOnFailure": true }
+    }
+  ]
+}

@@ -38,3 +38,7 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio / CMake local state
+.vs/
+CMakeUserPresets.json

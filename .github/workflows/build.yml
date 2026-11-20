@@ -1,0 +1,63 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: ${{ matrix.generator }} ${{ matrix.config }}
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        generator: [ "Visual Studio 18 2026", "Ninja Multi-Config" ]
+        config: [ Debug, Final ]
+
+    steps:
+    # conjure is a relative-URL submodule (../conjure). If that repo is private, the default token can't read it and
+    # a personal access token must be passed here with `token:`.
+    - uses: actions/checkout@v7.0.1
+      with:
+        submodules: recursive
+        lfs: true
+
+    - name: Install CMake 4.5
+      uses: lukka/get-cmake@v4.5.0
+      with:
+        cmakeVersion: "~4.5.0"
+
+    # Ninja doesn't set up the MSVC environment itself, the Visual Studio generator does.
+    - name: Set up MSVC environment
+      if: matrix.generator == 'Ninja Multi-Config'
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: x64
+
+    - name: Configure CMake (Visual Studio)
+      if: matrix.generator != 'Ninja Multi-Config'
+      run: cmake -B ${{ github.workspace }}/build -G "${{ matrix.generator }}" -A x64
+
+    # The Ninja job goes through the preset so CMakePresets.json is verified too.
+    - name: Configure CMake (Ninja preset)
+      if: matrix.generator == 'Ninja Multi-Config'
+      run: cmake --preset windows-x64
+
+    - name: Build (Visual Studio)
+      if: matrix.generator != 'Ninja Multi-Config'
+      run: cmake --build ${{ github.workspace }}/build --config ${{ matrix.config }}
+
+    - name: Build (Ninja preset)
+      if: matrix.generator == 'Ninja Multi-Config'
+      run: cmake --build --preset ${{ matrix.config == 'Debug' && 'debug' || 'final' }}
+
+    - name: Test (Visual Studio)
+      if: matrix.generator != 'Ninja Multi-Config'
+      run: ctest --test-dir ${{ github.workspace }}/build -C ${{ matrix.config }} --output-on-failure
+
+    - name: Test (Ninja preset)
+      if: matrix.generator == 'Ninja Multi-Config'
+      run: ctest --preset ${{ matrix.config == 'Debug' && 'debug' || 'final' }}
