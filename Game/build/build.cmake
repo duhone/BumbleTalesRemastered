@@ -20,6 +20,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/ConfirmEraseDialog.ixx
     ${root}/source/Constants.ixx
     ${root}/source/CrystalParticle.ixx
+    ${root}/source/CrystalParticleSystem.ixx
     ${root}/source/Event.ixx
     ${root}/source/FSM.ixx
     ${root}/source/FunctionObjects.ixx

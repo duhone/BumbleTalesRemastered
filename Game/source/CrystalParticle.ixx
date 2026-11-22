@@ -31,6 +31,11 @@ export namespace CR::Game {
 		CrystalParticle(glm::vec2 position, CrystalParticleStyle cpStyle, Constants::ResourceType rType);
 		~CrystalParticle() override;
 
+		CrystalParticle(const CrystalParticle&)            = delete;
+		CrystalParticle& operator=(const CrystalParticle&) = delete;
+		CrystalParticle(CrystalParticle&& other) noexcept;
+		CrystalParticle& operator=(CrystalParticle&& other) noexcept;
+
 		void Update() override;
 		void Render() override;
 		void SetPosition([[maybe_unused]] float xLoc, [[maybe_unused]] float yLoc) override {}
@@ -107,6 +112,25 @@ cg::CrystalParticle::CrystalParticle(glm::vec2 position, CrystalParticleStyle cp
 
 cg::CrystalParticle::~CrystalParticle() {
 	if(m_sprite.isValid()) { cegraph::Sprites::Delete(m_sprite); }
+}
+
+cg::CrystalParticle::CrystalParticle(CrystalParticle&& other) noexcept :
+	IParticle(other), m_sprite(std::exchange(other.m_sprite, {})), m_velocity(other.m_velocity),
+	m_acceleration(other.m_acceleration), m_position(other.m_position), maxTimeLeft(other.maxTimeLeft),
+	timeLeft(other.timeLeft) {}
+
+cg::CrystalParticle& cg::CrystalParticle::operator=(CrystalParticle&& other) noexcept {
+	if(this != &other) {
+		if(m_sprite.isValid()) { cegraph::Sprites::Delete(m_sprite); }
+		IParticle::operator=(other);
+		m_sprite       = std::exchange(other.m_sprite, {});
+		m_velocity     = other.m_velocity;
+		m_acceleration = other.m_acceleration;
+		m_position     = other.m_position;
+		maxTimeLeft    = other.maxTimeLeft;
+		timeLeft       = other.timeLeft;
+	}
+	return *this;
 }
 
 void cg::CrystalParticle::Update() {
