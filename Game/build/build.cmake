@@ -44,6 +44,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/NumberFont.ixx
     ${root}/source/OptionsMenuScreen.ixx
     ${root}/source/OptionsMenuView.ixx
+    ${root}/source/ParticleSystemManager.ixx
     ${root}/source/Property.ixx
     ${root}/source/RadioButtonControl.ixx
     ${root}/source/ResourceBar.ixx
