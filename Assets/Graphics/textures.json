@@ -76,6 +76,27 @@
             "name": "OptionsHeader",
             "path": "Graphics/Textures/Options/OptionsHeader.webp"
         },{
+            "name": "PiecespieceShatter0",
+            "path": "Graphics/Textures/pieces/pieceShatter0.webp"
+        },{
+            "name": "PiecespieceShatter1",
+            "path": "Graphics/Textures/pieces/pieceShatter1.webp"
+        },{
+            "name": "PiecespieceShatter2",
+            "path": "Graphics/Textures/pieces/pieceShatter2.webp"
+        },{
+            "name": "PiecespieceShatter3",
+            "path": "Graphics/Textures/pieces/pieceShatter3.webp"
+        },{
+            "name": "PiecespieceShatter4",
+            "path": "Graphics/Textures/pieces/pieceShatter4.webp"
+        },{
+            "name": "PiecespieceShatter5",
+            "path": "Graphics/Textures/pieces/pieceShatter5.webp"
+        },{
+            "name": "PiecespieceShatter6",
+            "path": "Graphics/Textures/pieces/pieceShatter6.webp"
+        },{
             "name": "PiecesSelector1",
             "path": "Graphics/Textures/pieces/Selector1.webp"
         },{

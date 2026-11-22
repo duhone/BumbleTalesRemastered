@@ -23,6 +23,7 @@ PACKAGES_ROOT = REPO_ROOT / "conjure" / "Engine" / "Packages"
 TEXTURE_PREFIX_OVERRIDES = {"InfoHelp": "Help"}
 
 # Values used for NEW entries instead of the schema default (schema default for frame_rate is FPS60).
+# FPS0 is a placeholder: the skill then sets frame_rate/looping for each new sprite from the legacy game (see SKILL.md).
 # Existing entries that are missing a field are backfilled with the real schema default so behavior doesn't change.
 NEW_ENTRY_OVERRIDES = {"frame_rate": "FPS0"}
 

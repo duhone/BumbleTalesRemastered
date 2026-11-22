@@ -126,19 +126,54 @@
             "frame_rate": "FPS0",
             "looping": true
         },{
+            "name": "PiecespieceShatter0",
+            "texture": "PiecespieceShatter0",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
+            "name": "PiecespieceShatter1",
+            "texture": "PiecespieceShatter1",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
+            "name": "PiecespieceShatter2",
+            "texture": "PiecespieceShatter2",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
+            "name": "PiecespieceShatter3",
+            "texture": "PiecespieceShatter3",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
+            "name": "PiecespieceShatter4",
+            "texture": "PiecespieceShatter4",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
+            "name": "PiecespieceShatter5",
+            "texture": "PiecespieceShatter5",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
+            "name": "PiecespieceShatter6",
+            "texture": "PiecespieceShatter6",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
             "name": "PiecesSelector1",
             "texture": "PiecesSelector1",
-            "frame_rate": "FPS10",
+            "frame_rate": "FPS15",
             "looping": true
         },{
             "name": "PiecesSelector2",
             "texture": "PiecesSelector2",
-            "frame_rate": "FPS10",
+            "frame_rate": "FPS15",
             "looping": true
         },{
             "name": "PiecesSelector3",
             "texture": "PiecesSelector3",
-            "frame_rate": "FPS10",
+            "frame_rate": "FPS15",
             "looping": false
         },{
             "name": "Piecestiles",
