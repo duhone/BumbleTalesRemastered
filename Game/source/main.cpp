@@ -107,6 +107,7 @@ namespace {
 											   "ShopPlusDimmer"_hash64,
 											   "ShopStarMeter"_hash64,
 											   "ShopStarMeterIndicator"_hash64,
+											   "StoryModeChainMatchTags"_hash64,
 											   "StoryModeDust"_hash64,
 											   "StoryModeFont_StarHUD"_hash64,
 											   "StoryModeMaxTag"_hash64,

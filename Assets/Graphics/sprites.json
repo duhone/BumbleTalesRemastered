@@ -376,6 +376,11 @@
             "frame_rate": "FPS10",
             "looping": true
         },{
+            "name": "StoryModeChainMatchTags",
+            "texture": "StoryModeChainMatchTags",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
             "name": "StoryModeDust",
             "texture": "StoryModeDust",
             "frame_rate": "FPS15",

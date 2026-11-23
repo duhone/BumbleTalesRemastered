@@ -226,6 +226,9 @@
             "name": "ShopStarMeterIndicator",
             "path": "Graphics/Textures/Shop/StarMeterIndicator.webp"
         },{
+            "name": "StoryModeChainMatchTags",
+            "path": "Graphics/Textures/StoryMode/ChainMatchTags.webp"
+        },{
             "name": "StoryModeDust",
             "path": "Graphics/Textures/StoryMode/Dust.webp"
         },{
