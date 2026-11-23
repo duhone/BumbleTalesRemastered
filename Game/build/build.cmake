@@ -16,6 +16,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/BuildingLevels.ixx
     ${root}/source/CharacterTale.ixx
     ${root}/source/ChainEffect.ixx
+    ${root}/source/ChainEffectManager.ixx
     ${root}/source/CheckboxControl.ixx
     ${root}/source/CharacterLevels.ixx
     ${root}/source/ConfirmEraseDialog.ixx

@@ -30,8 +30,8 @@ export namespace CR::Game {
 
 		ChainEffect(const ChainEffect&)            = delete;
 		ChainEffect& operator=(const ChainEffect&) = delete;
-		ChainEffect(ChainEffect&&)                 = delete;
-		ChainEffect& operator=(ChainEffect&&)      = delete;
+		ChainEffect(ChainEffect&& other) noexcept;
+		ChainEffect& operator=(ChainEffect&& other) noexcept;
 
 		void Update() override;
 		void Render() override;
@@ -77,6 +77,21 @@ cg::ChainEffect::ChainEffect(int amount, float xLoc, float yLoc) {
 
 cg::ChainEffect::~ChainEffect() {
 	if(m_chainSprite.isValid()) { cegraph::Sprites::Delete(m_chainSprite); }
+}
+
+cg::ChainEffect::ChainEffect(ChainEffect&& other) noexcept :
+	IRenderable(other), m_offset(other.m_offset), m_chainSprite(std::exchange(other.m_chainSprite, {})),
+	m_timeLeft(other.m_timeLeft), m_isDead(other.m_isDead) {}
+
+cg::ChainEffect& cg::ChainEffect::operator=(ChainEffect&& other) noexcept {
+	if(this != &other) {
+		if(m_chainSprite.isValid()) { cegraph::Sprites::Delete(m_chainSprite); }
+		m_offset      = other.m_offset;
+		m_chainSprite = std::exchange(other.m_chainSprite, {});
+		m_timeLeft    = other.m_timeLeft;
+		m_isDead      = other.m_isDead;
+	}
+	return *this;
 }
 
 void cg::ChainEffect::Update() {
