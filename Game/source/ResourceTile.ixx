@@ -100,7 +100,7 @@ namespace {
 	constexpr uint8_t c_tileZ     = 5;
 	constexpr uint8_t c_selectorZ = 20;
 
-	constexpr glm::vec2 c_tileSize{2 * cg::Constants::c_resourceTileWidth, 2 * cg::Constants::c_resourceTileHeight};
+	constexpr glm::vec2 c_tileSize{cg::Constants::c_resourceTileWidth, cg::Constants::c_resourceTileHeight};
 
 	// Hint spin measured from the legacy tiles3.png animation, one entry per frame at its 20fps playback.
 	// Clockwise degrees: a small wind-up backwards, a fast forward spin, a slight overshoot, then settle upright.

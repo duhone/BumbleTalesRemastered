@@ -238,6 +238,9 @@
             "name": "StoryModeMaxTag",
             "path": "Graphics/Textures/StoryMode/MaxTag.webp"
         },{
+            "name": "StoryModeNoMovesCover",
+            "path": "Graphics/Textures/StoryMode/NoMovesCover.webp"
+        },{
             "name": "StoryModeResourceBar1",
             "path": "Graphics/Textures/StoryMode/ResourceBar1.webp"
         },{

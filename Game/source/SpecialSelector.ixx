@@ -24,11 +24,10 @@ import std;
 import std.compat;
 
 export namespace CR::Game {
-	class ResourcePuzzle;
-
+	// Only drives the special animation timing, its sprite is never drawn. ResourceTile shows synced copies of it.
 	class SpecialSelector : public IRenderable {
 	  public:
-		SpecialSelector(ResourcePuzzle* parentPuzzle);
+		SpecialSelector();
 		virtual ~SpecialSelector();
 
 		// IRenderable
@@ -55,12 +54,11 @@ export namespace CR::Game {
 		enum class Type { Selector2, Selector3 };
 		void SetupSprite(Type a_type);
 
-		glm::vec2 offset;
+		glm::vec2 offset{};
 		CR::Engine::Graphics::Handles::Sprite selectorSprite;
-		ResourcePuzzle* m_parentPuzzle;
-		bool m_isSelector3;
+		bool m_isSelector3{false};
 
-		bool tilesExploded;
+		bool tilesExploded{false};
 	};
 }    // namespace CR::Game
 
@@ -72,10 +70,8 @@ namespace cg      = CR::Game;
 
 using namespace cecore::Literals;
 
-cg::SpecialSelector::SpecialSelector(ResourcePuzzle* parentPuzzle) {
+cg::SpecialSelector::SpecialSelector() {
 	SetupSprite(Type::Selector2);
-	m_parentPuzzle = parentPuzzle;
-	tilesExploded  = false;
 }
 
 cg::SpecialSelector::~SpecialSelector() {
@@ -151,15 +147,17 @@ void cg::SpecialSelector::SetupSprite(Type a_type) {
 		case Type::Selector2:
 			cegraph::Sprites::Create("PiecesSelector2"_hash64, selectorSprite);
 			cegraph::Sprites::SetPositions(selectorSprite, offset);
-			cegraph::Sprites::SetZOrders(selectorSprite, 80);
+			cegraph::Sprites::SetZOrders(selectorSprite, 20);
 			m_isSelector3 = false;
 			break;
 		case Type::Selector3:
 			cegraph::Sprites::Create("PiecesSelector3"_hash64, selectorSprite);
 			cegraph::Sprites::SetPositions(selectorSprite, offset);
-			cegraph::Sprites::SetZOrders(selectorSprite, 80);
+			cegraph::Sprites::SetZOrders(selectorSprite, 20);
 			cegraph::Sprites::StartAnimations(selectorSprite);
 			m_isSelector3 = true;
 			break;
 	}
+	// Hidden sprites don't animate, so keep it visible but fully transparent.
+	cegraph::Sprites::SetColors(selectorSprite, glm::u8vec4{255, 255, 255, 0});
 }

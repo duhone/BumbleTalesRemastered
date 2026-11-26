@@ -14,6 +14,7 @@ module;
 
 export module CR.Game.TileSelector;
 
+import CR.Game.Constants;
 import CR.Game.IRenderable;
 
 import CR.Engine;
@@ -22,11 +23,9 @@ import std;
 import std.compat;
 
 export namespace CR::Game {
-	class ResourcePuzzle;
-
 	class TileSelector : public IRenderable {
 	  public:
-		TileSelector(ResourcePuzzle* parentPuzzle);
+		TileSelector(float tileSpacing, glm::vec2 puzzleOffset);
 		~TileSelector();
 
 		// Methods
@@ -41,14 +40,12 @@ export namespace CR::Game {
 		void SetPosition(glm::ivec2 position);
 		glm::ivec2 GetPosition() const { return m_position; }
 
-		static const int tile_width  = 44;
-		static const int tile_height = 44;
-
 	  private:
-		glm::ivec2 m_position;    // position in the tile matrix
+		glm::ivec2 m_position{};    // position in the tile matrix
+		float m_tileSpacing{};
+		glm::vec2 m_puzzleOffset{};
 		CR::Engine::Graphics::Handles::Sprite m_selectorSprite;
-		ResourcePuzzle* m_parentPuzzle;
-		bool m_visible;
+		bool m_visible{true};
 	};
 }    // namespace CR::Game
 
@@ -60,15 +57,11 @@ namespace cg      = CR::Game;
 
 using namespace cecore::Literals;
 
-cg::TileSelector::TileSelector(ResourcePuzzle* parentPuzzle) {
-	m_parentPuzzle = parentPuzzle;
-	m_visible      = true;
-
+cg::TileSelector::TileSelector(float tileSpacing, glm::vec2 puzzleOffset) :
+	m_tileSpacing(tileSpacing), m_puzzleOffset(puzzleOffset) {
 	cegraph::Sprites::Create("PiecesSelector1"_hash64, m_selectorSprite);
-	cegraph::Sprites::SetZOrders(m_selectorSprite, 80);
+	cegraph::Sprites::SetZOrders(m_selectorSprite, 20);
 
-	m_position.x = 0;
-	m_position.y = 0;
 	SetPosition(m_position);
 }
 
@@ -76,22 +69,17 @@ cg::TileSelector::~TileSelector() {
 	CR::Engine::Graphics::Sprites::Delete(m_selectorSprite);
 }
 
-void cg::TileSelector::SetPosition([[maybe_unused]] glm::ivec2 position) {
+void cg::TileSelector::SetPosition(glm::ivec2 position) {
 	// Return w/no changes if player touched out of puzzle's bounds
-	/* TODO: ResourcePuzzle not ported yet
-	if(position.x > (ResourcePuzzle::x_tiles - 1) || position.x < 0 ||
-	   position.y > (ResourcePuzzle::y_tiles - 1) || position.y < 0)
-	    return;
+	if(position.x > (Constants::c_puzzleXTiles - 1) || position.x < 0 || position.y > (Constants::c_puzzleYTiles - 1) ||
+	   position.y < 0)
+		return;
 
-	// set the position of te selection sprite
+	// set the position of the selection sprite
 	m_position = position;
-	cegraph::Sprites::SetPositions(
-	    m_selectorSprite,
-	    glm::vec2(m_position.x * tile_width + tile_width / 2 + (m_position.x * m_parentPuzzle->Spacing()) +
-	                  m_parentPuzzle->Offset_X(),
-	              m_position.y * tile_height + tile_height / 2 + (m_position.y * m_parentPuzzle->Spacing()) +
-	                  m_parentPuzzle->Offset_Y()));
-	                  */
+	glm::vec2 tileSize{Constants::c_resourceTileWidth, Constants::c_resourceTileHeight};
+	cegraph::Sprites::SetPositions(m_selectorSprite,
+								   glm::vec2{m_position} * (tileSize + m_tileSpacing) + m_puzzleOffset);
 }
 
 void cg::TileSelector::Update() {}

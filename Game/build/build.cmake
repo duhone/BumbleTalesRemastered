@@ -51,6 +51,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/RadioButtonControl.ixx
     ${root}/source/ResourceBar.ixx
     ${root}/source/RepeatedSpriteHelper.ixx
+    ${root}/source/ResourcePuzzle.ixx
     ${root}/source/ResourceTile.ixx
     ${root}/source/SaveInfo.ixx
     ${root}/source/SavedGame.ixx

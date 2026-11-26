@@ -111,6 +111,7 @@ namespace {
 											   "StoryModeDust"_hash64,
 											   "StoryModeFont_StarHUD"_hash64,
 											   "StoryModeMaxTag"_hash64,
+											   "StoryModeNoMovesCover"_hash64,
 											   "StoryModeResourceBar1"_hash64,
 											   "StoryModeResourceBar2"_hash64,
 											   "StoryModeStarHUD"_hash64,

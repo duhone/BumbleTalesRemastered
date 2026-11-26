@@ -396,6 +396,11 @@
             "frame_rate": "FPS0",
             "looping": true
         },{
+            "name": "StoryModeNoMovesCover",
+            "texture": "StoryModeNoMovesCover",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
             "name": "StoryModeResourceBar1",
             "texture": "StoryModeResourceBar1",
             "frame_rate": "FPS0",

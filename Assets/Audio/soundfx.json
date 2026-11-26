@@ -1,11 +1,50 @@
 {
     "soundfx" : [
             {
+                "name" : "brick1",
+                "path" : "Audio/FX/brick1.flac"
+            }, {
+                "name" : "brick2",
+                "path" : "Audio/FX/brick2.flac"
+            }, {
                 "name" : "building_notcharged_1a",
                 "path" : "Audio/FX/building_notcharged_1a.flac"
             }, {
                 "name" : "building_readied_1",
                 "path" : "Audio/FX/building_readied_1.flac"
+            }, {
+                "name" : "crystal1",
+                "path" : "Audio/FX/crystal1.flac"
+            }, {
+                "name" : "crystal2",
+                "path" : "Audio/FX/crystal2.flac"
+            }, {
+                "name" : "gold1",
+                "path" : "Audio/FX/gold1.flac"
+            }, {
+                "name" : "gold2",
+                "path" : "Audio/FX/gold2.flac"
+            }, {
+                "name" : "invalidpiece1b",
+                "path" : "Audio/FX/invalidpiece1b.flac"
+            }, {
+                "name" : "invalidpiece2b",
+                "path" : "Audio/FX/invalidpiece2b.flac"
+            }, {
+                "name" : "leaves1",
+                "path" : "Audio/FX/leaves1.flac"
+            }, {
+                "name" : "leaves2",
+                "path" : "Audio/FX/leaves2.flac"
+            }, {
+                "name" : "mpiece",
+                "path" : "Audio/FX/mpiece.flac"
+            }, {
+                "name" : "nomoves",
+                "path" : "Audio/FX/nomoves.flac"
+            }, {
+                "name" : "powerused1c",
+                "path" : "Audio/FX/powerused1c.flac"
             }, {
                 "name" : "scrapbookpageturn1",
                 "path" : "Audio/FX/scrapbookpageturn1.flac"
@@ -13,8 +52,20 @@
                 "name" : "shopopen",
                 "path" : "Audio/FX/shopopen.flac"
             }, {
+                "name" : "slide1b",
+                "path" : "Audio/FX/slide1b.flac"
+            }, {
+                "name" : "slide2b",
+                "path" : "Audio/FX/slide2b.flac"
+            }, {
+                "name" : "slide3b",
+                "path" : "Audio/FX/slide3b.flac"
+            }, {
                 "name" : "tanlogo",
                 "path" : "Audio/FX/tanlogo.flac"
+            }, {
+                "name" : "wood",
+                "path" : "Audio/FX/wood.flac"
             }
         ]
 }
