@@ -19,6 +19,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/ChainEffectManager.ixx
     ${root}/source/CheckboxControl.ixx
     ${root}/source/CharacterBonus.ixx
+    ${root}/source/CharacterHUD.ixx
     ${root}/source/CharacterLevels.ixx
     ${root}/source/CharacterStats.ixx
     ${root}/source/ConfirmEraseDialog.ixx

@@ -55,6 +55,15 @@ namespace cg     = CR::Game;
 
 using namespace cecore::Literals;
 
+namespace {
+	constexpr int c_resourceWidth  = 28;
+	constexpr int c_resourceHeight = 26;
+	constexpr int c_statSize       = 26;
+	constexpr int c_statOffsetX    = 30;
+	constexpr int c_columnPitch    = 56;
+	constexpr int c_rowPitch       = 30;
+}    // namespace
+
 cg::CharacterStats::CharacterStats() :
 	m_spriteHelperStats("StoryModeCharHUDStat"_hash64, 30), m_spriteHelperResource("StoryModeCharHUDResource"_hash64, 30) {}
 
@@ -66,17 +75,22 @@ void cg::CharacterStats::Render() {
 	int xRow = 0;
 	int yRow = 0;
 
+	const int resourceX = int(offset.x) - c_resourceWidth / 2;
+	const int statX     = int(offset.x) + c_statOffsetX - c_statSize / 2;
+	const int resourceY = int(offset.y) - c_resourceHeight / 2;
+	const int statY     = int(offset.y) - c_statSize / 2;
+
 	m_spriteHelperStats.Start();
 	m_spriteHelperResource.Start();
 
 	for(size_t i = 0; i < m_cBonus.resourceBonus.size(); i++) {
 		if(m_cBonus.resourceBonus[i] > 0) {
 			m_spriteHelperResource.NewSprite();
-			m_spriteHelperResource.SetPosition(int(offset.x) + xRow * 56, int(offset.y) + yRow * 30);
+			m_spriteHelperResource.SetPosition(resourceX + xRow * c_columnPitch, resourceY + yRow * c_rowPitch);
 			m_spriteHelperResource.SetFrame(int(i));
 
 			m_spriteHelperStats.NewSprite();
-			m_spriteHelperStats.SetPosition(int(offset.x) + 30 + (xRow * 56), int(offset.y) + yRow * 30);
+			m_spriteHelperStats.SetPosition(statX + xRow * c_columnPitch, statY + yRow * c_rowPitch);
 			m_spriteHelperStats.SetFrame(m_cBonus.resourceBonus[i] - 1);
 
 			xRow++;
@@ -89,11 +103,11 @@ void cg::CharacterStats::Render() {
 
 	if(m_cBonus.dropRateBonusType != Constants::NoTile) {
 		m_spriteHelperResource.NewSprite();
-		m_spriteHelperResource.SetPosition(int(offset.x) + xRow * 56, int(offset.y) + yRow * 30);
+		m_spriteHelperResource.SetPosition(resourceX + xRow * c_columnPitch, resourceY + yRow * c_rowPitch);
 		m_spriteHelperResource.SetFrame(static_cast<int>(m_cBonus.dropRateBonusType));
 
 		m_spriteHelperStats.NewSprite();
-		m_spriteHelperStats.SetPosition(int(offset.x) + 30 + (xRow * 56), int(offset.y) + yRow * 30);
+		m_spriteHelperStats.SetPosition(statX + xRow * c_columnPitch, statY + yRow * c_rowPitch);
 		m_spriteHelperStats.SetFrame(2);
 	}
 
