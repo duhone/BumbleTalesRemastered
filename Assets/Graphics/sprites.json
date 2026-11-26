@@ -381,6 +381,16 @@
             "frame_rate": "FPS0",
             "looping": true
         },{
+            "name": "StoryModeCharHUDResource",
+            "texture": "StoryModeCharHUDResource",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "StoryModeCharHUDStat",
+            "texture": "StoryModeCharHUDStat",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
             "name": "StoryModeDust",
             "texture": "StoryModeDust",
             "frame_rate": "FPS15",

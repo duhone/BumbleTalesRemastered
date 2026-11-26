@@ -229,6 +229,12 @@
             "name": "StoryModeChainMatchTags",
             "path": "Graphics/Textures/StoryMode/ChainMatchTags.webp"
         },{
+            "name": "StoryModeCharHUDResource",
+            "path": "Graphics/Textures/StoryMode/CharHUDResource.webp"
+        },{
+            "name": "StoryModeCharHUDStat",
+            "path": "Graphics/Textures/StoryMode/CharHUDStat.webp"
+        },{
             "name": "StoryModeDust",
             "path": "Graphics/Textures/StoryMode/Dust.webp"
         },{

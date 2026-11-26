@@ -18,7 +18,9 @@ set(CR_IMPLEMENTATION
     ${root}/source/ChainEffect.ixx
     ${root}/source/ChainEffectManager.ixx
     ${root}/source/CheckboxControl.ixx
+    ${root}/source/CharacterBonus.ixx
     ${root}/source/CharacterLevels.ixx
+    ${root}/source/CharacterStats.ixx
     ${root}/source/ConfirmEraseDialog.ixx
     ${root}/source/Constants.ixx
     ${root}/source/CrystalParticle.ixx
