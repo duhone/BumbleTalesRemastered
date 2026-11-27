@@ -376,6 +376,36 @@
             "frame_rate": "FPS10",
             "looping": true
         },{
+            "name": "StoryModeBuildingHUDAnim1",
+            "texture": "StoryModeBuildingHUDAnim1",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
+            "name": "StoryModeBuildingHUDAnim2",
+            "texture": "StoryModeBuildingHUDAnim2",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
+            "name": "StoryModeBuildingHUDAnim3",
+            "texture": "StoryModeBuildingHUDAnim3",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
+            "name": "StoryModeBuildingHUDAnim4",
+            "texture": "StoryModeBuildingHUDAnim4",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
+            "name": "StoryModeBuildingHUDAnim5",
+            "texture": "StoryModeBuildingHUDAnim5",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
+            "name": "StoryModeBuildingHUDAnim6",
+            "texture": "StoryModeBuildingHUDAnim6",
+            "frame_rate": "FPS15",
+            "looping": true
+        },{
             "name": "StoryModeChainMatchTags",
             "texture": "StoryModeChainMatchTags",
             "frame_rate": "FPS0",

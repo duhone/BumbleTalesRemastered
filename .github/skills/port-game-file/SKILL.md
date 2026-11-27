@@ -53,6 +53,7 @@ The skill may edit any needed files under `Game/source/`, `Game/build/build.cmak
 10. Check for related hand-ported z-order, visibility, coordinate, or input assumptions in files touched by the new class. Fix tightly coupled game-side issues; report broader suspected issues separately rather than making unrelated changes.
 11. Build the smallest useful target when practical. The port may remain non-compiling if the remastered engine or assets do not yet provide a required feature, but report every blocker explicitly, including file and symbol names.
 12. Do not keep any commented out code that is in the original game.
+13. The old game tended to to allocate things on the heap. Watch for this, if heap alloc is needed because of inheritence or some other reason its fine to keep it. Convert to unique_ptr instead of raw new delete though. But the preference should be for simple in-situ member variables, no heap allocation. even if its in a container, no reason for a vector<Foo*> if it could be a vector<Foo>. And if no reason for a container to be a vector instead of an std::array, make it an array. if it needs to be vector, the make sure to reserve if a typical size is obvious, if no initial size is obvious, then reserve a couple of cache lines worth to start at least.
 
 ## Conventions
 

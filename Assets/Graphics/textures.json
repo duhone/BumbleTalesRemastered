@@ -226,6 +226,24 @@
             "name": "ShopStarMeterIndicator",
             "path": "Graphics/Textures/Shop/StarMeterIndicator.webp"
         },{
+            "name": "StoryModeBuildingHUDAnim1",
+            "path": "Graphics/Textures/StoryMode/BuildingHUDAnim1.webp"
+        },{
+            "name": "StoryModeBuildingHUDAnim2",
+            "path": "Graphics/Textures/StoryMode/BuildingHUDAnim2.webp"
+        },{
+            "name": "StoryModeBuildingHUDAnim3",
+            "path": "Graphics/Textures/StoryMode/BuildingHUDAnim3.webp"
+        },{
+            "name": "StoryModeBuildingHUDAnim4",
+            "path": "Graphics/Textures/StoryMode/BuildingHUDAnim4.webp"
+        },{
+            "name": "StoryModeBuildingHUDAnim5",
+            "path": "Graphics/Textures/StoryMode/BuildingHUDAnim5.webp"
+        },{
+            "name": "StoryModeBuildingHUDAnim6",
+            "path": "Graphics/Textures/StoryMode/BuildingHUDAnim6.webp"
+        },{
             "name": "StoryModeChainMatchTags",
             "path": "Graphics/Textures/StoryMode/ChainMatchTags.webp"
         },{

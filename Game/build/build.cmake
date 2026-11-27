@@ -13,6 +13,7 @@ set(CR_IMPLEMENTATION
     ${root}/source/ArcadeModeSaveInfo.ixx
     ${root}/source/ArcadeRecords.ixx
     ${root}/source/BuildingButtonControl.ixx
+    ${root}/source/BuildingHUD.ixx
     ${root}/source/BuildingLevels.ixx
     ${root}/source/CharacterTale.ixx
     ${root}/source/ChainEffect.ixx
