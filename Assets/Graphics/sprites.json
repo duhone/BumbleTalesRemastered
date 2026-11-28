@@ -436,8 +436,18 @@
             "frame_rate": "FPS15",
             "looping": false
         },{
+            "name": "StoryModeFont_Level",
+            "texture": "StoryModeFont_Level",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
             "name": "StoryModeFont_StarHUD",
             "texture": "StoryModeFont_StarHUD",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "StoryModeHUD",
+            "texture": "StoryModeHUD",
             "frame_rate": "FPS0",
             "looping": true
         },{

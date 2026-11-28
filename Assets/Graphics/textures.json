@@ -262,8 +262,14 @@
             "name": "StoryModeDust",
             "path": "Graphics/Textures/StoryMode/Dust.webp"
         },{
+            "name": "StoryModeFont_Level",
+            "path": "Graphics/Textures/StoryMode/Font_Level.webp"
+        },{
             "name": "StoryModeFont_StarHUD",
             "path": "Graphics/Textures/StoryMode/Font_StarHUD.webp"
+        },{
+            "name": "StoryModeHUD",
+            "path": "Graphics/Textures/StoryMode/StoryModeHUD.webp"
         },{
             "name": "StoryModeMaxTag",
             "path": "Graphics/Textures/StoryMode/MaxTag.webp"
