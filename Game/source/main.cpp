@@ -32,7 +32,10 @@ using namespace cecore::Literals;
 namespace {
 	// For this simple game we don't really need texture sets. So there will only be 1, and it will always be
 	// resident. loaded on startup.
-	constexpr uint64_t c_textureSetHashes[] = {"ArcadeModeResourceBar3"_hash64,
+	constexpr uint64_t c_textureSetHashes[] = {"ArcadeModeFont_HUDScore"_hash64,
+											   "ArcadeModeFont_Level2"_hash64,
+											   "ArcadeModeHUD"_hash64,
+											   "ArcadeModeResourceBar3"_hash64,
 											   "ArcadeModeResourceBar4"_hash64,
 											   "ArcadeModeTimeBar"_hash64,
 											   "ArcadeModeTimeTag"_hash64,

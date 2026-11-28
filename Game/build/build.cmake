@@ -10,6 +10,7 @@ set(CR_INTERFACE_MODULES
 
 set(CR_IMPLEMENTATION
     ${root}/source/AppConfig.ixx
+    ${root}/source/ArcadeModeHUD.ixx
     ${root}/source/ArcadeModeSaveInfo.ixx
     ${root}/source/ArcadeRecords.ixx
     ${root}/source/BuildingButtonControl.ixx

@@ -1,6 +1,15 @@
 {
     "textures": [
         {
+            "name": "ArcadeModeFont_HUDScore",
+            "path": "Graphics/Textures/ArcadeMode/Font_HUDScore.webp"
+        },{
+            "name": "ArcadeModeFont_Level2",
+            "path": "Graphics/Textures/ArcadeMode/Font_Level2.webp"
+        },{
+            "name": "ArcadeModeHUD",
+            "path": "Graphics/Textures/ArcadeMode/ArcadeModeHUD.webp"
+        },{
             "name": "ArcadeModeResourceBar3",
             "path": "Graphics/Textures/ArcadeMode/ResourceBar3.webp"
         },{

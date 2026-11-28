@@ -1,6 +1,21 @@
 {
     "sprites": [
         {
+            "name": "ArcadeModeFont_HUDScore",
+            "texture": "ArcadeModeFont_HUDScore",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ArcadeModeFont_Level2",
+            "texture": "ArcadeModeFont_Level2",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
+            "name": "ArcadeModeHUD",
+            "texture": "ArcadeModeHUD",
+            "frame_rate": "FPS0",
+            "looping": true
+        },{
             "name": "ArcadeModeResourceBar3",
             "texture": "ArcadeModeResourceBar3",
             "frame_rate": "FPS0",

@@ -39,7 +39,7 @@ export namespace CR::Game {
 		void IncreaseTimer(float time);
 		void DecreaseTimer(float time);
 
-		float GetCurrTime() { return currTime; }
+		float GetCurrTime() const { return currTime; }
 
 		Utility::Event TimerExpired;
 
